@@ -1,3 +1,7 @@
+# Stochastic Control and its Applications 
+## Workshop to celebrate Sean Meyn’s 60th birthday
+## IEEE Conference on Decision andControl (CDC), Miami Beach, 2018
+
 **Location:** Fontainebleau Miami Beach, Florida
 
 **Date:** Sunday, December 16, 2018
