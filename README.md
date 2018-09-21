@@ -35,7 +35,7 @@ distinguished control theorists have confirmed their interest in giving talks at
 12. Professor Benjamin Van Roy (Stanford University)
 13. Professor Venugopal V. Veeravalli (University of Illinois at Urbana-Champaign)
 
-[I'm a relative reference to a repository file](/Bio)
+[I'm a relative reference to a repository file](./Bio.md)
 
 **Biographics of speakers:**
 1. Vivek Borkar did his B.Tech. (Elec. Egg.) at IIT Bombay in 1976, M.S. (Systems and
