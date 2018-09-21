@@ -299,6 +299,7 @@ conference will be a perfect birthday present to recognize and honor the scholar
 that he has made to the systems and controls community over the past three decades.
 
 **Intended Audience:** All are welcome to join this celebration of Professor Meyn’s 60 th birthday.
+
 **Schedule:** The workshop will consist of 2 morning sections and 2 afternoon sections, for a total
 of 6 hours. The specific times for the sessions will be arranged in coordination with the
 conference organizers.
