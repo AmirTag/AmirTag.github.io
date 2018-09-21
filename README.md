@@ -21,12 +21,12 @@ vibrant field.
 former PhD students of Professor Meyn to participate in the workshop. The following
 distinguished control theorists have confirmed their interest in giving talks at the workshop:
 
-1. Professor Vivek Borkar (Indian Institute of Technology, Mumbai)
-2. Professor Ana Busic (Inria, Paris)
-3. Professor Peter E. Caines (McGill University)
-4. Professor Ken Duffy (Hamilton Institute)
-5. Professor Peter Glynn (Stanford University)
-6. Dr. Dayu Huang (General Electric Global Research)
+1. Professor [Vivek Borkar](./Vivek-bio.md) (Indian Institute of Technology, Mumbai)
+2. Professor [Ana Busic](./Ana-bio.md) (Inria, Paris)
+3. Professor [Peter E. Caines](./Caines-bio.md) (McGill University)
+4. Professor [Ken Duffy](./Ken-bio.md) (Hamilton Institute)
+5. Professor [Peter Glynn](./Glynn-bio.md) (Stanford University)
+6. Dr. [Dayu Huang](./Dayu-bio.md) (General Electric Global Research)
 7. Professor Ioannis Kontoyiannis (University of Cambridge)
 8. Professor Roland Malhame (Polytechnique Montréal)
 9. Professor Muriel Medard (Massachusetts Institute of Technology)
