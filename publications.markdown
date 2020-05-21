@@ -9,6 +9,10 @@ permalink: /publications/
 [On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://arxiv.org/abs/2005.08145)    
 Submitted to Transactions of Automatic Control (TAC), May, 2020    
 
+- Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou       
+[Lasso formulation of the shortest path problem](https://arxiv.org/abs/2005.09152)       
+Submitted to IEEE Conference on Decision and Control (CDC), May, 2020
+
 - Amirhossein Taghvaei, Tryphon T. Georgiou, Larry Norton, Allen R. Tannenbaum     
 [Fractional SIR Epidemiological Models](https://www.medrxiv.org/content/10.1101/2020.04.28.20083865v2)    
 Sumitted to Scientefic Reports, May, 2020
