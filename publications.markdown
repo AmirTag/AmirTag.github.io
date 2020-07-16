@@ -4,10 +4,6 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
-- Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
- [Optimal transport mapping via input-convex neural networks](https://arxiv.org/abs/1908.10962)         
- To appear at International Conference on Machine Learning (ICML), 2020
-
 - JiaoJiao Fan, Amirhossein Taghvaei, Yongxin Chen   
 [Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
 Submitted to Conference on Neural Information Processing Systems (NeurIPS), 2020
@@ -20,18 +16,6 @@ Sumitted to Scientefic Reports, May, 2020
 [On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://arxiv.org/abs/2005.08145)    
 Submitted to Transactions of Automatic Control (TAC), May, 2020    
 
-- Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou       
-[Lasso formulation of the shortest path problem](https://arxiv.org/abs/2005.09152)       
-Submitted to IEEE Conference on Decision and Control (CDC), May, 2020
-
-- Rui Fu, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
-[Harvesting energy from a periodic heat bath]()    
-Submitted to IEEE Conference on Decision and Control (CDC), May, 2020
-
-- S. Yagiz Olmez, Amirhossein Taghvaei, Prashant G. Mehta   
-[Deep FPF: Gain function approximation in high-dimensions]()   
-Submitted to IEEE Conference on Decision and Control (CDC), May, 2020
-
 - Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou     
  [Maximal power output of a stochastic thermodynamic engine](https://arxiv.org/abs/2001.00979)   
   Submitted to Automatica, Jan, 2020
@@ -40,16 +24,15 @@ Submitted to IEEE Conference on Decision and Control (CDC), May, 2020
  [An optimal transport formulation of the ensemble Kalman filter](https://arxiv.org/abs/1910.02338)        
   Submitted to Transactions of Automatic Control (TAC), Oct, 2019
 
-- Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
- [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://arxiv.org/abs/1902.07263)     
- To appear in SIAM Journal of Uncertainty Quantificatioin, Feb, 2019
-
 - Amirhossein Taghvaei and Amin Jalali    
  [2-Wasserstein Approximation via Restricted Convex Potentials with Application to Improved Training for GANs](https://arxiv.org/abs/1902.07197)     
  As part of internship at Technicolor AI, Feb, 2019   
 
 
 #### Journal Publications:
+- Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
+ [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://arxiv.org/abs/1902.07263)     
+ To appear in SIAM Journal of Uncertainty Quantificatioin, Feb, 2019
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta    
 [A mean-field optimal control formulation for global optimization](https://ieeexplore.ieee.org/document/8353737)      
@@ -65,6 +48,11 @@ IEEE Transactions on Automatic Control (TAC), Nov, 2017.
 
 
 #### Machine Learning Conferences:
+- Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
+ [Optimal transport mapping via input-convex neural networks](https://arxiv.org/abs/1908.10962)         
+ To appear at International Conference on Machine Learning (ICML), 2020
+
+
 - Amirhossein Taghvaei, Prashant G. Mehta      
 [Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html)        
 International Conference on Machine Learning (ICML), Long Beach, June, 2019 
@@ -76,6 +64,18 @@ International Conference on Machine Learning (ICML), Long Beach, June, 2019
 
 
 #### Control Conferences:
+- Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou       
+[Lasso formulation of the shortest path problem](https://arxiv.org/abs/2005.09152)       
+To appear at IEEE Conference on Decision and Control (CDC), May, 2020
+
+- Rui Fu, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
+[Harvesting energy from a periodic heat bath]()    
+To appear at  IEEE Conference on Decision and Control (CDC), May, 2020
+
+- S. Yagiz Olmez, Amirhossein Taghvaei, Prashant G. Mehta   
+[Deep FPF: Gain function approximation in high-dimensions]()   
+To appear at  IEEE Conference on Decision and Control (CDC), May, 2020
+
 - Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou      
 [Optimality vs Stability Trade-off in Ensemble Kalman Filters]()      
 24th International Symposium on Mathematical Theory of Networks and Systems (MTNS), 2020 (postponed)
