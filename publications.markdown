@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
-- JiaoJiao Fan, Amirhossein Taghvaei, Yongxin Chen   
+- Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
 [Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
 Submitted to Conference on Neural Information Processing Systems (NeurIPS), 2020
 
@@ -20,16 +20,17 @@ Submitted to Transactions of Automatic Control (TAC), May, 2020
  [Maximal power output of a stochastic thermodynamic engine](https://arxiv.org/abs/2001.00979)   
   Submitted to Automatica, Jan, 2020
 
-- Amirhossein Taghvaei and Prashant G. Mehta    
- [An optimal transport formulation of the ensemble Kalman filter](https://arxiv.org/abs/1910.02338)        
-  Submitted to Transactions of Automatic Control (TAC), Oct, 2019
-
 - Amirhossein Taghvaei and Amin Jalali    
  [2-Wasserstein Approximation via Restricted Convex Potentials with Application to Improved Training for GANs](https://arxiv.org/abs/1902.07197)     
  As part of internship at Technicolor AI, Feb, 2019   
 
 
 #### Journal Publications:
+- Amirhossein Taghvaei and Prashant G. Mehta    
+ [An optimal transport formulation of the ensemble Kalman filter](https://arxiv.org/abs/1910.02338)        
+  Transactions of Automatic Control (TAC), Oct, 2019
+
+
 - Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
  [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://arxiv.org/abs/1902.07263)     
  To appear in SIAM Journal of Uncertainty Quantificatioin, Feb, 2019
