@@ -11,7 +11,7 @@ layout: home
 Irvine, CA. 92697-2800  
 <amirhoseintghv@gmail.com>  
 [Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en)  
-[Curriculum Vitae](./files/cv-March-2020.pdf)
+[Curriculum Vitae](./files/resume.pdf)
 <br />
 
 ---

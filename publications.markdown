@@ -27,7 +27,7 @@ Submitted to Transactions of Automatic Control (TAC), May, 2020
 
 #### Journal Publications:
 - Amirhossein Taghvaei and Prashant G. Mehta    
- [An optimal transport formulation of the ensemble Kalman filter](https://arxiv.org/abs/1910.02338)        
+ [An optimal transport formulation of the ensemble Kalman filter](https://ieeexplore.ieee.org/document/9163273) ([arXiv](https://arxiv.org/abs/1910.02338))        
   Transactions of Automatic Control (TAC), Oct, 2019
 
 
@@ -36,15 +36,15 @@ Submitted to Transactions of Automatic Control (TAC), May, 2020
  To appear in SIAM Journal of Uncertainty Quantificatioin, Feb, 2019
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta    
-[A mean-field optimal control formulation for global optimization](https://ieeexplore.ieee.org/document/8353737)      
+[A mean-field optimal control formulation for global optimization](https://ieeexplore.ieee.org/document/8353737) ([arXiv](https://arxiv.org/abs/1910.02338))       
 IEEE Transactions on Automatic Control (TAC), May, 2018.   
 
 - Amirhossein Taghvaei, Jana de Wiljes, Prashant G. Mehta, and Sebastian Reich     
-[Kalman filter and its modern extensions for the continuous-time nonlinear filtering problem](http://dynamicsystems.asmedigitalcollection.asme.org/article.aspx?articleid=2653375)   
+[Kalman filter and its modern extensions for the continuous-time nonlinear filtering problem](http://dynamicsystems.asmedigitalcollection.asme.org/article.aspx?articleid=2653375) ([arXiv](https://arxiv.org/abs/1702.07241))   
 ASME Journal of Dynamic Systems, Measurement, and Control, Nov, 2017
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta    
-[Feedback Particle Filter on Riemannian Manifolds and Matrix Lie groups](https://ieeexplore.ieee.org/document/8100938)       
+[Feedback Particle Filter on Riemannian Manifolds and Matrix Lie groups](https://ieeexplore.ieee.org/document/8100938) ([arXiv](https://arxiv.org/abs/1701.02416))       
 IEEE Transactions on Automatic Control (TAC), Nov, 2017.   
 
 
@@ -55,12 +55,12 @@ IEEE Transactions on Automatic Control (TAC), Nov, 2017.
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta      
-[Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html)        
+[Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html) ([arXiv](https://arxiv.org/abs/1901.03317))        
 International Conference on Machine Learning (ICML), Long Beach, June, 2019 
 
 
 - Amirhossein Taghvaei, Jin W. Kim, Prasshant G. Mehta       
-[How regularization affects the critical points in linear neural networks](https://papers.nips.cc/paper/6844-how-regularization-affects-the-critical-points-in-linear-networks)         
+[How regularization affects the critical points in linear neural networks](https://papers.nips.cc/paper/6844-how-regularization-affects-the-critical-points-in-linear-networks) ([arXiv](https://arxiv.org/abs/1709.09625))         
 31st Conference on Neural Information Processing Systems (NIPS), Long Beach, December, 2017  
 
 
@@ -82,7 +82,7 @@ To appear at  IEEE Conference on Decision and Control (CDC), May, 2020
 24th International Symposium on Mathematical Theory of Networks and Systems (MTNS), 2020 (postponed)
 
 - Tixian Wang, Amirhossein Taghvaei, Prashant G. Mehta       
-[Bio-inspired Learning of Sensorimotor Control for Locomotion](https://arxiv.org/abs/1910.02556)       
+[Bio-inspired Learning of Sensorimotor Control for Locomotion](https://ieeexplore.ieee.org/document/9147889)       
 IEEE American Control Conference (ACC), July, 2020     
 
 - Tixian Wang, Amirhossein Taghvaei, Prashant G. Mehta        
