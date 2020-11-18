@@ -16,7 +16,7 @@ Irvine, CA. 92697-2800
 
 ---
 ### Research summary
-My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [nonlinear filtering/Data assimilation](), [sampling](), and [optimal mass transportation](). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
+My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [nonlinear filtering/Data assimilation](./research/#FPF), [sampling](./research/#SM), and [optimal mass transportation](./research/#OT). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
 
 ---
 ### Education
