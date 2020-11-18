@@ -4,9 +4,9 @@
 layout: home
 ---
 <img style="float: right;"  src="./images/Amir.jpg" width="140"/>
-[Postdoctoral Scholar](http://georgiou.eng.uci.edu//students.html) ([with Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html))   
-[Department of Mechanical and Aerospace Engineering](https://engineering.uci.edu/dept/mae)   
-[University of California, Irvine](https://uci.edu/)   
+Postdoctoral Scholar ([with Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html))   
+Department of Mechanical and Aerospace Engineering    
+University of California, Irvine    
 4100 Calit2 Building  
 Irvine, CA. 92697-2800  
 <amirhoseintghv@gmail.com>  
@@ -16,7 +16,7 @@ Irvine, CA. 92697-2800
 
 ---
 ### Research summary
-My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [nonlinear filtering](), [Bayesian inference](), and [learning a generative model](). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
+My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [nonlinear filtering/Data assimilation](), [sampling](), and [optimal mass transportation](). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
 
 ---
 ### Education
