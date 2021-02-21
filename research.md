@@ -8,15 +8,19 @@ permalink: /research/
 While the subject dates back to the invention of the least-squares method by Gauss, attention to fundamental limitations and the performance of data assimilation algorithms in a truly high-dimensional setting is quite recent. 
 A new branch of data assimilation algorithms, tapping on systems of controlled interacting particles and their respective OMT flow, hold a great promise to overcome the curse of dimensionality. The objective of this research is to develop design principles for controlled interacting particle filters and efficeint numerical algorithms to implemeent them in high-dimensional setting
 
+- Amirhossein Taghvaei and Prashant G. Mehta          
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter]()      
+IEEE Control Systems Magazine (CSM), Accepted 
+
 
 - Amirhossein Taghvaei and Prashant G. Mehta    
- [An optimal transport formulation of the ensemble Kalman filter](https://ieeexplore.ieee.org/document/9163273) ([arXiv](https://arxiv.org/abs/1910.02338))        
-Transactions of Automatic Control (TAC), Oct, 2019
+ [An optimal transport formulation of the ensemble Kalman filter](https://doi.org/10.1109/TAC.2020.3015410) ([arXiv](https://arxiv.org/abs/1910.02338))        
+Transactions of Automatic Control (TAC), Accepted
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
- [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://epubs.siam.org/doi/abs/10.1137/19M124513X?mobileUi=0) ([arXiv](https://arxiv.org/abs/1902.07263))     
-SIAM Journal of Uncertainty Quantificatioin, Feb, 2019
+ [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://doi.org/10.1137/19M124513X) ([arXiv](https://arxiv.org/abs/1902.07263))     
+SIAM/ASA Journal on Uncertainty Quantification, 8(3):1090–1117, 2020
 
 
 
@@ -32,8 +36,13 @@ International Conference on Machine Learning (ICML), Long Beach, June, 2019
 ### Computational methodology for optimal mass transportation:      {#OT}
 There is a growing interest in application of the optimal transportation theory in machine learning and control related problems. The main reason is that the optimal transportation theory provides powerful and elegant geometrical tools to view and manipulate probability distributions. The objective of this  ressearch is to develop efficient data-driven computational algorithms that provide reliable approximations to these geometrical tools in high dimensions.
 
+- Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
+[Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
+Submitted to International Conference of Machine Learning (ICML) 
+
+
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
- [Optimal transport mapping via input-convex neural networks](https://arxiv.org/abs/1908.10962)         
+ [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
 International Conference on Machine Learning (ICML), 2020
 
 ----------
@@ -41,6 +50,11 @@ International Conference on Machine Learning (ICML), 2020
 Classical thermodynamics is inherently static and can not capture non-equilibrium transitions and the power that can be extracted from an engine in finite time.
 To this end, the framework of stochastic thermodynamics was developed in recent years to allow quantifying thermodynamic quantities in finite time transitions. The objective of this project is to study fundamental limits in dissipation and in power generation by thermodynamic processes. Remarkabley, these problems can be viewed as optimal control problems for probabibility distributions where optimal mass transport play a central role.
 
+- Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
+[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://arxiv.org/abs/2101.05396)
+Submitted to Physical Review E
+
+
 - Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou     
- [Maximal power output of a stochastic thermodynamic engine](https://www.sciencedirect.com/science/article/pii/S0005109820305689?dgcid=author) ([arXiv ](https://arxiv.org/abs/2001.00979))   
-  To appear at Automatica, Jan, 2020
+ [Maximal power output of a stochastic thermodynamic engine](https://doi.org/10.1016/j.automatica.2020.109366) ([arXiv ](https://arxiv.org/abs/2001.00979))   
+Automatica, 123:109366, 2021

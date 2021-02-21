@@ -4,9 +4,19 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
+- Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta            
+[Feedback particle filter for collective inference](https://arxiv.org/abs/2010.06655)         
+Submitted to a special issue of Foundations of Data Science (FoDS) on Data Assimilation       
+
+
 - Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
 [Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
-Submitted to Conference on Neural Information Processing Systems (NeurIPS)
+Submitted to International Conference of Machine Learning (ICML) 
+
+
+- Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
+[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://arxiv.org/abs/2101.05396)
+Submitted to Physical Review E
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta     
@@ -24,18 +34,21 @@ Submitted to Transactions of Automatic Control (TAC)
 [Fractional SIR Epidemiological Models](https://doi.org/10.1038/s41598-020-77849-7)    
 Scientefic Reports, 10(1):20882, 2020
 
+
 - Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou     
  [Maximal power output of a stochastic thermodynamic engine](https://doi.org/10.1016/j.automatica.2020.109366) ([arXiv ](https://arxiv.org/abs/2001.00979))   
 Automatica, 123:109366, 2021
+
+
+- Amirhossein Taghvaei and Prashant G. Mehta          
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter]()      
+IEEE Control Systems Magazine (CSM), Accepted 
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta    
  [An optimal transport formulation of the ensemble Kalman filter](https://doi.org/10.1109/TAC.2020.3015410) ([arXiv](https://arxiv.org/abs/1910.02338))        
 Transactions of Automatic Control (TAC), Accepted
 
-- Amirhossein Taghvaei and Prashant G. Mehta          
-[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter]()      
-IEEE Control Systems Magazine (CSM), Accepted subject to minor revision
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
  [Diffusion map-based algorithm for gain function approximation in the feedback particle filter](https://doi.org/10.1137/19M124513X) ([arXiv](https://arxiv.org/abs/1902.07263))     
@@ -59,7 +72,7 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2017.
 
 #### Machine Learning Conferences:
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
- [Optimal transport mapping via input-convex neural networks](https://arxiv.org/abs/1908.10962)         
+ [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
 International Conference on Machine Learning (ICML), 2020
 
 
@@ -79,7 +92,7 @@ Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long B
 IEEE Conference on Decision and Control (CDC), Jeju Island, Republic of Korea, December 2020 (accepted)
 
 - Rui Fu, Olga Movilla, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
-[Harvesting energy from a periodic heat bath]()    
+[Harvesting energy from a periodic heat bath](https://arxiv.org/abs/2101.02239)    
 IEEE Conference on Decision and Control (CDC), Jeju Island, Republic of Korea, December 2020 (accepted)
 
 - S. Yagiz Olmez, Amirhossein Taghvaei, Prashant G. Mehta   
