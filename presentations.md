@@ -5,11 +5,14 @@ permalink: /presentations/
 ---
 
 #### Invited talks
+- [Controlled Interacting Particle Systems for Estimation and Sampling](/files/UW-slides-2021.pdf)       
+Department of Aeronautics & Astronautics, Univetsity of Washington, Seattle, Feb, 2021
+
 - [Feedback Particle Filter: Design, Estimation, and Eror Analysis](/files/UCLA-2019-slides.pdf)    
 University of California Los Angeles, Nov, 2019    
 
 - [Feedback Particle Filter: Design, Estimation, Analysis](/files/UCI-2019-slides.pdf)    
-University of California Irvine, May, 2019
+Department of Mechanical and Aerospace Engineering, University of California Irvine, May, 2019
 
 - [Poisson equation, its approximation, and error analysis]()   
 Mathematical Analysis Seminar Series. University of Illinois at Urbana-Champaign, February, 2019     

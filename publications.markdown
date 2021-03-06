@@ -4,6 +4,11 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
+- Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
+[On the relation between information and power in stochastic thermodynamic engines]()       
+Submitted to IEEE Control Systems Letters (L-CSS)    
+
+
 - Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta            
 [Feedback particle filter for collective inference](https://arxiv.org/abs/2010.06655)         
 Submitted to a special issue of Foundations of Data Science (FoDS) on Data Assimilation       
@@ -41,7 +46,7 @@ Automatica, 123:109366, 2021
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta          
-[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter]()      
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://arxiv.org/abs/2102.10712)           
 IEEE Control Systems Magazine (CSM), Accepted 
 
 
@@ -73,7 +78,7 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2017.
 #### Machine Learning Conferences:
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
  [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
-International Conference on Machine Learning (ICML), 2020
+International Conference on Machine Learning (ICML), 6672-6681, June 2020
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta      
@@ -88,47 +93,47 @@ Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long B
 
 #### Control Conferences:
 - Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou       
-[Lasso formulation of the shortest path problem](https://arxiv.org/abs/2005.09152)       
-IEEE Conference on Decision and Control (CDC), Jeju Island, Republic of Korea, December 2020 (accepted)
+[Lasso formulation of the shortest path problem](https://ieeexplore.ieee.org/document/9303909) ([arXiv](https://arxiv.org/abs/2005.09152))                 
+IEEE Conference on Decision and Control (CDC), 402-407, Jeju Island, Republic of Korea, December 2020 
 
-- Rui Fu, Olga Movilla, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
-[Harvesting energy from a periodic heat bath](https://arxiv.org/abs/2101.02239)    
-IEEE Conference on Decision and Control (CDC), Jeju Island, Republic of Korea, December 2020 (accepted)
+- Rui Fu, Olga Movilla, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Harvesting energy from a periodic heat bath](https://ieeexplore.ieee.org/document/9304271) ([arXiv](https://arxiv.org/abs/2101.02239))           
+IEEE Conference on Decision and Control (CDC), 3034-3039, Jeju Island, Republic of Korea, December 2020 
 
 - S. Yagiz Olmez, Amirhossein Taghvaei, Prashant G. Mehta   
-[Deep FPF: Gain function approximation in high-dimensions](https://arxiv.org/abs/2010.01183)   
-IEEE Conference on Decision and Control (CDC), Jeju Island, Republic of Korea, December 2020 (accepted)
+[Deep FPF: Gain function approximation in high-dimensions](https://ieeexplore.ieee.org/document/9304260) ([arXiv](https://arxiv.org/abs/2010.01183))          
+IEEE Conference on Decision and Control (CDC), 4790-4795, Jeju Island, Republic of Korea, December 2020 
 
 - Tixian Wang, Amirhossein Taghvaei, Prashant G. Mehta       
-[Bio-inspired Learning of Sensorimotor Control for Locomotion](https://ieeexplore.ieee.org/document/9147889)       
+[Bio-inspired Learning of Sensorimotor Control for Locomotion](https://ieeexplore.ieee.org/document/9147889) ([arXiv](https://arxiv.org/abs/1910.02556))           
 IEEE American Control Conference (ACC), 2188–2193, Denver, July 2020
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou      
-[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)      
-24th International Symposium on Mathematical Theory of Networks and Systems (MTNS), 2020 (accepted)
+[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)           
+24th International Symposium on Mathematical Theory of Networks and Systems (MTNS), 2020 
 
 - Tixian Wang, Amirhossein Taghvaei, Prashant G. Mehta        
-[Q-learning for POMDP: An application to learning locomotion gaits](https://ieeexplore.ieee.org/document/9030143)      
+[Q-learning for POMDP: An application to learning locomotion gaits](https://ieeexplore.ieee.org/document/9030143) ([arXiv](https://arxiv.org/abs/1910.00107))            
 IEEE Conference on Decision and Control (CDC), 2758–2763, Nice, France, December 2019
   
 - Jin W. Kim, Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn        
-[An approach to duality in nonlinear filtering](https://ieeexplore.ieee.org/document/8815136)       
+[An approach to duality in nonlinear filtering](https://ieeexplore.ieee.org/document/8815136) ([arXiv](https://arxiv.org/abs/1809.10762))            
 IEEE American Control Conference (ACC), 5360–5365, Philadelphia, July 2019
 
 - Amirhossein Taghvaei, Prashant G. Mehta       
-[Error analysis of the stochastic linear feedback particle filter](https://ieeexplore.ieee.org/document/8619806)      
+[Error analysis of the stochastic linear feedback particle filter](https://ieeexplore.ieee.org/document/8619806) ([arXiv](https://arxiv.org/abs/1809.07892))            
 IEEE Conference on Decision and Control (CDC), 7194–7199, Miami, December 2018
 
 - Jin W. Kim, Amirhossein Taghvaei, Prashant G. Mehta      
-[Derivation and Extensions of the Linear Feedback Particle Filter based on Duality Formalisms](https://ieeexplore.ieee.org/document/8618878)       
+[Derivation and Extensions of the Linear Feedback Particle Filter based on Duality Formalisms](https://ieeexplore.ieee.org/document/8618878) ([arXiv](https://arxiv.org/abs/1804.04199))               
 IEEE Conference on Decision and Control (CDC), 7188–7193, Miami, December 2018   
 
 - Amirhossein Taghvaei, Prashant G. Mehta      
-[Error analysis of the linear feedback article filter](https://ieeexplore.ieee.org/document/8430867)      
+[Error analysis of the linear feedback article filter](https://ieeexplore.ieee.org/document/8430867) ([arXiv](https://arxiv.org/abs/1710.11008))      
 IEEE American Control Conference (ACC), 4261–4266, Milwaukee, June 2018 
  
 - Amirhossein Taghvaei, Prashant G. Mehta. S. P. Meyn           
-[Error Estimates for the Kernel Gain Function Approximation in the Feedback Particle Filter](https://ieeexplore.ieee.org/document/7963661)       
+[Error Estimates for the Kernel Gain Function Approximation in the Feedback Particle Filter](https://ieeexplore.ieee.org/document/7963661) ([arXiv](https://arxiv.org/abs/1612.05606))       
 IEEE American Control Conference (ACC), 4576–4582, Seattle, May 2017
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta      
@@ -136,7 +141,7 @@ IEEE American Control Conference (ACC), 4576–4582, Seattle, May 2017
 IEEE American Control Conference (ACC), 4570–4575, Seattle, May 2017
 
 - Amirhossein Taghvaei, Prashant G. Mehta     
-[Gain Function Approximation in the Feedback Particle Filter](https://ieeexplore.ieee.org/document/7799105)     
+[Gain Function Approximation in the Feedback Particle Filter](https://ieeexplore.ieee.org/document/7799105) ([arXiv](https://arxiv.org/abs/1603.05496))     
 IEEE Conference on Decision and Control (CDC), 5446–5452 Las Vegas, December 2016
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta       
@@ -144,7 +149,7 @@ IEEE Conference on Decision and Control (CDC), 5446–5452 Las Vegas, December 2
 IEEE Conference on Decision and Control (CDC), 5440–5445, Las Vegas, December 2016  
 
 - Amirhossein Taghvaei, Prashant G. Mehta       
-[An Optimal Transport Formulation of Linear Feedback Particle Filter](https://ieeexplore.ieee.org/abstract/document/7525474)        
+[An Optimal Transport Formulation of Linear Feedback Particle Filter](https://ieeexplore.ieee.org/abstract/document/7525474) ([arXiv](https://arxiv.org/abs/1510.01948))        
 IEEE American Control Conference (ACC), 3614–3619, Boston, June 2016 
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta        

@@ -39,7 +39,7 @@ Optimization and sampling algorithms share remarkable similarities in general, a
 
 - Amirhossein Taghvaei, Prashant G. Mehta      
 [Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html) ([arXiv](https://arxiv.org/abs/1901.03317))        
-International Conference on Machine Learning (ICML), Long Beach, June, 2019 
+International Conference on Machine Learning (ICML), 6076–6085, Long Beach, June 2019 
 
 ----------
 ### Computational methodology for optimal mass transportation:      {#OT}
@@ -56,7 +56,7 @@ Submitted to International Conference of Machine Learning (ICML)
 
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
  [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
-International Conference on Machine Learning (ICML), 2020
+International Conference on Machine Learning (ICML), 6672-6681, June 2020
 
 ----------
 ### Fundamental limitations in stochastic thermodynamics:  
