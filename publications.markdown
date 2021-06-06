@@ -4,29 +4,9 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
-- Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
-[On the relation between information and power in stochastic thermodynamic engines]()       
-Submitted to IEEE Control Systems Letters (L-CSS)    
-
-
 - Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta            
 [Feedback particle filter for collective inference](https://arxiv.org/abs/2010.06655)         
 Submitted to a special issue of Foundations of Data Science (FoDS) on Data Assimilation       
-
-
-- Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
-[Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
-Submitted to International Conference of Machine Learning (ICML) 
-
-
-- Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
-[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://arxiv.org/abs/2101.05396)
-Submitted to Physical Review E
-
-
-- Amirhossein Taghvaei and Prashant G. Mehta     
-[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://arxiv.org/abs/2005.08145)    
-Submitted to Transactions of Automatic Control (TAC)   
 
 
 - Amirhossein Taghvaei and Amin Jalali    
@@ -35,6 +15,21 @@ Submitted to Transactions of Automatic Control (TAC)
 
 
 #### Journal publications:
+- Amirhossein Taghvaei and Prashant G. Mehta     
+[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://arxiv.org/abs/2005.08145)    
+Transactions of Automatic Control (TAC), Accepted   
+
+
+- Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
+[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.062103)([arXiv](https://arxiv.org/abs/2101.05396))        
+Phys. Rev. E 103, 062103, June 2021
+
+
+- Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
+[On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929)([arXiv](https://arxiv.org/abs/2103.03986))      
+IEEE Control Systems Letters (L-CSS), 2021    
+
+
 - Amirhossein Taghvaei, Tryphon T. Georgiou, Larry Norton, Allen R. Tannenbaum     
 [Fractional SIR Epidemiological Models](https://doi.org/10.1038/s41598-020-77849-7)    
 Scientefic Reports, 10(1):20882, 2020
@@ -52,7 +47,7 @@ IEEE Control Systems Magazine (CSM), Accepted
 
 - Amirhossein Taghvaei and Prashant G. Mehta    
  [An optimal transport formulation of the ensemble Kalman filter](https://doi.org/10.1109/TAC.2020.3015410) ([arXiv](https://arxiv.org/abs/1910.02338))        
-Transactions of Automatic Control (TAC), Accepted
+Transactions of Automatic Control (TAC), 2020
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
@@ -76,6 +71,11 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2017.
 
 
 #### Machine Learning Conferences:
+- Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
+[Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
+International Conference of Machine Learning (ICML), 2021 
+
+
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
  [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
 International Conference on Machine Learning (ICML), 6672-6681, June 2020
