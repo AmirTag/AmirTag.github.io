@@ -4,9 +4,9 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
-- Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta            
-[Feedback particle filter for collective inference](https://arxiv.org/abs/2010.06655)         
-Submitted to a special issue of Foundations of Data Science (FoDS) on Data Assimilation       
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
+[Energy harvesting from anisotropic fluctuations](https://arxiv.org/abs/2108.00334)        
+Submitted to Phys. Rev. E 
 
 
 - Amirhossein Taghvaei and Amin Jalali    
@@ -15,8 +15,13 @@ Submitted to a special issue of Foundations of Data Science (FoDS) on Data Assim
 
 
 #### Journal publications:
+- Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta                        
+[Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018)([arXiv](https://arxiv.org/abs/2010.06655))                   
+Foundations of Data Science (FoDS) on Data Assimilation, 2021    
+
+
 - Amirhossein Taghvaei and Prashant G. Mehta     
-[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://arxiv.org/abs/2005.08145)    
+[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://ieeexplore.ieee.org/document/9456997))([arXiv](https://arxiv.org/abs/2005.08145))    
 Transactions of Automatic Control (TAC), Accepted   
 
 
