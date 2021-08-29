@@ -4,14 +4,15 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
+
+- Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta       
+[Ensemble Kalman Filter (EnKF) for Reinforcement Learning (RL)](https://arxiv.org/abs/2107.01244)       
+Submitted to Neural Information Processing Systems (NeurIPS) Conference, 2021
+
+
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
 [Energy harvesting from anisotropic fluctuations](https://arxiv.org/abs/2108.00334)        
 Submitted to Phys. Rev. E 
-
-
-- Amirhossein Taghvaei and Amin Jalali    
- [2-Wasserstein Approximation via Restricted Convex Potentials with Application to Improved Training for GANs](https://arxiv.org/abs/1902.07197)     
- As part of internship at Technicolor AI, Feb, 2019   
 
 
 #### Journal publications:
@@ -46,7 +47,7 @@ Automatica, 123:109366, 2021
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta          
-[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://arxiv.org/abs/2102.10712)           
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060)([arXiv](https://arxiv.org/abs/2102.10712))           
 IEEE Control Systems Magazine (CSM), Accepted 
 
 
