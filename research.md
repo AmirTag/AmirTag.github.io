@@ -41,6 +41,10 @@ Optimization and sampling algorithms share remarkable similarities in general, a
 [Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html) ([arXiv](https://arxiv.org/abs/1901.03317))        
 International Conference on Machine Learning (ICML), 6076–6085, Long Beach, June 2019 
 
+- Jiaojiao Fan, Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen   
+[Variational Wasserstein gradient flow](https://arxiv.org/abs/2112.02424)  
+
+
 ----------
 ### Computational methodology for optimal mass transportation:      {#OT}
 <p align="center">
@@ -67,9 +71,10 @@ International Conference on Machine Learning (ICML), 6672-6681, June 2020
 Classical thermodynamics is inherently static and can not capture non-equilibrium transitions and the power that can be extracted from an engine in finite time.
 To this end, the framework of stochastic thermodynamics was developed in recent years to allow quantifying thermodynamic quantities in finite time transitions. The objective of this project is to study fundamental limits in dissipation and in power generation by thermodynamic processes. Remarkabley, these problems can be viewed as optimal control problems for probabibility distributions where optimal mass transport play a central role.
 
-- Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
-[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://arxiv.org/abs/2101.05396)
-Submitted to Physical Review E
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
+[Energy harvesting from anisotropic fluctuations](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.044101)([arXiv](https://arxiv.org/abs/2108.00334))        
+Phys. Rev. E 104, 044101, Oct 2021      
+
 
 
 - Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou     

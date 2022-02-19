@@ -5,17 +5,25 @@ permalink: /publications/
 ---
 #### Preprints/Under review:
 
+- Jiaojiao Fan, Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen   
+[Variational Wasserstein gradient flow](https://arxiv.org/abs/2112.02424)  
+ 
+
 - Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta       
 [Ensemble Kalman Filter (EnKF) for Reinforcement Learning (RL)](https://arxiv.org/abs/2107.01244)       
-Submitted to Neural Information Processing Systems (NeurIPS) Conference, 2021
 
 
-- Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
-[Energy harvesting from anisotropic fluctuations](https://arxiv.org/abs/2108.00334)        
-Submitted to Phys. Rev. E 
+- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou      
+[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)           
+
 
 
 #### Journal publications:
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
+[Energy harvesting from anisotropic fluctuations](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.044101)([arXiv](https://arxiv.org/abs/2108.00334))        
+Phys. Rev. E 104, 044101, Oct 2021      
+
+
 - Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta                        
 [Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018)([arXiv](https://arxiv.org/abs/2010.06655))                   
 Foundations of Data Science (FoDS) on Data Assimilation, 2021    
@@ -98,6 +106,11 @@ Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long B
 
 
 #### Control Conferences:
+- Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
+[On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929)([arXiv](https://arxiv.org/abs/2103.03986))      
+IEEE Conference on Decision and Control (CDC), Austin, December 2021  
+
+
 - Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou       
 [Lasso formulation of the shortest path problem](https://ieeexplore.ieee.org/document/9303909) ([arXiv](https://arxiv.org/abs/2005.09152))                 
 IEEE Conference on Decision and Control (CDC), 402-407, Jeju Island, Republic of Korea, December 2020 
@@ -114,9 +127,6 @@ IEEE Conference on Decision and Control (CDC), 4790-4795, Jeju Island, Republic 
 [Bio-inspired Learning of Sensorimotor Control for Locomotion](https://ieeexplore.ieee.org/document/9147889) ([arXiv](https://arxiv.org/abs/1910.02556))           
 IEEE American Control Conference (ACC), 2188–2193, Denver, July 2020
 
-- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou      
-[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)           
-24th International Symposium on Mathematical Theory of Networks and Systems (MTNS), 2020 
 
 - Tixian Wang, Amirhossein Taghvaei, Prashant G. Mehta        
 [Q-learning for POMDP: An application to learning locomotion gaits](https://ieeexplore.ieee.org/document/9030143) ([arXiv](https://arxiv.org/abs/1910.00107))            
