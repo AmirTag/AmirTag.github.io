@@ -5,6 +5,12 @@ permalink: /presentations/
 ---
 
 #### Invited talks
+- [Variational Wassserstein Gradient flow](/files/Kantorovich-2022-slides.pdf)  
+Kantorovich Initiative Retreat, Univesity of Washington , Seattle, Mar, 2022
+
+- [Optimal Transportation Methods in Nonlinear filtering](/files/NDCL-2022-slides.pdf)  
+Nonlinear Dynamics and Controls Lab (NDCL), Univesity of Washington, Seattle, Feb, 2022
+
 - [Controlled Interacting Particle Systems for Estimation and Sampling](/files/UW-slides-2021.pdf)       
 Department of Aeronautics & Astronautics, Univetsity of Washington, Seattle, Feb, 2021
 
@@ -17,6 +23,9 @@ Department of Mechanical and Aerospace Engineering, University of California Irv
 - [Poisson equation, its approximation, and error analysis]()   
 Mathematical Analysis Seminar Series. University of Illinois at Urbana-Champaign, February, 2019     
 
+- [Critical Points of Linear Networks](/files/ML-Seminar-UIUC-2017-slides.pdf)     
+Machine Learning Seminar, University of Illinois at Urbana-Champaign, Sep, 2017
+
 - [Bias-Variance Tradeoff in solution to the Poisson Equation](/files/Gainsville-2017-slides.pdf)    
 5th Workshop on Cognition and Control, University of Florida, Gainesville, January, 2017
 
@@ -24,6 +33,9 @@ Mathematical Analysis Seminar Series. University of Illinois at Urbana-Champaign
 4th Workshop on Cognition and Control, University of Florida, Gainesville, January, 2016
 
 #### Conference and workshop presentations
+- [On the relation between information and power in stochastic thermodynamic engines](/files/CDC-2021-slides.pdf)      
+IEEE Conference on Decision and Control (CDC), December 2021 (virtual)
+
 - [Accelerated flow for probability distributions](/files/ICML-2019-slides.pdf)    
 International Conference on Machine Learning (ICML), Long Beach, June, 2019
 
@@ -36,8 +48,6 @@ IEEE Conference on Decision and Control (CDC), Miami Beach, December 2018
 - [Error analysis of the linear feedback particle filter](/files/ACC-2018-slides.pdf)    
 IEEE American control conference (ACC), Milwaukee, June, 2018
 
-- [Critical Points of Linear Networks](/files/ML-Seminar-UIUC-2017-slides.pdf)     
-Machine Learning Seminar, University of Illinois at Urbana-Champaign, Sep, 2017
 
 - [Error Estimates for the Kernel Gain Function Approximation in the Feedback Particle Filter](/files/ACC-2017-slides.pdf)     
 IEEE American Control Conference (ACC), Seattle, May, 2017

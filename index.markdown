@@ -19,7 +19,7 @@ I am looking for graduate student interested to work in the intersection of cont
 
 ---
 ### Research summary
-My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [nonlinear filtering/Data assimilation](./research/#FPF), [sampling](./research/#SM), and [optimal mass transportation](./research/#OT). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
+My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [Optimal filtering and control](./research/#FPF), [sampling](./research/#SM), and [optimal mass transportation](./research/#OT). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. 
 
 ---
 ### Professional Experience/Education
@@ -27,7 +27,6 @@ My research interest lies at the intersection of control theory and machine lear
 - Ph.D. in Mechanical Engineering, [University of Illinois at Urbana-Champaign](https://illinois.edu/), 2019    
 Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 - M.S. in Mathematics, [University of Illinois at Urbana-Champaign](https://illinois.edu/), 2017
-- B.S. in Physics, [Sharif University of Technology](http://www.sharif.ir/web/en/), Iran, 2013  
-- B.S. in  Mechanical Engineering, [Sharif University of Technology](http://www.sharif.ir/web/en/), Iran, 2013  
+- B.S. in  Mechanical Engineering and Physics (dual major), [Sharif University of Technology](http://www.sharif.ir/web/en/), Iran, 2013  
 
 ---

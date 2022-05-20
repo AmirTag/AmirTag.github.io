@@ -4,18 +4,25 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
+- Amirhossein Taghvaei, Bamdad Hosseini     
+[An Optimal Transport Formulation of Bayes' Law for Nonlinear Filtering Algorithms](https://arxiv.org/abs/2203.11869)
 
-- Jiaojiao Fan, Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen   
-[Variational Wasserstein gradient flow](https://arxiv.org/abs/2112.02424)  
- 
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://arxiv.org/abs/2203.12483)
 
-- Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta       
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Thernodynamic engine powered by anisotropic fluctuations](https://arxiv.org/abs/2203.07573)
+
+- Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta             
 [Ensemble Kalman Filter (EnKF) for Reinforcement Learning (RL)](https://arxiv.org/abs/2107.01244)       
 
 
-- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou      
+- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou           
 [Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)           
 
+  
+- Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen        
+[An optimal control approach to particle filtering](https://arxiv.org/abs/2110.03199)
 
 
 #### Journal publications:
@@ -24,29 +31,32 @@ permalink: /publications/
 Phys. Rev. E 104, 044101, Oct 2021      
 
 
-- Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta                        
-[Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018)([arXiv](https://arxiv.org/abs/2010.06655))                   
-Foundations of Data Science (FoDS) on Data Assimilation, 2021    
+- Amirhossein Taghvaei and Prashant G. Mehta          
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060)([arXiv](https://arxiv.org/abs/2102.10712))           
+IEEE Control Systems Magazine (CSM), vol. 41, no. 4, pp. 34-49, Aug. 2021
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta     
 [On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://ieeexplore.ieee.org/document/9456997))([arXiv](https://arxiv.org/abs/2005.08145))    
-Transactions of Automatic Control (TAC), Accepted   
+Transactions of Automatic Control (TAC), (Early Access)  
+
 
 
 - Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
-[On power and efficiency in harvesting energy from a heat bath with periodic temperature profile](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.062103)([arXiv](https://arxiv.org/abs/2101.05396))        
+[Underdamped stochastic thermodynamic engines in contact with a heat bath with arbitrary temperature profile](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.062103)([arXiv](https://arxiv.org/abs/2101.05396))        
 Phys. Rev. E 103, 062103, June 2021
+
 
 
 - Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
 [On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929)([arXiv](https://arxiv.org/abs/2103.03986))      
-IEEE Control Systems Letters (L-CSS), 2021    
+IEEE Control Systems Letters (L-CSS), vol. 6, pp. 434-439, 2022
 
 
-- Amirhossein Taghvaei, Tryphon T. Georgiou, Larry Norton, Allen R. Tannenbaum     
-[Fractional SIR Epidemiological Models](https://doi.org/10.1038/s41598-020-77849-7)    
-Scientefic Reports, 10(1):20882, 2020
+
+- Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta                        
+[Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018)([arXiv](https://arxiv.org/abs/2010.06655))                   
+Foundations of Data Science (FoDS) on Data Assimilation, 3(3), 543:561, 2021
 
 
 - Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou     
@@ -54,14 +64,15 @@ Scientefic Reports, 10(1):20882, 2020
 Automatica, 123:109366, 2021
 
 
-- Amirhossein Taghvaei and Prashant G. Mehta          
-[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060)([arXiv](https://arxiv.org/abs/2102.10712))           
-IEEE Control Systems Magazine (CSM), Accepted 
-
 
 - Amirhossein Taghvaei and Prashant G. Mehta    
  [An optimal transport formulation of the ensemble Kalman filter](https://doi.org/10.1109/TAC.2020.3015410) ([arXiv](https://arxiv.org/abs/1910.02338))        
-Transactions of Automatic Control (TAC), 2020
+Transactions of Automatic Control (TAC), vol. 66, no. 7, pp. 3052-3067, July 2021
+
+
+- Amirhossein Taghvaei, Tryphon T. Georgiou, Larry Norton, Allen R. Tannenbaum     
+[Fractional SIR Epidemiological Models](https://doi.org/10.1038/s41598-020-77849-7)    
+Scientefic Reports, 10(1):20882, 2020
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn    
@@ -71,33 +82,38 @@ SIAM/ASA Journal on Uncertainty Quantification, 8(3):1090–1117, 2020
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta    
 [A mean-field optimal control formulation for global optimization](https://doi.org/10.1109/TAC.2018.2833060) ([arXiv](https://arxiv.org/abs/1701.02413))       
-IEEE Transactions on Automatic Control (TAC), 64(1):282–289, 2018  
+IEEE Transactions on Automatic Control (TAC), 64, no. 1, pp. 282-289, Jan. 2019  
 
 
 - Amirhossein Taghvaei, Jana de Wiljes, Prashant G. Mehta, and Sebastian Reich     
 [Kalman filter and its modern extensions for the continuous-time nonlinear filtering problem](https://doi.org/10.1115/1.4037780) ([arXiv](https://arxiv.org/abs/1702.07241))   
-Journal of Dynamic Systems, Measurement, and Control, 140(3):030904, 2018.
+Journal of Dynamic Systems, Measurement, and Control, 140(3):030904, 2018
 
 
 - Chi Zhang, Amirhossein Taghvaei, Prashant G. Mehta    
 [Feedback Particle Filter on Riemannian Manifolds and Matrix Lie groups](https://doi.org/10.1109/TAC.2017.2771336) ([arXiv](https://arxiv.org/abs/1701.02416))       
-IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2017. 
+IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2018
 
 
 #### Machine Learning Conferences:
+- Jiaojiao Fan, Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen   
+[Variational Wasserstein gradient flow](https://arxiv.org/abs/2112.02424)  
+International Conference of Machine Learning (ICML), 2022 (Accepted) 
+
+
 - Jiaojiao Fan, Amirhossein Taghvaei, Yongxin Chen   
 [Scalable computations of Wasserstein barycenter via input convex neural networks](https://arxiv.org/abs/2007.04462)  
-International Conference of Machine Learning (ICML), 2021 
+International Conference of Machine Learning (ICML), PMLR 139:1571-1581, 2021
 
 
 - Ashok Makkuva, Amirhossein Taghvaei, Sewoong Oh, Jason Lee    
  [Optimal transport mapping via input-convex neural networks](http://proceedings.mlr.press/v119/makkuva20a.html) ([arXiv](https://arxiv.org/abs/1908.10962))              
-International Conference on Machine Learning (ICML), 6672-6681, June 2020
+International Conference on Machine Learning (ICML), PMLR 119:6672-6681, 2020
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta      
 [Accelerated flow for probability distributions](http://proceedings.mlr.press/v97/taghvaei19a.html) ([arXiv](https://arxiv.org/abs/1901.03317))        
-International Conference on Machine Learning (ICML), 6076–6085, Long Beach, June 2019 
+International Conference on Machine Learning (ICML), PMLR 97:6076-6085, 2019
 
 
 - Amirhossein Taghvaei, Jin W. Kim, Prasshant G. Mehta       
