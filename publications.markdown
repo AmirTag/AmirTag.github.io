@@ -7,18 +7,9 @@ permalink: /publications/
 - Amirhossein Taghvaei, Bamdad Hosseini     
 [An Optimal Transport Formulation of Bayes' Law for Nonlinear Filtering Algorithms](https://arxiv.org/abs/2203.11869)
 
-- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
-[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://arxiv.org/abs/2203.12483)
-
-- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
-[Thernodynamic engine powered by anisotropic fluctuations](https://arxiv.org/abs/2203.07573)
 
 - Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta             
-[Ensemble Kalman Filter (EnKF) for Reinforcement Learning (RL)](https://arxiv.org/abs/2107.01244)       
-
-
-- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou           
-[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)           
+[Controlled Interacting Particle Algorithms for Simulation-based Reinforcement Learning](https://arxiv.org/abs/2107.01244)       
 
   
 - Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen        
@@ -26,6 +17,16 @@ permalink: /publications/
 
 
 #### Journal publications:
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://ieeexplore.ieee.org/document/9802668)([arXiv](https://arxiv.org/abs/2203.12483))         
+IEEE Control Systems Letters, vol. 6, pp. 3409-3414, 2022
+
+
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Thernodynamic engine powered by anisotropic fluctuations](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023218)([arXiv](https://arxiv.org/abs/2203.07573))          
+Phys. Rev. Research, 4, 023218, Jun 2022      
+
+
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
 [Energy harvesting from anisotropic fluctuations](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.044101)([arXiv](https://arxiv.org/abs/2108.00334))        
 Phys. Rev. E 104, 044101, Oct 2021      
@@ -38,7 +39,7 @@ IEEE Control Systems Magazine (CSM), vol. 41, no. 4, pp. 34-49, Aug. 2021
 
 - Amirhossein Taghvaei and Prashant G. Mehta     
 [On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://ieeexplore.ieee.org/document/9456997))([arXiv](https://arxiv.org/abs/2005.08145))    
-Transactions of Automatic Control (TAC), (Early Access)  
+Transactions of Automatic Control (TAC), vol. 41, no. 5, pp. 2605-2609, 2021
 
 
 
@@ -122,6 +123,11 @@ Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long B
 
 
 #### Control Conferences:
+- Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou           
+[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)   
+25th International Symposium on Mathematical Theory of Networks and Systems (MTNS 2022), Bayreuth, Germany, 2022 (accepted)        
+
+
 - Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
 [On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929)([arXiv](https://arxiv.org/abs/2103.03986))      
 IEEE Conference on Decision and Control (CDC), Austin, December 2021  
