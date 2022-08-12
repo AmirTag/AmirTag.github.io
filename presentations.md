@@ -5,6 +5,9 @@ permalink: /presentations/
 ---
 
 #### Invited talks
+- [The role of optimal transportation and geometry in stochastic thermodynamics](/files/PIMS-OT-Summer-School-2022.pdf)       
+PIMS-IFDS-NSF Summer School on Optimal Transport, Univesity of Washington , Seattle, June, 2022
+
 - [Variational Wassserstein Gradient flow](/files/Kantorovich-2022-slides.pdf)  
 Kantorovich Initiative Retreat, Univesity of Washington , Seattle, Mar, 2022
 
@@ -33,6 +36,10 @@ Machine Learning Seminar, University of Illinois at Urbana-Champaign, Sep, 2017
 4th Workshop on Cognition and Control, University of Florida, Gainesville, January, 2016
 
 #### Conference and workshop presentations
+- [Ensemble Kalman Filter for Reinforcement Learning](/files/SIAM-UQ-2022.pdf)        
+SIAM Conference on Uncertainty Quantification (UQ22), April, 2022  
+
+
 - [On the relation between information and power in stochastic thermodynamic engines](/files/CDC-2021-slides.pdf)      
 IEEE Conference on Decision and Control (CDC), December 2021 (virtual)
 

@@ -4,8 +4,17 @@ title: Publications
 permalink: /publications/
 ---
 #### Preprints/Under review:
-- Amirhossein Taghvaei, Bamdad Hosseini     
-[An Optimal Transport Formulation of Bayes' Law for Nonlinear Filtering Algorithms](https://arxiv.org/abs/2203.11869)
+
+- Jordi Ventura Siches, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou          
+[Inertialess Gyrating Engines](https://arxiv.org/abs/2208.01292)
+
+
+- Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou        
+[A lasso-alternative to Dijkstra's algorithm for identifying short paths in networks]()
+
+
+- Rui Fu, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
+[Stochastic thermodynamic engines under time-varying temperature profile](https://arxiv.org/abs/2207.05069)
 
 
 - Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta             
@@ -18,45 +27,45 @@ permalink: /publications/
 
 #### Journal publications:
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
-[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://ieeexplore.ieee.org/document/9802668)([arXiv](https://arxiv.org/abs/2203.12483))         
+[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://ieeexplore.ieee.org/document/9802668) ([arXiv](https://arxiv.org/abs/2203.12483))         
 IEEE Control Systems Letters, vol. 6, pp. 3409-3414, 2022
 
 
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
-[Thernodynamic engine powered by anisotropic fluctuations](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023218)([arXiv](https://arxiv.org/abs/2203.07573))          
+[Thernodynamic engine powered by anisotropic fluctuations](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.4.023218) ([arXiv](https://arxiv.org/abs/2203.07573))          
 Phys. Rev. Research, 4, 023218, Jun 2022      
 
 
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Rui Fu, Yongxin Chen, Tryphon T. Georgiou                       
-[Energy harvesting from anisotropic fluctuations](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.044101)([arXiv](https://arxiv.org/abs/2108.00334))        
+[Energy harvesting from anisotropic fluctuations](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.044101) ([arXiv](https://arxiv.org/abs/2108.00334))        
 Phys. Rev. E 104, 044101, Oct 2021      
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta          
-[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060)([arXiv](https://arxiv.org/abs/2102.10712))           
+[Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060) ([arXiv](https://arxiv.org/abs/2102.10712))           
 IEEE Control Systems Magazine (CSM), vol. 41, no. 4, pp. 34-49, Aug. 2021
 
 
 - Amirhossein Taghvaei and Prashant G. Mehta     
-[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://ieeexplore.ieee.org/document/9456997))([arXiv](https://arxiv.org/abs/2005.08145))    
+[On the Lyapunov Foster criterion and Poincare inequality for Reversible Markov Chains](https://ieeexplore.ieee.org/document/9456997)) ([arXiv](https://arxiv.org/abs/2005.08145))    
 Transactions of Automatic Control (TAC), vol. 41, no. 5, pp. 2605-2609, 2021
 
 
 
 - Olga Movilla Miangolarra, Rui Fu, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
-[Underdamped stochastic thermodynamic engines in contact with a heat bath with arbitrary temperature profile](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.062103)([arXiv](https://arxiv.org/abs/2101.05396))        
+[Underdamped stochastic thermodynamic engines in contact with a heat bath with arbitrary temperature profile](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.062103) ([arXiv](https://arxiv.org/abs/2101.05396))        
 Phys. Rev. E 103, 062103, June 2021
 
 
 
 - Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
-[On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929)([arXiv](https://arxiv.org/abs/2103.03986))      
+[On the relation between information and power in stochastic thermodynamic engines](https://ieeexplore.ieee.org/document/9426929) ([arXiv](https://arxiv.org/abs/2103.03986))      
 IEEE Control Systems Letters (L-CSS), vol. 6, pp. 434-439, 2022
 
 
 
 - Jin Won Kim, Amirhossein Taghvaei, Yongxin Chen, Prashant G. Mehta                        
-[Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018)([arXiv](https://arxiv.org/abs/2010.06655))                   
+[Feedback particle filter for collective inference](https://www.aimsciences.org/article/doi/10.3934/fods.2021018) ([arXiv](https://arxiv.org/abs/2010.06655))                   
 Foundations of Data Science (FoDS) on Data Assimilation, 3(3), 543:561, 2021
 
 
@@ -123,9 +132,19 @@ Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long B
 
 
 #### Control Conferences:
+- Amirhossein Taghvaei, Bamdad Hosseini     
+[An Optimal Transport Formulation of Bayes' Law for Nonlinear Filtering Algorithms](https://arxiv.org/abs/2203.11869)
+IEEE Conference on Decision and Control (CDC), Cancun, Mexico, 2022
+
+
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
+[Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://ieeexplore.ieee.org/document/9802668)([arXiv](https://arxiv.org/abs/2203.12483))         
+IEEE Conference on Decision and Control (CDC), Cancun, Mexico, 2022
+
+
 - Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou           
 [Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)   
-25th International Symposium on Mathematical Theory of Networks and Systems (MTNS 2022), Bayreuth, Germany, 2022 (accepted)        
+25th International Symposium on Mathematical Theory of Networks and Systems (MTNS 2022), Bayreuth, Germany, 2022         
 
 
 - Amirhossein Taghvaei, Olga Movilla Miangolarra, Rui Fu, Yongxin Chen, Tryphon T. Georgiou     
