@@ -10,8 +10,8 @@ permalink: /mentorship/
 - Anqi Dong, University of California, Irvine
 
 ### Master's students
--  Hasan Horata, University of Washington, Seattle
--  Siri Gadipudi, University of Washington, Seattle
+-  Hasan Horata, University of Washington, Seattle     
+-  Siri Gadipudi, University of Washington, Seattle.     
 --------
 
 ### Former students:
