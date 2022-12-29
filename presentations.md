@@ -36,6 +36,14 @@ Machine Learning Seminar, University of Illinois at Urbana-Champaign, Sep, 2017
 4th Workshop on Cognition and Control, University of Florida, Gainesville, January, 2016
 
 #### Conference and workshop presentations
+- [An Optimal Transport Formulation of the Bayes Law for Nonlinear Filtering Algorithms](files/OT-Bayes-CDC-2022.pdf)
+IEEE Conference on Decision and Control, Cancun, Mexico, December, 2022
+
+
+- [Optimality vs Stability Trade-off in Ensemble Kalman Filters](/files/EnKF-MTNS-2022.pdf)    
+International Symposium on Mathematical Theory of Networks and Systems Bayeruth, Germany, September, 2022
+
+
 - [Ensemble Kalman Filter for Reinforcement Learning](/files/SIAM-UQ-2022.pdf)        
 SIAM Conference on Uncertainty Quantification (UQ22), April, 2022  
 
