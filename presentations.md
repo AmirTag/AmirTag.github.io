@@ -36,7 +36,7 @@ Machine Learning Seminar, University of Illinois at Urbana-Champaign, Sep, 2017
 4th Workshop on Cognition and Control, University of Florida, Gainesville, January, 2016
 
 #### Conference and workshop presentations
-- [An Optimal Transport Formulation of the Bayes Law for Nonlinear Filtering Algorithms](files/OT-Bayes-CDC-2022.pdf)
+- [An Optimal Transport Formulation of the Bayes Law for Nonlinear Filtering Algorithms](files/OT-Bayes-CDC-2022.pdf)       
 IEEE Conference on Decision and Control, Cancun, Mexico, December, 2022
 
 
