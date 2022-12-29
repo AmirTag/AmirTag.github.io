@@ -4,13 +4,12 @@ title: Research
 permalink: /research/
 ---
 
-### Data assimilation in high dimensional space:       {#FPF}
+### Optimal Transportation methods in optimal filtering/estimation:       {#FPF}
 <p align="center">
 <img src="../images/FPF-artwork-with-Poisson.png" width="440"/>
 </p>
 
-While the subject dates back to the invention of the least-squares method by Gauss, attention to fundamental limitations and the performance of data assimilation algorithms in a truly high-dimensional setting is quite recent. 
-A new branch of data assimilation algorithms, tapping on systems of controlled interacting particles and their respective OMT flow, hold a great promise to overcome the curse of dimensionality. The objective of this research is to develop design principles for controlled interacting particle filters and efficeint numerical algorithms to implemeent them in high-dimensional setting
+Uncertainty is, more than ever, an integral part of modern control system applications. We use models that are learned from data, fuse variety of noisy sensors, and augment machine learning modules that are inherently stochastic. Nonlinear filtering is a principled approach to quantify uncertainty and as- similate noisy sensory data in a probabilistic framework. However, existing nonlinear filtering algorithms face critical limitations due to (i) highly nonlinear and complex models (ii) curse of dimensionality; (ii) and incorrect specification of models and noise statistics. This research project is aimed at overcoming these limitations.
 
 - [Optimal Transportation Methods in Nonlinear Filtering: The feedback particle filter](https://ieeexplore.ieee.org/document/9491060)([arXiv](https://arxiv.org/abs/2102.10712))     
 
@@ -53,7 +52,7 @@ There is a growing interest in application of the optimal transportation theory 
 
 
 ----------
-### Fundamental limitations in stochastic thermodynamics:  
+### Fundamental limitations in stochastic thermodynamics:  {#Thermo}
 <p align="center">
 <img src="../files/engine.jpg" width="400"/>
 </p>
