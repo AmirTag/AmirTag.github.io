@@ -5,8 +5,16 @@ permalink: /publications/
 ---
 #### Preprints/Under review:
 
-- Jordi Ventura Siches, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou          
-[Inertialess Gyrating Engines](https://arxiv.org/abs/2208.01292)
+- Amirhossein Taghvaei, Prashant G. Mehta.     
+[A Survey of Feedback Particle Filter and related Controlled Interacting Particle Systems (CIPS)]()
+
+
+- Shahriar Talebi, Amirhossein Taghvaei, Mehran Mesbahi.   
+[Duality-Based Stochastic Policy Optimization for Estimation with Unknown Noise Covariances](https://arxiv.org/abs/2210.14878)   
+
+
+- Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou      
+[Minimal entropy production in anisotropic temperature fields](https://arxiv.org/abs/2210.01062)
 
 
 - Anqi Dong, Amirhossein Taghvaei, Tryphon T. Georgiou        
@@ -16,16 +24,22 @@ permalink: /publications/
 - Rui Fu, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
 [Stochastic thermodynamic engines under time-varying temperature profile](https://arxiv.org/abs/2207.05069)
 
-
-- Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta             
-[Controlled Interacting Particle Algorithms for Simulation-based Reinforcement Learning](https://arxiv.org/abs/2107.01244)       
-
   
 - Qinsheng Zhang, Amirhossein Taghvaei, Yongxin Chen        
 [An optimal control approach to particle filtering](https://arxiv.org/abs/2110.03199)
 
 
 #### Journal publications:
+- Jordi Ventura Siches, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou          
+[Inertialess Gyrating Engines](https://academic.oup.com/pnasnexus/article/1/5/pgac251/6798386)([arXiv](https://arxiv.org/abs/2208.01292))   
+PNAS Nexus, Volume 1, Issue 5, November 2022 
+
+
+- Anant Joshi, Amirhossein Taghvaei, Prashant G. Mehta, Sean P. Meyn                   
+[Controlled Interacting Particle Algorithms for Simulation-based Reinforcement Learning](https://www.sciencedirect.com/science/article/abs/pii/S0167691122001694)([arXiv](https://arxiv.org/abs/2107.01244))      
+Systems & Control Letters, Volume 170, 2022
+
+
 - Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou       
 [Geometry of finite-time thermodynamic cycles with anisotropic thermal fluctuations](https://ieeexplore.ieee.org/document/9802668) ([arXiv](https://arxiv.org/abs/2203.12483))         
 IEEE Control Systems Letters, vol. 6, pp. 3409-3414, 2022
@@ -143,7 +157,7 @@ IEEE Conference on Decision and Control (CDC), Cancun, Mexico, 2022
 
 
 - Amirhossein Taghvaei, Prashant G. Mehta, Tryphon T. Georgiou           
-[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://arxiv.org/abs/2010.09920)   
+[Optimality vs Stability Trade-off in Ensemble Kalman Filters](https://www.sciencedirect.com/science/article/pii/S2405896322027082)([arXiv](https://arxiv.org/abs/2010.09920))        
 25th International Symposium on Mathematical Theory of Networks and Systems (MTNS 2022), Bayreuth, Germany, 2022         
 
 
