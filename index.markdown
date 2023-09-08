@@ -20,6 +20,7 @@ Seattle, WA  98195-2400
 - Machine learning ([computational optimal transport](./research/#OT), [sampling](./research/#SM))
 - [Stochastic thermodynamics](./research/#Thermo)
 <!--My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [Optimal filtering and control](./research/#FPF), [sampling](./research/#SM), [optimal mass transportation](./research/#OT), and [stochastic thermodynamics](./research/#Thermo). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. -->
+
 ---
 ### Teaching
 - Nonliner control systems (AA/ME/EE 583)
