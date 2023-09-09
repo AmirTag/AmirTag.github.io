@@ -3,7 +3,136 @@ layout: page
 title: Presentations
 permalink: /presentations/
 ---
+<h3 style="text-align: center;">Selected presentation slides</h3>
 
+<p align="center">
+<a href="/files/SIAM-OPT-2023.pdf">
+<img src="../images/SIAM-OPT-2023-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/OT-Bayes-CDC-2022.pdf">
+<img src="../images/OT-Bayes-CDC-2022-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/EnKF-MTNS-2022.pdf">
+<img src="../images/EnKF-MTNS-2022-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/PIMS-OT-Summer-School-2022.pdf">
+<img src="../images/PIMS-OT-Summer-School-2022-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/NDCL-2022-slides.pdf">
+<img src="../images/NDCL-2022-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+    <a href="/files/CDC-2021-slides.pdf">
+<img src="../images/CDC-2021-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/UW-slides-2021.pdf">
+<img src="../images/UW-slides-2021-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/ICML-2019-slides.pdf">
+<img src="../images/ICML-2019-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/UCI-2019-slides.pdf">
+<img src="../images/UCI-2019-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/thesis-slides.pdf">
+<img src="../images/thesis-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/CDC-2018-slides.pdf">
+<img src="../images/CDC-2018-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/ACC-2018-slides.pdf">
+<img src="../images/ACC-2018-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/ML-Seminar-UIUC-2017-slides.pdf">
+<img src="../images/ML-Seminar-UIUC-2017-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/ACC-2017-slides.pdf">
+<img src="../images/ACC-2017-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/CSE-fellow-slides.pdf">
+<img src="../images/CSE-fellow-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/Gainsville-2017-slides.pdf">
+<img src="../images/Gainsville-2017-slides-title.png" width="350"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/CDC-2016-slides.pdf">
+<img src="../images/CDC-2016-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/ACC-2016-slides.pdf">
+<img src="../images/ACC-2016-slides-title.png" width="350"/>
+</a>
+</p>
+
+<h3 style="text-align: center;">Selected Posters</h3>
+<p align="center">
+<a href="/files/CDC-2018-poster.pdf">
+<img src="../images/CDC-2018-poster.png" width="700"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/SIAM-UQ-2018-poster.pdf">
+<img src="../images/SIAM-UQ-2018-poster.png" width="700"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/NIPS-2017-poster.pdf">
+<img src="../images/NIPS-2017-poster.png" width="700"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/IPAM-2017-poster.pdf">
+<img src="../images/IPAM-2017-poster.png" width="700"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/CSLSC-2017-poster.pdf">
+<img src="../images/CSLSC-2017-poster.png" width="700"/>
+</a>
+</p>
+
+<p align="center">
+<a href="/files/ME-research-expo-2015-poster.pdf">
+<img src="../images/ME-research-expo-2015-poster.png" width="700"/>
+</a>
+</p>
+
+<!--
 #### Invited talks
 - [The role of optimal transportation and geometry in stochastic thermodynamics](/files/PIMS-OT-Summer-School-2022.pdf)       
 PIMS-IFDS-NSF Summer School on Optimal Transport, Univesity of Washington , Seattle, June, 2022
@@ -107,3 +236,4 @@ UIUC Mechanical Engineering Research Expo, Nov, 2015
 - [Linear Feedback Particle Filter](/files/IPAM-2015-poster.pdf)                       
 IPAM Summer School on Game Theory, Los Angeles, August, 2015
 
+-->

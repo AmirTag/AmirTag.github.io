@@ -21,7 +21,7 @@
 title: Amirhossein Taghvaei
 email: amirhoseintghv@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
- Personal webpage of Amirhossein Taghvaei. Postdoc at UC Irvine. Research in control theory and machine learning. 
+ Personal webpage of Amirhossein Taghvaei.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
