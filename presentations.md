@@ -66,7 +66,7 @@ permalink: /presentations/
 </p>
 
 <p align="center">
-<a href="/files/ML-Seminar-UIUC-2017-slides.pdf">
+<a href="/files/ML-seminar-UIUC-2017-slides.pdf">
 <img src="../images/ML-seminar-UIUC-2017-slides-title.png" width="350"/>
 </a>
 	&nbsp;	&nbsp;
