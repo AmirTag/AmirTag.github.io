@@ -4,8 +4,8 @@ title: Teaching
 permalink: /teaching/
 ---
 
-### Courses taught:
-- [Fa 2022: AA 583: Nonlinear Systems and Control](/teaching/Fa22AA583) 
-- [Sp 2022: AA 447: Feedback Control Systems in Aerospace](/teaching/Sp22AA447)
-- [Fa 2021: AA 583: Nonlinear Systems and Control](/teaching/Fa21AA583) 
+### Courses:
+- Feedback Control Systems in Aerospace ([Spring 2022](/teaching/Sp22AA447)) 
+- Nonlinear Systems and Control ([Fall 2021](/teaching/Fa21AA583), [Fall 2022](/teaching/Fa22AA583)) 
+- Estimation And System Identification ([Spring 2023](/teaching/Sp23AA549)) 
 

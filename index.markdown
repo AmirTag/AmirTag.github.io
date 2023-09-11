@@ -24,8 +24,8 @@ Seattle, WA  98195-2400
 ---
 ### Teaching
 - Nonliner control systems (AA/ME/EE 583)
-- Estimation (AA/ME/EE 549)
-- Feedback control systems (AA 447) 
+- Estimation And System Identification (AA/ME/EE 549)
+- Feedback Control Systems in Aerospace (AA 447) 
 
 ---
 ### Professional Experience/Education
