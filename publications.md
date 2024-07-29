@@ -11,26 +11,18 @@ Anant A Joshi, Heng-Sheng Chang, Amirhossein Taghvaei, Prashant G Mehta, Sean P 
 - [Divergence metrics in the study of Markov and hidden Markov processes](https://arxiv.org/abs/2404.15779)         
 Jin Won Kim, Amirhossein Taghvaei, Prashant G Mehta
 
-- [Dual Ensemble Kalman Filter for Stochastic Optimal Control](https://arxiv.org/abs/2404.06696)          
-Anant A Joshi, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn
-
-- [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)        
-Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei
-
-- [Time-Reversal of Stochastic Maximum Principle](https://arxiv.org/abs/2403.02044)       
-Amirhossein Taghvaei 
 
 - [Conditional optimal transport on function spaces](https://arxiv.org/abs/2311.05672)      
 Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei
-
-- [Minimal entropy production in the presence of anisotropic temperature fields](https://arxiv.org/abs/2302.04401)           
-Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou      
+ 
    
-
-
 #### Journal publications:
 
-- [Stochastic thermodynamic engines under time-varying temperature profile](https://www.sciencedirect.com/science/article/pii/S0005109823005277)([arXiv](https://arxiv.org/abs/2207.05069))     
+- [Minimal entropy production in the presence of anisotropic temperature fields](https://arxiv.org/abs/2302.04401)           
+Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
+Transactions of Automatic Control (TAC), Accepted
+
+- [Stochastic thermodynamic engines under time-varying temperature profile](https://www.sciencedirect.com/science/article/pii/S0005109823005277) ([arXiv](https://arxiv.org/abs/2207.05069))     
 Rui Fu, Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou           
 Automatica 159, 111361 
 
@@ -40,9 +32,9 @@ Olga Movilla Miangolarra, Amirhossein Taghvaei, Tryphon T. Georgiou
 IEEE Control Systems Letters, vol. 7, pp. 2107-2112, 2023        
         
   
-- [Computational optimal transport and filtering on Riemannian manifolds](https://ieeexplore.ieee.org/abstract/document/10314716/)   
+- [Computational optimal transport and filtering on Riemannian manifolds](https://ieeexplore.ieee.org/abstract/document/10314716/) ([arXiv](https://arxiv.org/abs/2309.08847))           
   Daniel Grange, Mohammad Al-Jarrah, Ricardo Baptista, Amirhossein Taghvaei, Tryphon T Georgiou, Sean Phillips, Allen Tannenbaum                  
-  IEEE Control Systems Letters
+  IEEE Control Systems Letters, vol. 7, pp. 3495-3500, 2023
   
 
 - [A Survey of Feedback Particle Filter and related Controlled Interacting Particle Systems (CIPS)](https://www.sciencedirect.com/science/article/abs/pii/S136757882300010X)([arXiv](https://arxiv.org/abs/2301.00935))        
@@ -132,7 +124,11 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2018
 
 #### Machine Learning Conferences:
 
-- [Data-driven optimal filtering for linear systems with unknown noise covariances](https://proceedings.neurips.cc/paper_files/paper/2023/hash/dbe8185809cb7032ec7ec6e365e3ed3b-Abstract-Conference.html)          
+- [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886)
+  Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei
+International Conference of Machine Learning (ICML), 2024  
+  
+- [Data-driven optimal filtering for linear systems with unknown noise covariances](https://proceedings.neurips.cc/paper_files/paper/2023/hash/dbe8185809cb7032ec7ec6e365e3ed3b-Abstract-Conference.html) ([arXiv](https://arxiv.org/abs/2305.17836))           
 Shahriar Talebi, Amirhossein Taghvaei, Mehran Mesbahi         
 Advances in Neural Information Processing Systems (NeurIPS), December 2023
 
@@ -158,7 +154,22 @@ Amirhossein Taghvaei, Jin W. Kim, Prasshant G. Mehta
 Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long Beach, December 2017   
 
 #### Control Conferences:
-- [Optimal Transport Particle Filters](https://ieeexplore.ieee.org/abstract/document/10383337)([arXiv](https://arxiv.org/abs/2304.00392))                              
+- [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)        
+Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei         
+IEEE Conference on Decision and Control (CDC), Milan, 2024
+
+
+- [Time-Reversal of Stochastic Maximum Principle](https://arxiv.org/abs/2403.02044)       
+Amirhossein Taghvaei          
+IEEE Conference on Decision and Control (CDC), Milan, 2024
+
+
+- [Dual Ensemble Kalman Filter for Stochastic Optimal Control](https://arxiv.org/abs/2404.06696)          
+Anant A Joshi, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn          
+IEEE Conference on Decision and Control (CDC), Milan, 2024
+
+
+- [Optimal Transport Particle Filters](https://ieeexplore.ieee.org/abstract/document/10383337) ([arXiv](https://arxiv.org/abs/2304.00392))                              
 Mohammad Al-Jarrah, Amirhossein Taghvaei, Bamdad Hosseini   
 2023 62nd IEEE Conference on Decision and Control (CDC), 6798-6805     
         
