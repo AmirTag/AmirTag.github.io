@@ -19,7 +19,7 @@ Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei
 #### Journal publications:
 
 - [Minimal entropy production in the presence of anisotropic temperature fields](https://arxiv.org/abs/2302.04401)           
-Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou
+Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            
 Transactions of Automatic Control (TAC), Accepted
 
 - [Stochastic thermodynamic engines under time-varying temperature profile](https://www.sciencedirect.com/science/article/pii/S0005109823005277) ([arXiv](https://arxiv.org/abs/2207.05069))     
@@ -124,9 +124,9 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2018
 
 #### Machine Learning Conferences:
 
-- [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886)
-  Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei
-International Conference of Machine Learning (ICML), 2024  
+- [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886)            
+Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei              
+International Conference of Machine Learning (ICML), 2024      
   
 - [Data-driven optimal filtering for linear systems with unknown noise covariances](https://proceedings.neurips.cc/paper_files/paper/2023/hash/dbe8185809cb7032ec7ec6e365e3ed3b-Abstract-Conference.html) ([arXiv](https://arxiv.org/abs/2305.17836))           
 Shahriar Talebi, Amirhossein Taghvaei, Mehran Mesbahi         
