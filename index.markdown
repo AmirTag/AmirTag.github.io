@@ -4,18 +4,14 @@
 layout: home
 ---
 <img style="float: right;"  src="./images/Amir.jpg" width="140"/>
-Assistant Professor  
-William E. Boeing Department of Aeronautics and Astronautics               
-University of Washington, Seattle         
-Guggenheim Hall (GUG) 318B        
-Seattle, WA  98195-2400        
-<amirtag@uw.edu>  
-[Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en)  
-[Curriculum Vitae](./files/resume.pdf)
+
+I am Assistant Professor at the William E. Boeing Department of Aeronautics and Astronautics, in the University of Washington, Seattle. 
+Prior to coming to Seattle, I enjoyed two sunny years as Postdoctoral Scholar at the University of California Irvine in Prof. Tryphon Georgiou’s research lab. I received my Ph.D. degree in Mechanical Science and Engineering and the M.S. degree in Mathematics from University of Illinois at Urbana-Champaign. You can find me at Guggenheim Hall (GUG) 318B and reach out to me by [e-mail](<amirtag@uw.edu>).                  
+You can find my up-to-date oublication list at my [Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en).   
 <br />
 
 ---
-### Research topics 
+### Research projects
 - [Nonlinear filtering and optimal control](./research/#FPF)
 - Machine learning ([computational optimal transport](./research/#OT), [sampling](./research/#SM))
 - [Stochastic thermodynamics](./research/#Thermo)
