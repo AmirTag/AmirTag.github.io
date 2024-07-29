@@ -7,22 +7,24 @@ layout: home
 
 I am Assistant Professor at [William E. Boeing Department of Aeronautics and Astronautics](https://www.aa.washington.edu/), in the [University of Washington, Seattle](https://www.washington.edu/). 
 Prior to coming to Seattle, I enjoyed two sunny years as Postdoctoral Scholar at the [University of California Irvine](https://uci.edu/) in [Prof. Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html) research lab. I received my Ph.D. degree in Mechanical Science and Engineering and the M.S. degree in Mathematics from [University of Illinois at Urbana-Champaign](). You can find me at Guggenheim Hall (GUG) 318B and reach out to me by [e-mail](<amirtag@uw.edu>).           
-       
+
 You can find my up-to-date publication list at my [Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en).   
 <br />
 
 ---
-### Research projects
-- [Nonlinear filtering and optimal control](./research/#FPF)
-- Machine learning ([computational optimal transport](./research/#OT), [sampling](./research/#SM))
-- [Stochastic thermodynamics](./research/#Thermo)
-<!--My research interest lies at the intersection of control theory and machine learning. In particular, I have been working on problems that can be modelled as a control or optimization problem on the space of probability distributions, such as [Optimal filtering and control](./research/#FPF), [sampling](./research/#SM), [optimal mass transportation](./research/#OT), and [stochastic thermodynamics](./research/#Thermo). The motivation is to design meaningful approximations that can be computed through efficient and scalable numerical algorithms. -->
+### Research Projects
+- [Variational Optimal Transport Methods for Nonlinear Filtering](./research/#OTPF) (Supported by NSF)
+- [Fundamentals of Power Generation from Thermal Anisotropy - A Stochastic Control Framework](./research/#anisotropy)  (Supported by NSF)
+- [Computational optimal transport, Wasserstein gradient flow, and Sampling](./research/#OT)
+- [Controlled Interacting Particle Systems for Nonlinear Filtering and Optimal Control](./research/#FPF)
+
 
 ---
 ### Teaching
 - Nonliner control systems (AA/ME/EE 583)
 - Estimation And System Identification (AA/ME/EE 549)
 - Feedback Control Systems in Aerospace (AA 447) 
+- Linear Systems theory (AA/EE 547)
 
 ---
 ### Professional Experience/Education
@@ -30,6 +32,6 @@ You can find my up-to-date publication list at my [Google Scholar](https://schol
 - Ph.D. in Mechanical Engineering, [University of Illinois at Urbana-Champaign](https://illinois.edu/), 2019    
 Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 - M.S. in Mathematics, [University of Illinois at Urbana-Champaign](https://illinois.edu/), 2017
-- B.S. in  Mechanical Engineering and Physics (dual major), [Sharif University of Technology](http://www.sharif.ir/web/en/), Iran, 2013  
+- B.S. in  Mechanical Engineering and Physics, [Sharif University of Technology](http://www.sharif.ir/web/en/), Iran, 2013  
 
 ---
