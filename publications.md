@@ -11,7 +11,6 @@ Anant A Joshi, Heng-Sheng Chang, Amirhossein Taghvaei, Prashant G Mehta, Sean P 
 - [Divergence metrics in the study of Markov and hidden Markov processes](https://arxiv.org/abs/2404.15779)         
 Jin Won Kim, Amirhossein Taghvaei, Prashant G Mehta
 
-
 - [Conditional optimal transport on function spaces](https://arxiv.org/abs/2311.05672)      
 Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei
  
@@ -167,6 +166,14 @@ IEEE Conference on Decision and Control (CDC), Milan, 2024
 - [Dual Ensemble Kalman Filter for Stochastic Optimal Control](https://arxiv.org/abs/2404.06696)          
 Anant A Joshi, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn          
 IEEE Conference on Decision and Control (CDC), Milan, 2024
+
+- [Computational optimal transport and filtering on Riemannian manifolds](https://ieeexplore.ieee.org/abstract/document/10314716/) ([arXiv](https://arxiv.org/abs/2309.08847))           
+  Daniel Grange, Mohammad Al-Jarrah, Ricardo Baptista, Amirhossein Taghvaei, Tryphon T Georgiou, Sean Phillips, Allen Tannenbaum                  
+  IEEE American Control Conference (ACC), Toronto, 2024    
+
+- [Computational optimal transport and filtering on Riemannian manifolds](https://arxiv.org/abs/2310.19000)            
+  Daniel Grange, Ricardo Baptista, Amirhossein Taghvaei, Allen Tannenbaum, Sean Phillips                            
+  IEEE American Control Conference (ACC), Toronto, 2024  
 
 
 - [Optimal Transport Particle Filters](https://ieeexplore.ieee.org/abstract/document/10383337) ([arXiv](https://arxiv.org/abs/2304.00392))                              

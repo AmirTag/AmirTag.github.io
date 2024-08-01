@@ -20,10 +20,10 @@ You can find my up-to-date publication list at my [Google Scholar](https://schol
 
 ---
 ### Teaching
-- Nonliner control systems (AA/ME/EE 583)
-- Estimation And System Identification (AA/ME/EE 549)
-- Feedback Control Systems in Aerospace (AA 447) 
-- Linear Systems theory (AA/EE 547)
+- [Nonliner control systems (AA/ME/EE 583)](./teaching/#AA583)
+- [Linear Systems theory (AA/EE 547)](./teaching/#AA547)
+- [Estimation And System Identification (AA/ME/EE 549)](./teaching/#AA549)
+- [Control In Aerospace Systems (AA 447)](./teaching/#AA447)
 
 <!---
 ### Professional Experience/Education
