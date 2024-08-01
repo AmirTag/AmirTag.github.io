@@ -6,18 +6,20 @@ permalink: /research/
 
 ### Variational Optimal Transport Methods for Nonlinear Filtering       {#OTPF}
 <p align="center">
-<img src="../images/FPF-artwork-with-Poisson.png" width="440"/>
+<img src="../images/OTPF-research.png" width="440"/>
 </p>
 
 Quantifying uncertainty and effectively assimilating noisy sensory data is is the subject of nonlinear filtering, and is crucial for the reliable and safe operation of control systems. This research project aims to merge recent developments in machine learning (ML) and optimal transportation (OT) to construct nonlinear filtering algorithms with increased flexibility, scalability, and adaptability. This is achieved through the utilization of a novel variational formulation of Bayes’ law, rooted in OT theory, which enables the application of ML tools.
 
+Research supported by the National Science Foundation (NSF) award EPCN-2318977.
+
 #### Publications: 
 
-- [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)        
+- [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630) ([GitHub](https://github.com/Mohd9485/OT-DDF))            
 Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei         
 IEEE Conference on Decision and Control (CDC), Milan, 2024
 
-- [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886)            
+- [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886) ([GitHub](https://github.com/Mohd9485/OTPF))             
 Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei              
 International Conference of Machine Learning (ICML), 2024   
 
@@ -41,6 +43,36 @@ IEEE Control Systems Magazine (CSM), vol. 41, no. 4, pp. 34-49, Aug. 2021
 Amirhossein Taghvaei and Prashant G. Mehta       
 Transactions of Automatic Control (TAC), vol. 66, no. 7, pp. 3052-3067, July 2021
 
+
+#### Presentations:
+
+- [Nonlinear Filtering with Brenier Optimal Transport Maps](../files/ICML-2024-Mohammad.pdf)                      
+Mohammad Al-Jarrah       
+The Forty-first International Conference on Machine Learning (ICML), Vienna, Austria, 2024
+
+
+- [Variational Optimal Transport Methods for Nonlinear Filtering](../files/SIAM-UQ-2024.pdf)               
+Amirhossein Taghvaei             
+SIAM Conference on Uncertainty Quantification (UQ), Trieste, Italy, 2024  
+
+
+- [Variational Optimal Transport Methods for Nonlinear Filtering](../files/UF-2024.pdf)                    
+Amirhossein Taghvaei                   
+7th Workshop on Cognition and Control, Univ. of Florida, Gainsville, 2024    
+
+- [Optimal Transport Particle Filters](../files/CDC-2023-slides-Mohammad.pdf)                      
+Mohammad Al-Jarrah         
+IEEE Conference on Decision and Control (CDC), Singapore, Singapore, 2023    
+
+- [An Optimal Transport Formulation of the Bayes Law for Nonlinear Filtering Algorithms](../files/OT-Bayes-CDC-2022.pdf)                   
+Amirhossein Taghvaei      
+IEEE Conference on Decision and Control (CDC), Cancun, Mexico, 2022
+
+
+
+
+
+
 ----------
 ### Fundamentals of Power Generation from Thermal Anisotropy - A Stochastic Control Framework  {#anisotropy}
 <p align="center">
@@ -48,6 +80,8 @@ Transactions of Automatic Control (TAC), vol. 66, no. 7, pp. 3052-3067, July 202
 </p>
 
 The proposed research is motivated by the central role that anisotropy plays for power generation in physical and engineered processes. On earth, life is sustained by the anisotropy in temperature between the hot Sun and the cold starry sky that fuels an enormous cascade of processes; in hot springs and hydrothermal vents, microorganisms thrive on the temperature and chemical variations they experience; and in living cells, enzymes and molecular motors produce work by tapping onto periodic potentials in polymers, fueled by ATP (adenosine triphosphate) hydrolysis. While it is of great interest to know how Darwinian evolution has tuned such an array of complex processes, our proposed research focuses on functioning principles in utilizing anisotropy in engineered and naturally occurring thermal systems.
+
+Research supported by the National Science Foundation (NSF) award EPCN-2347358.
 
 #### Publications: 
 
@@ -119,6 +153,9 @@ International Conference on Machine Learning (ICML), PMLR 97:6076-6085, 2019
 
 ----------
 ### Controlled Interacting Particle Systems for Nonlinear Filtering and Optimal Control {#FPF}
+<p align="center">
+<img src="../images/FPF-artwork-with-Poisson.png" width="440"/>
+</p>
 
 #### Publications: 
 

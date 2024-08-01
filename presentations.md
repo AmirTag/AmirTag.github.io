@@ -6,6 +6,17 @@ permalink: /presentations/
 <h3 style="text-align: center;">Selected presentation slides</h3>
 
 <p align="center">
+<a href="/files/SIAM-UQ-2024.pdf">
+<img src="../images/SIAM-UQ-2024-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/UF-2024.pdf">
+<img src="../images/UF-2024-title.png" width="350"/>
+</a>
+</p>
+
+
+<p align="center">
 <a href="/files/SIAM-OPT-2023.pdf">
 <img src="../images/SIAM-OPT-2023-title.png" width="350"/>
 </a>
