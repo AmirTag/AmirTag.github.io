@@ -5,7 +5,7 @@ layout: home
 ---
 <img style="float: right;"  src="./images/Amir.jpg" width="140"/>
 
-I am Assistant Professor at [William E. Boeing Department of Aeronautics and Astronautics](https://www.aa.washington.edu/), in the [University of Washington, Seattle](https://www.washington.edu/). 
+I am an Assistant Professor at [William E. Boeing Department of Aeronautics and Astronautics](https://www.aa.washington.edu/), in the [University of Washington, Seattle](https://www.washington.edu/). 
 Prior to coming to Seattle, I enjoyed two sunny years as Postdoctoral Scholar at the [University of California Irvine](https://uci.edu/) in [Prof. Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html) research lab. I received my Ph.D. degree in Mechanical Science and Engineering and the M.S. degree in Mathematics from [University of Illinois at Urbana-Champaign](). You can find me at Guggenheim Hall (GUG) 318B and reach out to me by [e-mail](<amirtag@uw.edu>).           
 
 You can find my up-to-date publication list at my [Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en).   
