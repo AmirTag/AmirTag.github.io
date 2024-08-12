@@ -43,7 +43,7 @@ permalink: /teaching/
 
 Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathematical preliminaries.  
 
-### Handwritten Lecture notes 
+#### Handwritten Lecture notes 
 1. [What is this course about?](/teaching-files/Fa23AA583-files/1- Introduction.pdf) ([pendulum code](/teaching-files/Fa23AA583-files/pendulum-gym-code.zip))
 2. [Phase portrait method](/teaching-files/Fa23AA583-files/2- Phase Portrait Method.pdf) ([supplementary note](/teaching-files/Fa23AA583-files/2- one-dimensional-phase-portrait-note.pdf), [SIS simulation](/teaching-files/Fa23AA583-files/SIS-simulation.ipynb),[pendulum simulation](/teaching-files/Fa23AA583-files/pendulum-phase-portrait.ipynb))
 3. [Linearization](/teaching-files/Fa23AA583-files/3- Linearization.pdf) ([hand-out](/teaching-files/Fa23AA583-files/3- linearization-handout.pdf),[Taylor expansion](/teaching-files/Fa23AA583-files/3- Taylor-expansion.pdf))
@@ -94,7 +94,7 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 #### What Math do you need to know for this course? 
 - Solid understanding of linear algebra: vector spaces, Linear dependence and independence, Subspaces and bases and dimensions, change of basis, image and null space, eigenvalues and eigenvectors, diagonalization, Symmetric matrices, Positive definite matrices
 
-### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBD
 
 ---
 
@@ -126,7 +126,7 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 - Optimal transport/coupling viewpoint 
 
 
-### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBD
 
 ---
 
@@ -164,4 +164,4 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 - Loop shaping 
 
 
-### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBD
