@@ -94,7 +94,7 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 #### What Math do you need to know for this course? 
 - Solid understanding of linear algebra: vector spaces, Linear dependence and independence, Subspaces and bases and dimensions, change of basis, image and null space, eigenvalues and eigenvectors, diagonalization, Symmetric matrices, Positive definite matrices
 
-#### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBA
 
 ---
 
@@ -126,7 +126,7 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 - Optimal transport/coupling viewpoint 
 
 
-#### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBA
 
 ---
 
@@ -164,4 +164,4 @@ Look at this [notes](/teaching-files/Fa23AA583-files/prelim-math.pdf) on mathema
 - Loop shaping 
 
 
-#### Handwritten Lecture notes: TBD
+#### Handwritten Lecture notes: TBA
