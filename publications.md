@@ -5,17 +5,29 @@ permalink: /publications/
 ---
 #### Preprints/Under review:
 
+
+- [Flow matching for stochastic linear control systems](https://arxiv.org/abs/2412.00617)    
+Yuhang Mei, Mohammad Al-Jarrah, Amirhossein Taghvaei, Yongxin Chen   
+
+- [How to implement the Bayes’ formula in the age of ML?](https://arxiv.org/abs/2411.09653)      
+Amirhossein Taghvaei, Prashant Mehta     
+
+- [Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study](https://arxiv.org/abs/2410.04615)         
+Yuhang Mei, Amirhossein Taghvaei    
+
+
 - [Design of Interacting Particle Systems for Fast and Efficient Reinforcement Learning](https://arxiv.org/abs/2406.11057)       
 Anant A Joshi, Heng-Sheng Chang, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn
 
 - [Divergence metrics in the study of Markov and hidden Markov processes](https://arxiv.org/abs/2404.15779)         
 Jin Won Kim, Amirhossein Taghvaei, Prashant G Mehta
-
-- [Conditional optimal transport on function spaces](https://arxiv.org/abs/2311.05672)      
-Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei
  
    
 #### Journal publications:
+
+- [Conditional optimal transport on function spaces](https://arxiv.org/abs/2311.05672)      
+Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei    
+SIAM/ASA Journal on Uncertainty Quantification (Accepted) 
 
 - [Minimal entropy production in the presence of anisotropic temperature fields](https://arxiv.org/abs/2302.04401)           
 Olga Movilla Miangolarra, Amirhossein Taghvaei, Yongxin Chen, Tryphon T. Georgiou            

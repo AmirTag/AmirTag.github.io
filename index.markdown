@@ -36,8 +36,23 @@ Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 --->
 ---
 ### News
+Nov 2024
+- We submitted the article ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) to the 7th Annual Learning for Dynamics & Control Conference. 
+
+- I participated and presented our research at the  [1st MMS (Mathematics and Mathematical Sciences) Workshop for Young Researchers](https://www.math.kyoto-u.ac.jp/ja/event/conference/5525) at Kyoto University, Japan
+
+Oct 2024
+- Our paper ["Conditional optimal transport on function spaces"](https://arxiv.org/abs/2311.05672)  is accpeted to be published in the SIAM/ASA Journal on Uncertainty Quantification.
+
+- We submitted our article ["How to implement the Bayes’ formula in the age of ML?"](https://arxiv.org/abs/2411.09653) to Encyclopedia of Systems and Control Engineering. 
+
+
+Sep 2024
+- We submitted the article ["Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study"](https://arxiv.org/abs/2410.04615) to the 2025 IEEE American Control Conference (ACC).       
+- I presented our work on "Nonlinear Filtering with Brenier Optimal Transport Maps" at the 2024 Allerton Conference, University of Illinois at Urbana-Champaign.
+
 Aug 2024
-- I deliver a semi-planary lecture, titled ["Towards data-driven nonlinear filtering algorithms"](https://mtns2024.eng.cam.ac.uk/plenary-semi-plenary-lectures/), at the 26th International Symposium on Mathematical Theory of Networks and Systems (MTNS), Cambridge, UK.    
+- I deliver a semi-planary lecture, titled ["Towards data-driven nonlinear filtering algorithms"](https://mtns2024.eng.cam.ac.uk/plenary-semi-plenary-lectures/), at the 26th International Symposium on Mathematical Theory of Networks and Systems (MTNS), Cambridge, UK. 
 - Our paper [Minimal entropy production in the presence of anisotropic temperature fields](https://arxiv.org/abs/2302.04401) is accpeted to be published at the IEEE Transactions of Automatic Control (TAC). 
 
 July 2024 
