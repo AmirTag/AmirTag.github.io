@@ -39,7 +39,9 @@ Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 Nov 2024
 - We submitted the article ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) to the 7th Annual Learning for Dynamics & Control Conference. 
 
-- I participated and presented our research at the  [1st MMS (Mathematics and Mathematical Sciences) Workshop for Young Researchers](https://www.math.kyoto-u.ac.jp/ja/event/conference/5525) at Kyoto University, Japan
+- I participated and presented our research at the  [1st MMS (Mathematics and Mathematical Sciences) Workshop for Young Researchers](https://www.math.kyoto-u.ac.jp/ja/event/conference/5525) at Kyoto University, Japan.
+
+- I am pleased to announce that Mohammad Al-Jarrah won The Sarchin Fellowship Award, based on academic performance, the impact and quality research, as well as the leadership and professional potential. 
 
 Oct 2024
 - Our paper ["Conditional optimal transport on function spaces"](https://arxiv.org/abs/2311.05672)  is accpeted to be published in the SIAM/ASA Journal on Uncertainty Quantification.
