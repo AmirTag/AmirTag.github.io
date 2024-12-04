@@ -46,6 +46,7 @@ Oct 2024
 
 - We submitted our article ["How to implement the Bayes’ formula in the age of ML?"](https://arxiv.org/abs/2411.09653) to Encyclopedia of Systems and Control Engineering. 
 
+- Mohammad Al-Jarrah presented our work on ["Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps"](https://meetings.siam.org/sess/dsp_talk.cfm?p=139660) at the SIAM Conference on Mathematics of Data Science (MDS24), Atlanta, Georgia. 
 
 Sep 2024
 - We submitted the article ["Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study"](https://arxiv.org/abs/2410.04615) to the 2025 IEEE American Control Conference (ACC).       
