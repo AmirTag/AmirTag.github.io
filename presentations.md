@@ -15,7 +15,6 @@ permalink: /presentations/
 </p>
 
 
-<h3 style="text-align: center;">Selected presentation slides</h3>
 <p align="center">
 <a href="/files/MTNS-2024.pdf">
 <img src="../images/MTNS-2024-title.png" width="350"/>
