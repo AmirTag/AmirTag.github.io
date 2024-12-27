@@ -36,6 +36,12 @@ Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 --->
 ---
 ### News
+Dec 2024
+- I presented our research [Time-Reversal of Stochastic Maximum Principle](https://amirtag.github.io/files/CDC-2024-slides.pdf) at the IEEE Conference on Decision and Control, Milan, Italy. 
+
+- I am very pleased to anounce that Mohammad Al-Jarrah won the outstanding paper award for his work on [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)  at the IEEE Conference on Decision and Control, Milan, Italy. 
+
+
 Nov 2024
 - We submitted the article ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) to the 7th Annual Learning for Dynamics & Control Conference. 
 
