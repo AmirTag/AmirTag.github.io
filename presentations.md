@@ -5,6 +5,18 @@ permalink: /presentations/
 ---
 <h3 style="text-align: center;">Selected presentation slides</h3>
 <p align="center">
+<a href="/files/CDC-2024-slides.pdf">
+<img src="../images/CDC-2024-slides-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/Kyoto-MMS-2024.pdf">
+<img src="../images/Kyoto-MMS-2024-title.png" width="350"/>
+</a>
+</p>
+
+
+<h3 style="text-align: center;">Selected presentation slides</h3>
+<p align="center">
 <a href="/files/MTNS-2024.pdf">
 <img src="../images/MTNS-2024-title.png" width="350"/>
 </a>
