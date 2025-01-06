@@ -6,7 +6,7 @@ permalink: /team/
 
 ## Ph.D. Students 
 ---
-<img style="float: right;"  src="../images/Mohammad.jpeg" width="180"/>
+<img style="float: right;"  src="../images/Mohammad.jpg" width="180"/>
 
 ### Mohammad Al-Jarrah 
 I’m a Ph.D. Student in the department of aeronautics and aeronautics at University of Washington (UW) since January 2023. I received my master degree in 2020 from the same department. In 2018, I completed my undergrad degree at the top of my class and received the Geda and Phil Condit Endowed Fellowship for two years at UW. In 2024, I was the recipient of the  A&A Student Excellence Award doctoral student and the UW SPEEA Aerospace Career Enhancement (ACE) Fellowship. My current research focuses on developing a new algorithm to solve the nonlinear filtering problem. Our approach relies heavily on the theory of optimal transport and deep learning. My research goal is to establish a novel framework to enable making decision under uncertainty.
