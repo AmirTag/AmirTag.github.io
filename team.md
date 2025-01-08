@@ -14,7 +14,7 @@ I’m a Ph.D. Student in the department of aeronautics and aeronautics at Univer
 
 ---
 
-<img style="float: right;"  src="../images/Yuhang.jpg" width="180"/>     
+<img style="float: right;"  src="../images/Yuhang.jpg" width="160"/>     
 
 ### Yuhang Mei
 I am a first-year PhD student in Aeronautics and Astronautics Department at University of Washington advised by Prof. Amir Taghvaei. Besfore joining UW, I completed my master's in Mechanical Engineering and Electrical & Computer Engineering at University of Michigan advised by Prof. Necmiye Ozay. I obtained my Bachelor degree in Mechanical Engineering at Huazhong University of Science and Technology. My research focus on the intersection of machine learning and control.
