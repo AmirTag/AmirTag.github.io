@@ -6,7 +6,7 @@ layout: home
 <img style="float: right;"  src="./images/Amir.jpg" width="140"/>
 
 I am an Assistant Professor at [William E. Boeing Department of Aeronautics and Astronautics](https://www.aa.washington.edu/), in the [University of Washington, Seattle](https://www.washington.edu/). 
-Prior to coming to Seattle, I enjoyed two sunny years as Postdoctoral Scholar at the [University of California Irvine](https://uci.edu/) in [Prof. Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html) research lab. I received my Ph.D. degree in Mechanical Science and Engineering and the M.S. degree in Mathematics from [University of Illinois at Urbana-Champaign](). You can find me at Guggenheim Hall (GUG) 318B and reach out to me by [e-mail](<amirtag@uw.edu>).           
+Prior to coming to Seattle, I enjoyed two sunny years as Postdoctoral Scholar at the [University of California Irvine](https://uci.edu/) in [Prof. Tryphon Georgiou](http://georgiou.eng.uci.edu/index.html) research lab. I received my Ph.D. degree in Mechanical Science and Engineering under supervision of [Prof. Prashant Mehta](https://mehta.mechse.illinois.edu) from [University of Illinois at Urbana-Champaign](). You can find me at Guggenheim Hall (GUG) 318B and reach out to me by [e-mail](<amirtag@uw.edu>).           
 
 You can find my up-to-date publication list at my [Google Scholar](https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en).   
 
@@ -36,27 +36,54 @@ Advisor: [Prashant G. Mehta](http://mehta.mechse.illinois.edu/)
 --->
 ---
 ### News
-Dec 2024
-- I presented our research [Time-Reversal of Stochastic Maximum Principle](https://amirtag.github.io/files/CDC-2024-slides.pdf) at the IEEE Conference on Decision and Control, Milan, Italy. 
+
+September 2025
+- I am presenting our research on [A time-reversal methodology for steering the state of control-affine stochastic systems]() at the 61th Annual Allerton Conference on Communication, Control, and Computing, Urbana, Illinois
+
+
+July 2025
+- We have three accepted papers ["A Time-Reversal Control Synthesis for Steering the State of Stochastic Systems"](https://arxiv.org/abs/2504.00238), ["Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps"](https://arxiv.org/abs/2503.12633) , and ["Error Analysis of Sampling Algorithms for Approximating Stochastic Optimal Control"](https://arxiv.org/abs/2504.02198), at the IEEE Conference on Decision and Control (CDC). 
+
+June 2025
+- Yuhang is presenting his poster on ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) at the 7th Annual Learning for Dynamics & Control Conference, Ann-Arbor, Michigan.
+
+- Our paper ["Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps"](https://arxiv.org/abs/2503.12633) is acceopted to appear at the IEEE Control Systems Letters (L-CSS).
+
+- Mohammad is presenting his research at the at Morgan Stanley's Machine Learning Research Talks, where he will join as intern  during summer. 
+
+March 2025
+- I am proud that our NSF supported research on [Fundamentals of Power Generation from Thermal Anisotropy - A Stochastic Control Framework](./research/#anisotropy) was featured on the [University of Washington newsletter](https://www.aa.washington.edu/news/article/2025-02-14/bacteria-inspires-nanoengines)
+
+-  I am presenting our research on [Data-Driven Nonlinear Filtering Algorithms with Optimal Transport Maps]() at the SIAM Conference on Computational Science and Engineering (CSE25)
+
+February 2025
+- We have two accepted papers ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) and [Interacting Particle Systems for Fast Linear Quadratic RL](https://arxiv.org/abs/2406.11057) at the 7th Annual Learning for Dynamics & Control Conference.
+
+January 2025
+- I am presenting our research  on [Variational Optimal Transport Methods for Nonlinear Filtering]() at the 2025 Joint Mathematics Meeting, Seattle, WA
+
+
+December 2024
+- I am presenting our research [Time-Reversal of Stochastic Maximum Principle](https://amirtag.github.io/files/CDC-2024-slides.pdf) at the IEEE Conference on Decision and Control, Milan, Italy. 
 
 - I am very pleased to anounce that Mohammad Al-Jarrah won the outstanding paper award for his work on [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)  at the IEEE Conference on Decision and Control, Milan, Italy. 
 
 
-Nov 2024
+November 2024
 - We submitted the article ["Flow matching for stochastic linear control systems"](https://arxiv.org/abs/2412.00617) to the 7th Annual Learning for Dynamics & Control Conference. 
 
 - I participated and presented our research at the  [1st MMS (Mathematics and Mathematical Sciences) Workshop for Young Researchers](https://www.math.kyoto-u.ac.jp/ja/event/conference/5525) at Kyoto University, Japan.
 
 - I am pleased to announce that Mohammad Al-Jarrah won The Sarchin Fellowship Award, based on academic performance, the impact and quality research, as well as the leadership and professional potential. 
 
-Oct 2024
+October 2024
 - Our paper ["Conditional optimal transport on function spaces"](https://arxiv.org/abs/2311.05672)  is accpeted to be published in the SIAM/ASA Journal on Uncertainty Quantification.
 
 - We submitted our article ["How to implement the Bayes’ formula in the age of ML?"](https://arxiv.org/abs/2411.09653) to Encyclopedia of Systems and Control Engineering. 
 
 - Mohammad Al-Jarrah presented our work on ["Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps"](https://meetings.siam.org/sess/dsp_talk.cfm?p=139660) at the SIAM Conference on Mathematics of Data Science (MDS24), Atlanta, Georgia. 
 
-Sep 2024
+September 2024
 - We submitted the article ["Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study"](https://arxiv.org/abs/2410.04615) to the 2025 IEEE American Control Conference (ACC).       
 - I presented our work on "Nonlinear Filtering with Brenier Optimal Transport Maps" at the 2024 Allerton Conference, University of Illinois at Urbana-Champaign.
 

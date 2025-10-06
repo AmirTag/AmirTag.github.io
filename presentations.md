@@ -4,6 +4,18 @@ title: Presentations
 permalink: /presentations/
 ---
 <h3 style="text-align: center;">Selected presentation slides</h3>
+
+<p align="center">
+<a href="/files/Allerton-2025.pdf">
+<img src="../images/Allerton-2025-title.png" width="350"/>
+</a>
+	&nbsp;	&nbsp;
+<a href="/files/SIAM-CSE-2025.pdf">
+<img src="../images/SIAM-CSE-2025-title.png" width="350"/>
+</a>
+</p>
+
+
 <p align="center">
 <a href="/files/CDC-2024-slides.pdf">
 <img src="../images/CDC-2024-slides-title.png" width="350"/>

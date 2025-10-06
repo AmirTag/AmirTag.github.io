@@ -6,24 +6,25 @@ permalink: /publications/
 #### Preprints/Under review:
 
 
-- [Flow matching for stochastic linear control systems](https://arxiv.org/abs/2412.00617)    
-Yuhang Mei, Mohammad Al-Jarrah, Amirhossein Taghvaei, Yongxin Chen   
+  
 
-- [How to implement the Bayes’ formula in the age of ML?](https://arxiv.org/abs/2411.09653)      
-Amirhossein Taghvaei, Prashant Mehta     
-
-- [Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study](https://arxiv.org/abs/2410.04615)         
-Yuhang Mei, Amirhossein Taghvaei    
-
-
-- [Design of Interacting Particle Systems for Fast and Efficient Reinforcement Learning](https://arxiv.org/abs/2406.11057)       
-Anant A Joshi, Heng-Sheng Chang, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn
-
-- [Divergence metrics in the study of Markov and hidden Markov processes](https://arxiv.org/abs/2404.15779)         
-Jin Won Kim, Amirhossein Taghvaei, Prashant G Mehta
  
    
 #### Journal publications:
+
+- [Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps](https://ieeexplore.ieee.org/document/11052315)       
+Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei                        
+IEEE Control Systems Letters, vol. 9, pp. 1670-1675, 2025              
+
+- [How to implement the Bayes’ formula in the age of ML?](https://arxiv.org/abs/2411.09653)      
+Amirhossein Taghvaei, Prashant Mehta   
+Encyclopedia of Systems and Control Engineering
+
+
+- [Divergence metrics in the study of Markov and hidden Markov processes](https://arxiv.org/abs/2404.15779)         
+Jin Won Kim, Amirhossein Taghvaei, Prashant G Mehta
+proceedings of the Banff workshop on "Geometry, Topology, and Control System Design" in the memory of Roger Brockett. 
+
 
 - [Conditional optimal transport on function spaces](https://arxiv.org/abs/2311.05672)      
 Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei    
@@ -135,6 +136,14 @@ IEEE Transactions on Automatic Control (TAC), 63(8):2465–2480, 2018
 
 #### Machine Learning Conferences:
 
+- [Flow matching for stochastic linear control systems](https://arxiv.org/abs/2412.00617)         
+Yuhang Mei, Mohammad Al-Jarrah, Amirhossein Taghvaei, Yongxin Chen   
+7th Annual Learning for Dynamics & Control Conference, Ann-Arbor, Michigan, 2025 
+
+- [Interacting Particle Systems for Fast Linear Quadratic RL](https://arxiv.org/abs/2406.11057)      
+Anant A Joshi, Heng-Sheng Chang, Amirhossein Taghvaei, Prashant G Mehta, Sean P Meyn     
+7th Annual Learning for Dynamics & Control Conference, Ann-Arbor, Michigan, 2025    
+
 - [Nonlinear Filtering with Brenier Optimal Transport Maps](https://arxiv.org/abs/2310.13886)            
 Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei              
 International Conference of Machine Learning (ICML), 2024      
@@ -165,6 +174,24 @@ Amirhossein Taghvaei, Jin W. Kim, Prasshant G. Mehta
 Advances in Neural Information Processing Systems (NeurIPS), 2502–2512, Long Beach, December 2017   
 
 #### Control Conferences:
+
+- [A Time-Reversal Control Synthesis for Steering the State of Stochastic Systems](https://arxiv.org/abs/2504.00238)        
+Yuhang Mei, Amirhossein Taghvaei, Ali Pakniyat        
+IEEE Conference on Decision and Control (CDC), Rio, Brazil, 2025    
+
+- [Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps](https://arxiv.org/abs/2503.12633)       
+Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei                  
+IEEE Conference on Decision and Control (CDC), Rio, Brazil, 2025
+
+- [Error Analysis of Sampling Algorithms for Approximating Stochastic Optimal Control](https://arxiv.org/abs/2504.02198)
+Anant A. Joshi, Amirhossein Taghvaei, Prashant G. Mehta                
+IEEE Conference on Decision and Control (CDC), Rio, Brazil, 2025
+
+
+- [Time-reversal solution of BSDEs in stochastic optimal control: a linear quadratic study](https://arxiv.org/abs/2410.04615)         
+Yuhang Mei, Amirhossein Taghvaei    
+IEEE American Control Conference (ACC), Denver, 2025
+
 - [Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps](https://arxiv.org/abs/2403.15630)        
 Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei         
 IEEE Conference on Decision and Control (CDC), Milan, 2024
