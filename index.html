@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amirhossein Taghvaei — Assistant Professor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1a1a1a;
+      --muted:  #6b6b6b;
+      --rule:   #e0ddd8;
+      --bg:     #faf9f7;
+      --accent: #2a5caa;
+      --serif:  'EB Garamond', Georgia, serif;
+      --sans:   'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .shell {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--rule);
+      background: #f0ede8;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c9d6e3 0%, #a8bdd4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: #2a5caa;
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+      /* Sharp image rendering on all screens including HiDPI/Retina */
+      object-fit: cover;
+      object-position: center 20%;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    .sidebar-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .sidebar-dept {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    nav { display: flex; flex-direction: column; gap: 0.1rem; }
+
+    nav a {
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 0.35rem 0;
+      border-left: 2px solid transparent;
+      padding-left: 0.75rem;
+      margin-left: -0.75rem;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+    }
+
+    .sidebar-contact {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sidebar-contact a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.15s;
+    }
+
+    .sidebar-contact a:hover { color: var(--accent); }
+
+    .sidebar-contact svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── Main ── */
+    main {
+      padding: 4rem 5rem 6rem 5rem;
+      max-width: 780px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.12s; }
+    section:nth-child(3) { animation-delay: 0.19s; }
+    section:nth-child(4) { animation-delay: 0.26s; }
+    section:nth-child(5) { animation-delay: 0.33s; }
+    section:nth-child(6) { animation-delay: 0.40s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: #3a3a3a;
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Achievements block ── */
+    .achievements-block {
+      margin-top: 1.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 0.5rem 1.25rem;
+      background: #f5f3f0;
+    }
+
+    .ach-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .ach-item:last-child { border-bottom: none; }
+
+    .ach-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.55rem;
+      border-radius: 2rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 4.5rem;
+      text-align: center;
+    }
+
+    .ach-tag.funding  { background: #d1fae5; color: #065f46; }
+    .ach-tag.paper    { background: #dbeafe; color: #1e40af; }
+    .ach-tag.talk     { background: #ede9fe; color: #5b21b6; }
+    .ach-tag.award    { background: #fef3c7; color: #92400e; }
+    .ach-tag.student  { background: #fce7f3; color: #9d174d; }
+
+    .ach-text {
+      font-size: 0.88rem;
+      color: #3a3a3a;
+      line-height: 1.6;
+    }
+
+    /* ── Research vision ── */
+    .research-vision {
+      font-size: 0.95rem;
+      color: #3a3a3a;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+
+    /* ── Project cards ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      background: white;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: block;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .project-img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 1;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.3s ease;
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    .project-card:hover .project-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .project-info {
+      padding: 0.85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .project-arrow {
+      font-size: 1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover .project-arrow {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 600px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Research interests ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 2rem;
+      color: var(--muted);
+      background: white;
+    }
+
+    /* ── Publications ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 0 1rem;
+    }
+
+    .pub-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.45;
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-title a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .pub-title a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .pub-meta { font-size: 0.8rem; color: var(--muted); }
+
+    .pub-links { margin-top: 0.4rem; display: flex; gap: 0.75rem; }
+
+    .pub-link {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .pub-link:hover { border-color: var(--accent); }
+
+    /* ── Teaching ── */
+    .course-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .course {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .course:last-child { border-bottom: none; }
+
+    .course-name { font-size: 0.95rem; }
+    .course-code { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+    .course-term { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+
+    /* ── CV timeline ── */
+    .cv-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .cv-item {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 0 1rem;
+    }
+
+    .cv-period { font-size: 0.78rem; color: var(--muted); padding-top: 0.15rem; }
+
+    .cv-role { font-size: 0.95rem; font-weight: 500; line-height: 1.3; }
+    .cv-place { font-size: 0.82rem; color: var(--muted); }
+
+
+    /* ── News / Highlights ── */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0 1.25rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .news-item:last-child { border-bottom: none; }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+
+    .news-body {
+      font-size: 0.88rem;
+      color: #3a3a3a;
+      line-height: 1.65;
+    }
+
+    .news-body a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .news-body a:hover { border-color: var(--accent); }
+
+    .news-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 2rem;
+      margin-right: 0.4rem;
+      font-weight: 500;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    .news-tag.award  { background: #fef3c7; color: #92400e; }
+    .news-tag.paper  { background: #dbeafe; color: #1e40af; }
+    .news-tag.funding { background: #d1fae5; color: #065f46; }
+    .news-tag.talk   { background: #ede9fe; color: #5b21b6; }
+    .news-tag.student { background: #fce7f3; color: #9d174d; }
+    .news-tag.misc   { background: #f3f4f6; color: #374151; }
+
+    /* ── Contact ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-value { font-size: 0.9rem; line-height: 1.6; }
+    .contact-value a { color: var(--accent); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+
+      aside {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        gap: 1rem;
+      }
+
+      .avatar { width: 56px; height: 56px; font-size: 1.2rem; margin-bottom: 0; }
+
+      .sidebar-name { font-size: 0.95rem; }
+      .sidebar-dept { margin-bottom: 0; }
+
+      nav { flex-direction: row; flex-wrap: wrap; gap: 0.25rem; }
+
+      nav a { border-left: none; padding-left: 0; margin-left: 0; border-bottom: 2px solid transparent; padding-bottom: 0.1rem; }
+
+      nav a:hover, nav a.active { border-left-color: transparent; border-bottom-color: var(--accent); }
+
+      .sidebar-contact { display: none; }
+
+      main { padding: 2.5rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <img class="avatar" src="images/Amir.jpg" alt="Your Name" />
+    <div>
+      <div class="sidebar-name">Amirhossein Taghvaei</div>
+      <div class="sidebar-title">Assistant Professor</div>
+      <div class="sidebar-dept">William E. Boeing Dept. of Aeronautics & Astronautics<br>University of Washington, Seattle</div>
+    </div>
+
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Recent Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#highlights">Group Highlights</a>
+    </nav>
+
+    <div class="sidebar-contact">
+      <a id="email-link" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <span style="unicode-bidi:bidi-override; direction:rtl;">ude.wu@gatrimA</span>
+      </a>
+      <a href="https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Google Scholar
+      </a>
+      <a href="https://github.com/AmirTag" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/amirhossein-taghvaei-7a078237/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7"/><circle cx="7" cy="7" r="1"/><path d="M11 10v7m0-4a3 3 0 0 1 6 0v4"/></svg>
+        LinkedIn
+      </a>
+      <a href="files/cv-Nov-2025.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Curriculum Vitae
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── Main content ── -->
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <h1>Amirhossein Taghvaei</h1>
+      <p class="hero-sub">Assistant Professor · Dept. of Aeronautics & Astronautics · University of Washington Seattle </p>
+      <p class="hero-bio">
+        I am an Assistant Professor in the William E. Boeing Department of Aeronautics & Astronautics at the University of Washington (UW), Seattle. I lead a research group at the intersection of <strong>control theory</strong>, <strong>statistical inference</strong>, and <strong>machine learning,</strong> focused on principled and scalable decision-making under uncertainty. Our work is motivated by applications in aerospace systems, robotics, and environmental monitoring, with the broader goal of developing a unified framework for the <strong>control of uncertainty</strong> in complex dynamical systems.
+      </p>
+      <br>
+      <p class="hero-bio">
+        Before joining UW, I completed my Ph.D. at the University of Illinois at Urbana-Champaign and was a postdoctoral scholar at the University of California, Irvine, with Prof. Tryphon Georgiou. Check out my <a href="https://scholar.google.com/citations?user=l96zhjwAAAAJ&hl=en">Google Scholar</a> for an up-to-date list of publications. I am always looking for motivated Ph.D. students — please reach out if our interests align.
+      </p>
+
+          <div class="achievements-block">
+        <div class="ach-item">
+          <span class="ach-tag funding">Funding</span>
+          <span class="ach-text">NSF-supported research through awards EPCN-2318977 and EPCN-2347358 on scalable nonlinear filtering and stochastic control.</span>
+        </div>
+        <div class="ach-item">
+          <span class="ach-tag paper">Paper</span>
+          <span class="ach-text">9 papers in leading machine learning venues (ICML, NeurIPS, L4DC) and 26 journal articles in top control and applied mathematics journals.</span>
+        </div>
+        <div class="ach-item">
+          <span class="ach-tag talk">Talk</span>
+          <span class="ach-text">Semi-plenary lecture at MTNS 2024, Cambridge, UK.</span>
+        </div>
+        <div class="ach-item">
+          <span class="ach-tag student">Student</span>
+          <span class="ach-text">Mohammad Al-Jarrah received the CDC 2024 Outstanding Student Paper Award and did a summer internship with the Morgan Stanley’s Machine Learning team.</span>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Research -->
+    <section id="research">
+      <h2>Research</h2>
+      <p class="research-vision">
+        Our research vision is to develop a unified <strong>mathematical</strong> and <strong>computational</strong> framework that closes the loop between <strong>models</strong>, <strong>data</strong>, and <strong>decisions</strong>, enabling autonomous systems to reason, sense, and act reliably in uncertain and dynamic environments. Our work is organized around two complementary directions: (i) scalable and principled methods for <strong>nonlinear filtering</strong>, enabling accurate inference in high-dimensional, nonlinear, and non-Gaussian settings using geometric and variational tools such as <strong>optimal transport</strong>; and (ii) the interplay of <strong>stochastic control</strong> and <strong>generative modeling</strong>, leveraging time-reversal and diffusion-based methods to design control strategies that shape uncertainty at the distributional level. Together, these efforts integrate estimation and control into a coherent framework for <strong>decision-making under uncertainty</strong>, with the potential to enable <strong>safer</strong>, more <strong>efficient</strong>, and more <strong>sustainable</strong> autonomous systems.
+      </p>
+
+      <div class="project-grid">
+        <a class="project-card" href="OTF.html">
+          <div class="project-img-wrap">
+            <img src="images/otf_animation.gif"  alt="Optimal Transport–Based Nonlinear Filtering" />
+          </div>
+          <div class="project-info">
+            <div class="project-title">Optimal Transport–Based Nonlinear Filtering</div>
+            <div class="project-arrow">→</div>
+          </div>
+        </a>
+
+        <a class="project-card" href="SOC.html">
+          <div class="project-img-wrap">
+            <img src="images/soc_animation.gif" alt="Interplay of Stochastic Control and Generative Models" />
+          </div>
+          <div class="project-info">
+            <div class="project-title">Bridging Stochastic Control and Generative Modeling</div>
+            <div class="project-arrow">→</div>
+          </div>
+        </a>
+      </div>
+      <br>
+      <p class="research-vision"> Our research is supported by the <strong>National Science Foundation (NSF)</strong> grants EPCN-2318977 and EPCN-2347358.  
+      </p>
+
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Selected Recent Publications</h2>
+      <div class="pub-list">
+
+        <div class="pub">
+          <span class="pub-year">2026</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2603.20455">Time-Reversed BSDEs for Accurate Gradient Estimation in Diffusion Models</a></div>
+            <div class="pub-meta">Yuhang Mei, Amirhossein Taghvaei. <br><em>Submitted to the IEEE Control Systems Letters</em> </div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2603.20455">arXiv</a>
+              <a class="pub-link" href="https://github.com/YuhangMeiUW/BSDE-Gradient">Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11312478">A time-reversal control synthesis for steering the state of stochastic systems</a></div>
+            <div class="pub-meta">Yuhang Mei, Amirhossein Taghvaei, Ali Pakniyat. <br><em>IEEE Conference on Decision and Control (CDC), December, 2025</em> </div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2504.00238">arXiv</a>
+              <a class="pub-link" href="https://github.com/YuhangMeiUW/P2P">Code</a>
+              <a class="pub-link" href="slides/time-reversal-CDC-2025.pdf">Slides</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title"><a href="https://arxiv.org/abs/2510.19283">Error Analysis of Triangular Optimal Transport Maps for Filtering</a></div>
+            <div class="pub-meta">Mohammad Al-Jarrah, Bamdad Hosseini, Niyizhen Jin, Michele Martino, Amirhossein Taghvaei. <br><em>Submitted to the SIAM Journal on Uncertainty Quantification</em></div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2510.19283">arXiv</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title"><a href="https://proceedings.mlr.press/v283/mei25a.html">Flow matching for stochastic linear control systems</a></div>
+            <div class="pub-meta">Yuhang Mei, Mohammad Al-Jarrah, Amirhossein Taghvaei, Yongxin Chen. <br><em>Annual Learning for Dynamics \& Control Conference (L4DC), PMLR 283:484-496, 2025</em></div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2412.00617">arXiv</a> 
+              <a class="pub-link" href="https://github.com/YuhangMeiUW/Flow-matching-control">Code</a> 
+              <a class="pub-link" href="slides/L4DC_poster.pdf">Poster</a>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <div class="pub">
+          <span class="pub-year">2025</span>
+          <div>
+            <div class="pub-title"><a href="https://epubs.siam.org/doi/full/10.1137/23M1618922">Conditional optimal transport on function spaces</a></div>
+            <div class="pub-meta">Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei. <br> <em>SIAM/ASA Journal on Uncertainty Quantification, 13(1), pp.304-338, 2025</em></div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2311.05672">arXiv</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2024</span>
+          <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10886712">Data-driven approximation of stationary nonlinear filters with optimal transport maps</a></div>
+            <div class="pub-meta">Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei. <br> <em>IEEE Conference on Decision and Control (CDC), December 2024</em> <br> Outstanding Student Paper Award</div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2403.15630">arXiv</a>
+              <a class="pub-link" href="https://github.com/Mohd9485/OT-DDF">Code</a>  
+              <a class="pub-link" href="slides/Mohammad_CDC_2024_presentation.pdf">Slides</a> 
+            </div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <span class="pub-year">2024</span>
+          <div>
+            <div class="pub-title"><a href="https://proceedings.mlr.press/v235/al-jarrah24a.html">Nonlinear Filtering with Brenier Optimal Transport Maps</a></div>
+            <div class="pub-meta">Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei. <br> <em>International Conference on Machine Learning (ICML), PMLR 235:813-839, 2024.</em> </div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2310.13886">arXiv</a>
+              <a class="pub-link" href="https://github.com/Mohd9485/Filtering-with-Optimal-Transport">Code</a>  
+              <a class="pub-link" href="slides/ICML_2024.pdf">Poster</a> 
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="course-list">
+        <div class="course">
+          <div>
+            <div class="course-name">Estimation and System Identification</div>
+            <div class="course-code">AA/EE/ME 549 · Graduate</div>
+          </div>
+          <div class="course-term">Spring 2023, 2025, 2026</div>
+        </div>
+        <div class="course">
+          <div>
+            <div class="course-name">Linear System Theory</div>
+            <div class="course-code">AA/EE 547 · Graduate</div>
+          </div>
+          <div class="course-term">Winter 2024, 2025, 2026</div>
+        </div>
+        <div class="course">
+          <div>
+            <div class="course-name">Nonlinear Control Systems</div>
+            <div class="course-code">AA/EE/ME 583 · Graduate</div>
+          </div>
+          <div class="course-term">Fall 2021, 2022, 2023, 2025</div>
+        </div>
+        <div class="course">
+          <div>
+            <div class="course-name">Control In Aerospace Systems </div>
+            <div class="course-code">AA 447 · Undergraduate</div>
+          </div>
+          <div class="course-term">Spring 2022, 2024</div>
+        </div>
+    </section>
+
+<!-- Group Highlights -->
+<section id="highlights">
+  <h2>Group Highlights</h2>
+  <div class="news-list">
+
+    <div class="news-item">
+      <span class="news-date">Feb 2026</span>
+      <div class="news-body">
+        <span class="news-tag paper">Paper</span>
+        Our article on <a href="https://onlinelibrary.wiley.com/doi/10.1002/net.70035">A Lasso‐Alternative to Dijkstra's Algorithm for Identifying Short Paths in Networks</a> is now published. This is a joint work with Anqi Dong and Tryphon Georgiou. 
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">Dec 2025</span>
+      <div class="news-body">
+        <span class="news-tag talk">Talk</span>
+        We are organizing a three part invited session on "Optimal transportation methods for estimation and control" at the IEEE Conference on Decision and Control (CDC), Brazil, 2025. 
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">Oct 2025</span>
+      <div class="news-body">
+        <span class="news-tag talk">Talk</span>
+        I presented our research on <a href="slides/UW-Applied-Math-2025.pdf">From diﬀusion models to stochastic control: a
+          time-reversal methodology for feedback control design</a>  at the Applied Mathematics Seminar Series, University of Washington, Seattle
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">July 2025</span>
+      <div class="news-body">
+        <span class="news-tag paper">Paper</span>
+        We have three accepted papers 
+        <a href="https://arxiv.org/abs/2504.00238">A Time-Reversal Control Synthesis for Steering the State of Stochastic Systems</a>, 
+          <a href="https://arxiv.org/html/2503.12633v1">Fast filtering of non-Gaussian models using Amortized Optimal Transport Maps</a>, and 
+            <a href="https://arxiv.org/abs/2504.02198">Error Analysis of Sampling Algorithms for Approximating Stochastic Optimal Control</a>, for presentation and publication in the proceedings of the at the IEEE Conference on Decision and Control (CDC).
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">June 2025</span>
+      <div class="news-body">
+        <span class="news-tag student">Student</span>
+        Mohammad Al-Jarrah is presenting his research at the at Morgan Stanley’s Machine Learning Research Talks, where he will join as intern during summer. 
+      </div>
+    </div>
+
+
+
+    <div class="news-item">
+      <span class="news-date">Mar 2025</span>
+      <div class="news-body">
+        <span class="news-tag award">Award</span>
+        Our NSF supported research "Fundamentals of Power Generation from Thermal Anisotropy - A Stochastic Control Framework" is featured on the <a href="https://www.aa.washington.edu/news/article/2025-02-14/bacteria-inspires-nanoengines"> University of Washington newsletter </a>.
+      </div>
+    </div>
+
+    <div class="news-item">
+      <span class="news-date">Feb 2025</span>
+      <div class="news-body">
+        <span class="news-tag paper">Paper</span>
+        Our articles on “Flow matching for stochastic linear control systems” and "Interacting Particle Systems for Fast Linear Quadratic RL" are accepted for presentation at the 7th Annual Learning for Dynamics & Control (L4DC) Conference, Ann-Arbor, Michigan.
+      </div>
+    </div>
+    
+
+    <div class="news-item">
+      <span class="news-date">Dec 2024</span>
+      <div class="news-body">
+        <span class="news-tag student">Student</span>
+        Mohammad Al-Jarrah wins the outstanding student paper award for his work on "Data-Driven Approximation of Stationary Nonlinear Filters with Optimal Transport Maps" at the IEEE Conference on Decision and Control, Milan, Italy.
+      </div>
+    </div>
+  
+    <div class="news-item">
+      <span class="news-date">Aug 2024</span>
+      <div class="news-body">
+        <span class="news-tag talk">Talk</span>
+        I delivered a semi-plenary lecture, titled “Towards data-driven nonlinear filtering algorithms”, at the 26th International Symposium on Mathematical Theory of Networks and Systems (MTNS), Cambridge, UK.
+      </div>
+    </div>  
+
+
+        <div class="news-item">
+      <span class="news-date">Aug 2024</span>
+      <div class="news-body">
+        <span class="news-tag paper">Paper</span>
+        Our article "Minimal entropy production in the presence of anisotropic temperature fields" is accpeted to be published at the IEEE Transactions of Automatic Control (TAC).
+      </div>
+    </div>
+
+
+       <div class="news-item">
+      <span class="news-date">June 2024</span>
+      <div class="news-body">
+        <span class="news-tag student">Student</span>
+        Ph.D. student, Mohammad Al-Jarrah, wins the Doctoral Research Excellence award from the Department of Aeronautics & Astronautics, University of Washington, Seattle. 
+      </div>
+    </div> 
+
+
+        <div class="news-item">
+      <span class="news-date">June 2024</span>
+      <div class="news-body">
+        <span class="news-tag award">Award</span>
+       Our collaborative research proposal “Fundamentals of Power Generation from Thermal Anisotropy - A Stochastic Control Framework”, with Prof. Tryphon Georgiou, is awarded by the Energy, Power, Control, and Networks (EPCN) program at National Science Foundation (NSF).
+      </div>
+    </div>
+    
+        <div class="news-item">
+      <span class="news-date">May 2024</span>
+      <div class="news-body">
+        <span class="news-tag paper">Paper</span>
+        Our article “Nonlinear Filtering with Brenier Optimal Transport Maps” is accepted to be presented at the International Conference of Machine Learning (ICML), Vienna, July, 2024
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+  </main>
+</div>
+
+<script>
+  // Obfuscated email — assembled at runtime so bots can't scrape it
+  const user = "amirtag.uw.edu";
+  const domain = "uw.edu";
+  const el = document.getElementById("email-link");
+  if (el) el.href = "mailto:" + user + "@" + domain;
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -40% 0px', threshold: 0.05 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

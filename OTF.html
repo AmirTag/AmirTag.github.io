@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optimal Transport–Based Nonlinear Filtering — TagLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1a1a1a;
+      --muted:  #6b6b6b;
+      --rule:   #e0ddd8;
+      --bg:     #faf9f7;
+      --accent: #2a5caa;
+      --serif:  'EB Garamond', Georgia, serif;
+      --sans:   'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .back-link {
+      font-size: 0.82rem;
+      text-decoration: none;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.15s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .header-name {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .header-name a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .header-name a:hover { color: var(--accent); }
+
+    /* ── Content ── */
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 6rem;
+    }
+
+    .project-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p {
+      font-size: 0.97rem;
+      color: #3a3a3a;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li {
+      font-size: 0.97rem;
+      color: #3a3a3a;
+      line-height: 1.85;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── People ── */
+    .people {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .person {
+      font-size: 0.82rem;
+      padding: 0.3rem 0.75rem;
+      border: 1px solid var(--rule);
+      border-radius: 2rem;
+      color: var(--muted);
+      background: white;
+    }
+
+    /* ── Publications in this project ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.5rem; }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      line-height: 1.45;
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-title a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .pub-title a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .pub-meta { font-size: 0.8rem; color: var(--muted); }
+
+    .pub-links { margin-top: 0.35rem; display: flex; gap: 0.75rem; }
+
+    .pub-link {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .pub-link:hover { border-color: var(--accent); }
+
+    @media (max-width: 600px) {
+      header { padding: 1rem 1.25rem; }
+      .page { padding: 2rem 1.25rem 4rem; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="back-link" href="index.html">← Back</a>
+    <span class="header-name"><a href="index.html">TagLab</a></span>
+  </header>
+
+  <div class="page">
+
+    <div class="project-label">Research Project</div>
+    <h1>Optimal Transport–Based Nonlinear Filtering</h1>
+
+    
+    <img class="hero-img" src="images/otf_animation.gif" style="width:100%; border-radius:4px;" alt="Optimal Transport–Based Nonlinear Filtering" />
+
+    <h2>Overview</h2>
+    <p>
+     Quantifying uncertainty and effectively assimilating noisy sensory data is the subject of nonlinear
+filtering, and is crucial for the reliable and safe operation of robotic systems. Classical nonlinear
+filtering algorithms, such as Kalman filter and its extensions, or sequential importance sampling
+particle filters, are subject to fundamental limitations and do not perform well in the nonlinear and
+high-dimensional settings. This research aims to overcome these challenges by merging the recent
+developments in machine learning (ML) and optimal transportation (OT) to construct nonlinear filtering
+algorithms with increased flexibility, scalability, and adaptability. This is achieved through
+the utilization of a novel variational formulation of Bayes’ law, rooted in OT theory, which enables
+the application of ML tools.
+    </p>
+
+    <p>The research project has broader societal impacts as it lays the foundations for uncertainty-aware
+autonomous systems, leading to significant improvements in their safety and efficiency. Research
+highlights of our team include: peer-reviewed publications in International Conference on Machine
+Learning, 2024 (ICML), Annual Conference on Neural Information Processing Systems
+(NeurIPS), 2023, Student Outstanding paper award at IEEE Conference on Decision and Control
+(CDC), 2024, semi-plenary lecture at the 26th International Symposium on Mathematical
+Theory of Networks and Systems (MTNS) 2024. This research is supported by the NSF award
+(2318977).</p>
+
+
+
+    <h2>Key Ideas</h2>
+    <ul>
+      <li>Variational formulation of Bayes’
+law where the conditional distribution is identified as the push-forward of an optimal transport map</li>
+      <li>In contrast to the importance
+sampling particle filters, the variational method is likelihood free and perform well in high-dimensional situations
+when the likelihood is degenerate.</li>
+      <li>The stochastic optimization
+formulation allows for the application of the ML tools. namely the expressiveness of neural
+networks and scalability of stochastic optimization algorithms.</li>
+    </ul>
+
+  
+    <h2>Team</h2>
+    <div class="people">
+      <span class="person">Amirhossein Taghvaei</span>
+      <span class="person">Bamdad Hosseini (Collaborator)</span>
+      <span class="person">Mohammad Al-Jarrah (Ph.D. Student)</span>
+      <span class="person">Jenny Jin (Ph.D. Student)</span>
+      <span class="person">Michele Martino (Ph.D. Student)</span>
+      <span class="person">Alex Hsu (Ph.D. Student)</span>
+    </div>
+
+    <h2>Selected Publications</h2>
+    <div class="pub-list">
+      <div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2510.19283">Error Analysis of Triangular Optimal Transport Maps for Filtering</a></div>
+        <div class="pub-meta">Mohammad Al-Jarrah, Bamdad Hosseini, Niyizhen Jin, Michele Martino, Amirhossein Taghvaei. <br><em>Submitted to the SIAM Journal on Uncertainty Quantification</em></div>
+        <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2510.19283">arXiv</a>
+        </div>
+      </div>
+      <div>
+        <div class="pub-title"><a href="https://epubs.siam.org/doi/full/10.1137/23M1618922">Conditional optimal transport on function spaces</a></div>
+        <div class="pub-meta">Bamdad Hosseini, Alexander W Hsu, Amirhossein Taghvaei. <br> <em>SIAM/ASA Journal on Uncertainty Quantification, 13(1), pp.304-338, 2025</em></div>
+        <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2311.05672">arXiv</a>
+        </div>
+      </div>
+
+      <div>
+            <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10886712">Data-driven approximation of stationary nonlinear filters with optimal transport maps</a></div>
+            <div class="pub-meta">Mohammad Al-Jarrah, Bamdad Hosseini, Amirhossein Taghvaei. <br> <em>IEEE Conference on Decision and Control (CDC), December 2024</em> <br> Outstanding Student Paper Award</div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2403.15630">arXiv</a>
+              <a class="pub-link" href="https://github.com/Mohd9485/OT-DDF">Code</a>  
+              <a class="pub-link" href="slides/Mohammad_CDC_2024_presentation.pdf">Slides</a> 
+            </div>
+      </div>
+
+      <div>
+            <div class="pub-title"><a href="https://proceedings.mlr.press/v235/al-jarrah24a.html">Nonlinear Filtering with Brenier Optimal Transport Maps</a></div>
+            <div class="pub-meta">Mohammad Al-Jarrah, Niyizhen Jin, Bamdad Hosseini, Amirhossein Taghvaei. <br> <em>International Conference on Machine Learning (ICML), PMLR 235:813-839, 2024.</em> </div>
+            <div class="pub-links">
+              <a class="pub-link" href="https://arxiv.org/abs/2310.13886">arXiv</a>
+              <a class="pub-link" href="https://github.com/Mohd9485/Filtering-with-Optimal-Transport">Code</a>  
+              <a class="pub-link" href="slides/ICML_2024.pdf">Poster</a> 
+            </div>
+      </div>
+    </div>
+
+    <h2>Selected Presentations</h2>
+    <div class="pub-list">
+      <div>
+        <div class="pub-title"><a href="#">Towards Data-Driven Nonlinear Filtering Algorithms</a></div>
+        <div class="pub-meta">Semi-planary presentation at the 26th International Symposium on
+Mathematical Theory of Networks and Systems, Cambridge, UK</div>
+        <div class="pub-links">
+          <a class="pub-link" href="files/MTNS-2024.pdf">Slides</a>
+        </div>
+      </div>
+      <div>
+        <div class="pub-title"><a href="#">Variational Optimal Transport Methods for
+Nonlinear Filtering</a></div>
+        <div class="pub-meta">Presented at 7th Workshop on Cognition and Control
+Univ. of Florida, Gainsville, Jan. 2024</div>
+        <div class="pub-links">
+          <a class="pub-link" href="files/MTNS-2024.pdf">Slides</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
+
+
