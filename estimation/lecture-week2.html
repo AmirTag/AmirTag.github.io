@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 2 — Least-Squares Method · AA/EE/ME 549</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1a1a1a;
+      --muted:   #6b6b6b;
+      --rule:    #e0ddd8;
+      --bg:      #faf9f7;
+      --sidebar: #f0ede8;
+      --accent:  #2a5caa;
+      --serif:   'EB Garamond', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --mono:    'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background: var(--sidebar);
+      border-right: 1px solid var(--rule);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .course-tag  { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+    .course-title-side { font-family: var(--serif); font-size: 0.95rem; font-weight: 500; line-height: 1.35; color: var(--ink); margin-bottom: 0.2rem; }
+    .course-sub  { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+    .toc-label   { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.6rem; }
+
+    nav { display: flex; flex-direction: column; gap: 0; }
+
+    nav a {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      text-decoration: none;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      padding-left: 0.65rem;
+      margin-left: -0.65rem;
+      border-left: 2px solid transparent;
+      line-height: 1.4;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a.sub { font-size: 0.72rem; padding-left: 1.25rem; color: #999; }
+    nav a:hover, nav a.active { color: var(--accent); border-left-color: var(--accent); }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .sidebar-footer a {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s;
+    }
+
+    .sidebar-footer a:hover { color: var(--accent); }
+
+    /* ── Main ── */
+    main { padding: 3.5rem 5rem 6rem; max-width: 820px; }
+
+    .lecture-meta { font-family: var(--sans); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+
+    h1.lecture-title {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+    }
+
+    .lecture-author { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+    /* ── Objectives ── */
+    .objectives {
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      background: #f4f7fc;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 3rem;
+    }
+
+    .objectives-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+
+    .objectives ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .objectives li { font-family: var(--sans); font-size: 0.88rem; color: #2a3a5a; line-height: 1.6; }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .section:nth-child(1) { animation-delay: 0.05s; }
+    .section:nth-child(2) { animation-delay: 0.10s; }
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.30s; }
+    .section:nth-child(7) { animation-delay: 0.35s; }
+    .section:nth-child(8) { animation-delay: 0.40s; }
+    .section:nth-child(9) { animation-delay: 0.45s; }
+
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    h2.sec-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    h2.sec-title .sec-num { font-family: var(--sans); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.15rem; }
+
+    h3.subsec-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin-top: 2rem; margin-bottom: 0.75rem; }
+    h3.subsec-title .subsec-num { font-family: var(--sans); font-size: 0.68rem; color: var(--muted); margin-right: 0.4rem; }
+
+    p { margin-bottom: 1rem; color: #2a2a2a; }
+
+    /* ── Figure ── */
+    .figure {
+      margin: 1.75rem 0;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+    }
+
+    .figure-caption {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .figure-caption strong { color: var(--ink); }
+
+    /* ── Question callout ── */
+    .question {
+      border-left: 3px solid #6aaa6a;
+      background: #f0faf0;
+      padding: 0.75rem 1.1rem;
+      margin: 1.25rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .question-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #2a7a2a; font-weight: 500; margin-bottom: 0.3rem; }
+    .question p { font-family: var(--sans); font-size: 0.88rem; color: #1a4a1a; margin-bottom: 0; }
+
+    /* ── Equation display ── */
+    .eq-block { margin: 1.25rem 0; padding: 0.5rem 0; overflow-x: auto; }
+    .eq-label { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); float: right; margin-top: 0.2rem; }
+
+    /* ── Summary / Key result box ── */
+    .summary-box {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      background: #f8f6f2;
+      padding: 1.4rem 1.75rem;
+      margin: 2rem 0;
+    }
+
+    .summary-box-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .summary-box p { margin-bottom: 0.5rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    /* ── Reminder box ── */
+    .reminder {
+      border: 1px solid #c8d8ee;
+      border-radius: 4px;
+      background: #eef4fb;
+      padding: 1.1rem 1.4rem;
+      margin: 1.5rem 0;
+    }
+
+    .reminder-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
+    .reminder p { font-family: var(--sans); font-size: 0.87rem; color: #1a2a3a; margin-bottom: 0.4rem; line-height: 1.65; }
+    .reminder p:last-child { margin-bottom: 0; }
+
+    /* ── Exercise box ── */
+    .exercise {
+      border: 1px solid #d4c8e8;
+      border-radius: 4px;
+      background: #f5f0fb;
+      padding: 1.1rem 1.4rem;
+      margin: 2rem 0;
+    }
+
+    .exercise-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: #5b21b6; font-weight: 500; margin-bottom: 0.5rem; }
+    .exercise p { color: #1a0a3a; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .exercise p:last-child { margin-bottom: 0; }
+    .exercise ol { padding-left: 1.3rem; margin-top: 0.5rem; }
+    .exercise ol li { font-family: var(--sans); font-size: 0.88rem; color: #1a0a3a; line-height: 1.7; margin-bottom: 0.35rem; }
+
+    /* ── Example box ── */
+    .example {
+      border-left: 3px solid #c8b88a;
+      background: #fdf8ee;
+      padding: 1rem 1.2rem;
+      margin: 1.75rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .example-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #8a6a20; font-weight: 500; margin-bottom: 0.5rem; }
+    .example p { color: #3a2a0a; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .example p:last-child { margin-bottom: 0; }
+
+    /* ── Remark box ── */
+    .remark {
+      border-left: 3px solid #aaa;
+      background: #f5f5f3;
+      padding: 0.9rem 1.2rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .remark-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #555; font-weight: 500; margin-bottom: 0.4rem; }
+    .remark p { color: #333; margin-bottom: 0; font-size: 0.93rem; }
+
+    /* ── Content lists ── */
+    ul.content-list, ol.content-list { padding-left: 1.4rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    ul.content-list li, ol.content-list li { color: #2a2a2a; line-height: 1.75; }
+
+    /* ── Inline code ── */
+    code { font-family: var(--mono); font-size: 0.82em; background: #eee; padding: 0.1em 0.4em; border-radius: 3px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; flex-direction: row; flex-wrap: wrap; padding: 1.25rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .sidebar-footer { display: none; }
+      main { padding: 2rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="course-tag">AA / EE / ME 549</div>
+    <div class="course-title-side">Estimation &amp; System Identification</div>
+    <div class="course-sub">Week 2 · Least-Squares Method</div>
+
+    <div class="toc-label">Contents</div>
+    <nav>
+      <a href="#objectives">Learning Objectives</a>
+      <a href="#sec1">1 · History</a>
+      <a href="#sec2">2 · Mathematical Formulation</a>
+      <a href="#sec3">3 · Solution</a>
+      <a href="#sec3-1" class="sub">3.1 Uniqueness</a>
+      <a href="#sec3-2" class="sub">3.2 Regularization</a>
+      <a href="#sec4">4 · System Identification</a>
+      <a href="#sec5">5 · Error Analysis</a>
+      <a href="#sec5-1" class="sub">5.1 SVD Review</a>
+      <a href="#sec5-2" class="sub">5.2 Error Analysis</a>
+      <a href="#sec6">6 · Auto-Regressive Models</a>
+      <a href="#sec7">7 · Curve Fitting</a>
+      <a href="#sec8">8 · Programming Exercise</a>
+      <a href="#sec9">9 · Appendix: Gradients</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="course.html">← Back to course</a>
+      <a href="lecture-week1.html">← Week 1</a>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <div class="lecture-meta">Week 2 · Lecture Notes</div>
+    <h1 class="lecture-title">Least-Squares Method</h1>
+    <div class="lecture-author">Amirhossein Taghvaei · University of Washington</div>
+
+    <!-- Learning objectives -->
+    <div class="objectives" id="objectives">
+      <div class="objectives-label">Learning Objectives</div>
+      <ul>
+        <li>Describe the mathematical formulation of the linear least-squares problem.</li>
+        <li>Apply the optimality condition to find a solution candidate and analyze its optimality.</li>
+        <li>Apply the least-squares method for system identification.</li>
+        <li>Apply elementary error analysis on the least-squares problem.</li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section" id="sec1">
+      <h2 class="sec-title"><span class="sec-num">Section 1</span>A Bit of History</h2>
+
+      <div class="question">
+        <div class="question-label">Question 1</div>
+        <p>Who invented the least-squares algorithm?</p>
+      </div>
+
+      <p>In 1748, the French Academy of Science posed the following challenge: use Newton's law of gravity to explain how Jupiter and Saturn cause each other to speed up or slow down. Euler came up with a response and won the prize. His response included an equation relating 8 orbital elements. To find the values of these 8 unknowns, he consulted the astronomical observation archive and found 75 observations — leading to the question:</p>
+
+      <p><em>How do you find 8 unknowns from 75 equations?</em></p>
+
+      <div class="figure">
+        <img src="Euler-prize.png" alt="1748 French Academy of Science prize announcement" />
+        <div class="figure-caption"><strong>Figure 1.</strong> L. Euler was the winner of the 1748 French Academy of Science prize for explaining how Jupiter and Saturn cause each other to speed up or slow down.</div>
+      </div>
+
+      <p>Consider a simpler version of this problem, with two unknowns $X_1$ and $X_2$ and three equations:</p>
+
+      <div class="eq-block">
+        $$X_1 + X_2 = 4, \qquad 2X_1 - X_2 = 2, \qquad X_1 - 2X_2 = 1$$
+      </div>
+
+      <p>Finding $X_1$ and $X_2$ is not straightforward. For example, the first two equations give $X_1 = 2$, $X_2 = 2$, but these values do not satisfy the third equation.</p>
+
+      <p>In 1805, the "mystery mathematician" (Legendre) came up with a systematic solution:</p>
+
+      <p style="text-align:center; font-style:italic;">Find $X_1$ and $X_2$ that satisfy the equations with the least amount of error.</p>
+
+      <p>He defined the residual for each equation:</p>
+
+      <div class="eq-block">
+        $$e_1 = X_1 + X_2 - 4, \qquad e_2 = 2X_1 - X_2 - 2, \qquad e_3 = X_1 - 2X_2 - 1$$
+      </div>
+
+      <p>and aimed to minimize the sum of squared residuals:</p>
+
+      <div class="eq-block">
+        $$\min_{X_1, X_2} \; e_1^2 + e_2^2 + e_3^2$$
+      </div>
+
+      <p>This is the <strong>least-squares</strong> approach. Later, Gauss provided a probabilistic justification: the least-squares estimate gives the "most likely" values of $X_1$ and $X_2$ under a Gaussian assumption on the observation error — a justified assumption by the central limit theorem. The method is widely used because of its simplicity, flexibility, and because it only requires vector calculus and linear algebra.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="sec2">
+      <h2 class="sec-title"><span class="sec-num">Section 2</span>Mathematical Formulation</h2>
+
+      <p>Assume there are $n$ unknown variables $(X_1, \ldots, X_n)$ and $m$ observations $(Y_1, \ldots, Y_m)$ related by the linear model:</p>
+
+      <div class="eq-block">
+        $$\begin{aligned}
+        Y_1 &= H_{1,1}X_1 + \cdots + H_{1,n}X_n + W_1 \\
+        Y_2 &= H_{2,1}X_1 + \cdots + H_{2,n}X_n + W_2 \\
+        &\;\vdots \\
+        Y_m &= H_{m,1}X_1 + \cdots + H_{m,n}X_n + W_m
+        \end{aligned}$$
+      </div>
+
+      <p>where $(W_1, \ldots, W_m)$ represent measurement noise. In compact matrix form:</p>
+
+      <div class="eq-block">
+        $$Y = HX + W, \qquad X \in \mathbb{R}^n,\; Y \in \mathbb{R}^m,\; H \in \mathbb{R}^{m\times n},\; W \in \mathbb{R}^m$$
+      </div>
+
+      <p>For any estimate $\hat{X}$, define the residual $e = Y - H\hat{X}$. The least-squares estimate minimizes the squared norm of the residual:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(2.1)</span>
+        $$\min_{\hat{X}} \; \|Y - H\hat{X}\|^2$$
+      </div>
+
+      <p>We denote the objective function as:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(2.2)</span>
+        $$J(\hat{X}) := \|Y - H\hat{X}\|^2$$
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="sec3">
+      <h2 class="sec-title"><span class="sec-num">Section 3</span>Solution to the Least-Squares Problem</h2>
+
+      <p>We use the first-order optimality condition to find candidate minimizers.</p>
+
+      <div class="summary-box">
+        <div class="summary-box-label">First-Order Optimality Condition</div>
+        <p>For an unconstrained problem $\min_{x \in \mathbb{R}^n} f(x)$ with $f$ differentiable, if $x^\star$ is the minimizer, then $\nabla f(x^\star) = 0$.</p>
+      </div>
+
+      <div class="remark">
+        <div class="remark-label">Remark 3.1</div>
+        <p>The first-order optimality condition identifies <em>candidates</em> for optimality. A point satisfying $\nabla f(x^\star) = 0$ may be a minimizer, maximizer, or saddle point — further analysis is needed.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 1</div>
+        <p>Use the definition of the gradient in Section 9 and the geometric method to derive the expression for $\nabla J(\hat{X})$ defined in (2.2).</p>
+      </div>
+
+      <p>Applying the optimality condition $\nabla J(\hat{X}) = 0$ yields the <strong>normal equations</strong>:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(3.1)</span>
+        $$2H^\top H\hat{X} - 2H^\top Y = 0$$
+      </div>
+
+      <p>When $H^\top H$ is invertible, the unique solution is:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(3.2)</span>
+        $$\boxed{\hat{X} = (H^\top H)^{-1} H^\top Y}$$
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 2</div>
+        <p>Show that any $\hat{X}$ satisfying the optimality condition (3.1) is a global minimizer by showing:</p>
+        $$J(X) - J(\hat{X}) = \|HX - H\hat{X}\|^2 \geq 0 \quad \text{for all } X$$
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 3.2</div>
+        <p>For the three-equation example from Section 1, the least-squares objective is:</p>
+        <div class="eq-block">
+          $$J(\hat{X}) = (\hat{X}_1 + \hat{X}_2 - 4)^2 + (2\hat{X}_1 - \hat{X}_2 - 2)^2 + (\hat{X}_1 - 2\hat{X}_2 - 1)^2$$
+        </div>
+        <p>Setting $\nabla J(\hat{X}) = 0$ gives:</p>
+        <div class="eq-block">
+          $$\begin{bmatrix} 2X_1 - X_2 - 3 \\ 2X_2 - X_1 \end{bmatrix} = 0 \implies (X_1, X_2) = (2, 1)$$
+        </div>
+      </div>
+
+      <h3 class="subsec-title" id="sec3-1"><span class="subsec-num">3.1</span>Uniqueness of the Solution</h3>
+
+      <p>The matrix $H^\top H$ is invertible if and only if the null space of $H$ is empty, which requires all $n$ columns of $H$ to be linearly independent. Since $H$ is $m \times n$, this requires $m \geq n$ — at least as many measurements as unknowns.</p>
+
+      <p>Geometrically, each measurement is an inner product between a row $H_k$ of $H$ and the unknown $X$:</p>
+
+      <div class="eq-block">
+        $$Y_k = H_k^\top X + W_k, \qquad k = 1, \ldots, m$$
+      </div>
+
+      <p>Invertibility requires measuring $X$ along at least $n$ linearly independent directions. When the null space of $H$ is empty, the minimizer is unique: if $\hat{X}$ and $X'$ are both minimizers, then $H\hat{X} = HX'$, and an empty null space forces $\hat{X} = X'$.</p>
+
+      <div class="reminder">
+        <div class="reminder-label">Reminder: Rank-Nullity Theorem</div>
+        <p>For any $m \times n$ matrix $A$:</p>
+        <p style="text-align:center;">$\dim(\mathcal{N}(A)) + \dim(\mathcal{R}(A)) = n$</p>
+        <p>The number of linearly independent columns equals $\dim(\mathcal{R}(A))$ and the number of linearly independent rows equals $\dim(\mathcal{R}(A^\top))$. The two are always equal.</p>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Summary · Least-Squares Solution</div>
+        <p>Any $\hat{X}$ solving the normal equations $H^\top H \hat{X} = H^\top Y$ is a global minimizer of $\|Y - H\hat{X}\|^2$.</p>
+        <p>If $H$ has empty null space (at least $n$ linearly independent rows), the minimizer is <em>unique</em>:</p>
+        <div class="eq-block">$$\hat{X} = (H^\top H)^{-1} H^\top Y$$</div>
+      </div>
+
+      <h3 class="subsec-title" id="sec3-2"><span class="subsec-num">3.2</span>Regularization Technique</h3>
+
+      <p>When $H$ has a non-empty null space (too few independent measurements), there are infinitely many minimizers. We add a penalty on $\|\hat{X}\|$ and solve:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(3.3)</span>
+        $$\min_{\hat{X}} \; \|Y - H\hat{X}\|^2 + \lambda\|\hat{X}\|^2, \qquad \lambda > 0$$
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 3</div>
+        <p>Show that the solution to the regularized problem is:</p>
+        <div class="eq-block">
+          <span class="eq-label">(3.4)</span>
+          $$\hat{X}_\lambda = (H^\top H + \lambda I)^{-1} H^\top Y$$
+        </div>
+        <p>Argue why $H^\top H + \lambda I$ is invertible for all $\lambda > 0$, regardless of $H$.</p>
+        <p>Also show that $X^\star = \lim_{\lambda \to 0} \hat{X}_\lambda$ is the minimum-norm solution among all minimizers of $\|Y - H\hat{X}\|^2$, and equals $H^\dagger Y$ where $H^\dagger$ is the pseudo-inverse.</p>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="sec4">
+      <h2 class="sec-title"><span class="sec-num">Section 4</span>Application: Linear System Identification</h2>
+
+      <p>Consider a discrete-time linear system:</p>
+
+      <div class="eq-block">
+        $$z(t+1) = Az(t) + W(t), \qquad t = 0, 1, \ldots, t_f$$
+      </div>
+
+      <p>where $z(t) \in \mathbb{R}^d$ is the state (e.g. deformation of an aircraft wing) and $A$ is unknown. We want to estimate $A$ from data $\{z(0), z(1), \ldots, z(t_f)\}$ by minimizing the one-step prediction error:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(4.1)</span>
+        $$\min_A \sum_{k=0}^{t_f - 1} \|z(t+1) - Az(t)\|^2$$
+      </div>
+
+      <p>Setting $X = \text{vec}(A) \in \mathbb{R}^{d^2}$ (vectorize row by row), the dynamic update becomes $Y(t) = H(t)X + W(t)$ where $H(t)$ is a block-diagonal matrix built from $z(t)$. Stacking over all time steps gives $Y = HX + W$, and the least-squares solution applies directly.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 4</div>
+        <p>Show that the objective (4.1) can be written as $\min_{\hat{X}} \sum_{t=0}^{t_f-1} \|Y(t) - H(t)\hat{X}\|^2$ with solution:</p>
+        <div class="eq-block">
+          $$\hat{X} = \left(\sum_{t=0}^{t_f-1} H(t)^\top H(t)\right)^{-1} \sum_{t=0}^{t_f-1} H(t)^\top Y(t)$$
+        </div>
+      </div>
+
+      <p>The minimizer is unique when $H$ has $d^2$ linearly independent rows, which occurs when there are $d$ linearly independent state vectors in $\{z(0), \ldots, z(t_f - 1)\}$. This is the <strong>persistence of excitation</strong> condition — all modes of the system must be excited for successful identification.</p>
+
+      <div class="example">
+        <div class="example-label">Example 4.1</div>
+        <p>Numerical demonstration of system identification for a mass-spring system with two springs. See the Jupyter notebook.</p>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section" id="sec5">
+      <h2 class="sec-title"><span class="sec-num">Section 5</span>Error Analysis</h2>
+
+      <p>The estimation error from the least-squares algorithm depends directly on the minimum singular value of $H$. We first review the singular value decomposition.</p>
+
+      <h3 class="subsec-title" id="sec5-1"><span class="subsec-num">5.1</span>Mathematical Review: Singular Value Decomposition</h3>
+
+      <p>For an $m \times n$ matrix $H$ with rank $r$, the SVD admits three equivalent representations:</p>
+
+      <p><strong>1. Sum of rank-one matrices:</strong></p>
+      <div class="eq-block">
+        $$H = \sum_{i=1}^r \sigma_i u_i v_i^\top$$
+      </div>
+      <p>where $\sigma_i > 0$ are singular values, $u_i \in \mathbb{R}^m$ and $v_i \in \mathbb{R}^n$ are orthonormal vectors.</p>
+
+      <p><strong>2. Compact matrix product:</strong></p>
+      <div class="eq-block">
+        $$H = U \Sigma V^\top$$
+      </div>
+      <p>where $U \in \mathbb{R}^{m \times r}$, $\Sigma \in \mathbb{R}^{r \times r}$ diagonal with positive entries, $V \in \mathbb{R}^{n \times r}$, and $U^\top U = V^\top V = I_{r \times r}$. Note $UU^\top$ projects onto the range of $H$, and $VV^\top$ projects onto the orthogonal complement of the null space of $H$.</p>
+
+      <p><strong>3. Full matrix product:</strong> Extending $U$ and $V$ to square orthogonal matrices $\tilde{U}$ (m×m) and $\tilde{V}$ (n×n):</p>
+      <div class="eq-block">
+        $$H = \tilde{U}\tilde{\Sigma}\tilde{V}^\top, \qquad \tilde{\Sigma} = \begin{bmatrix} \Sigma & 0_{r \times (n-r)} \\ 0_{(m-r) \times r} & 0_{(m-r) \times (n-r)} \end{bmatrix}$$
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Key Definitions</div>
+        <p><strong>Pseudo-inverse:</strong> $H^\dagger = V\Sigma^{-1}U^\top = \sum_{i=1}^r \frac{1}{\sigma_i} v_i u_i^\top$, satisfying $H^\dagger H = VV^\top$ and $HH^\dagger = UU^\top$.</p>
+        <p><strong>Matrix norm:</strong> $\|H\| = \max_{x \in \mathbb{R}^n} \frac{\|Hx\|}{\|x\|} = \max_i \sigma_i(H)$ (largest singular value).</p>
+      </div>
+
+      <h3 class="subsec-title" id="sec5-2"><span class="subsec-num">5.2</span>Elementary Error Analysis</h3>
+
+      <p>Working in the SVD basis (with $r = n$ for a unique minimizer), transform variables as:</p>
+
+      <div class="eq-block">
+        $$\alpha = \tilde{V}^\top X, \quad \hat{\alpha} = \tilde{V}^\top \hat{X}, \quad \beta = \tilde{U}^\top Y, \quad \omega = \tilde{U}^\top W$$
+      </div>
+
+      <p>In this basis, the observation model becomes $\beta_i = \sigma_i \alpha_i + \omega_i$ for $i = 1, \ldots, n$, and the minimizer takes the simple form $\hat{\alpha}_i = \beta_i / \sigma_i$. The estimation error then simplifies to:</p>
+
+      <div class="eq-block">
+        $$\|X - \hat{X}\|^2 = \sum_{i=1}^n (\alpha_i - \hat{\alpha}_i)^2 = \sum_{i=1}^n \frac{\omega_i^2}{\sigma_i^2} = \sum_{i=1}^n \frac{|u_i^\top W|^2}{\sigma_i^2}$$
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Error Analysis Summary</div>
+        <p>Assuming $\text{rank}(H) = n$, the unique least-squares estimate $\hat{X}$ satisfies:</p>
+        <div class="eq-block">
+          $$\|X - \hat{X}\|^2 = \sum_{i=1}^n \frac{|u_i^\top W|^2}{\sigma_i^2}$$
+        </div>
+        <p>Assuming homogeneous noise with magnitude $\sigma_W$, this yields the bound:</p>
+        <div class="eq-block">
+          $$\|X - \hat{X}\|^2 \lesssim n \cdot \frac{\sigma_W^2}{\sigma_{\min}(H)^2} = \frac{\text{size of unknown} \times \text{noise}^2}{\text{min. singular value}^2}$$
+        </div>
+        <p>For randomly collected data with $m$ rows, $\sigma_{\min}(H) \sim \sqrt{m}$, giving $\|X - \hat{X}\| \lesssim \frac{\sqrt{n}\,\sigma_W}{\sqrt{m}}$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 5</div>
+        <p>Use the SVD to express the regularized least-squares solution (3.3) as $\hat{X}_\lambda = \sum_{i=1}^n c_i v_i$. Give the expression for the coefficients $c_i$. Take the limit $\lambda \to 0$ and show it equals $H^\dagger Y$.</p>
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section" id="sec6">
+      <h2 class="sec-title"><span class="sec-num">Section 6</span>Application: Auto-Regressive Models</h2>
+
+      <p>Given time-series data $\{z(0), z(1), \ldots, z(t_f)\}$ (scalar), the linear auto-regressive model of order $n$ predicts future values from the last $n$ observations:</p>
+
+      <div class="eq-block">
+        <span class="eq-label">(6.1)</span>
+        $$z(t) = a_1 z(t-1) + a_2 z(t-2) + \cdots + a_n z(t-n) + W(t), \qquad t = n, n+1, \ldots, t_f$$
+      </div>
+
+      <p>The unknown coefficients $a_1, \ldots, a_n$ can be estimated via least-squares once (6.1) is cast as $Y = HX + W$.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 6</div>
+        <p>By suitable definition of $Y$, $H$, $X$, and $W$, express (6.1) in the vector-matrix form $Y = HX + W$. Give the size and expression for each, in terms of $a_1, \ldots, a_n$, $z(0), \ldots, z(t_f)$, and $W(n), \ldots, W(t_f)$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 7</div>
+        <p>Download the provided data file with $\{z(1), \ldots, z(2T)\}$, $T = 100$. Split into training (first 100) and test (last 100) sets.</p>
+        <ol>
+          <li>Write a function that learns an AR model of order $n$ from the training set.</li>
+          <li>Evaluate the training error: $\frac{1}{T-n}\sum_{t=n+1}^{T} (\hat{z}(t) - z(t))^2$.</li>
+          <li>Plot training error vs. $n$ for $n = 1, 2, \ldots, 10$.</li>
+          <li>Evaluate and plot the test error on the remaining 100 entries.</li>
+          <li>Can you identify the true model order from your results?</li>
+        </ol>
+      </div>
+
+      <p>In practice, the model order is unknown. Statistical criteria such as the <em>Akaike information criterion (AIC)</em> provide principled ways to select the order that balances fit and overfitting. We do not cover these techniques in this course.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section" id="sec7">
+      <h2 class="sec-title"><span class="sec-num">Section 7</span>Application: Curve Fitting</h2>
+
+      <p>Given time-series data $\{(t_k, Y_k)\}_{k=1}^m$, choose $n$ basis functions $\{\psi_1(t), \ldots, \psi_n(t)\}$ (e.g. polynomials, Fourier modes) and model each observation as:</p>
+
+      <div class="eq-block">
+        $$Y_k = \sum_{i=1}^n X_i \psi_i(t_k) + W_k$$
+      </div>
+
+      <p>Stacking gives $Y = HX + W$ where $H_{k,i} = \psi_i(t_k)$, and the unknowns $X = [X_1, \ldots, X_n]^\top$ are the expansion coefficients.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 8</div>
+        <p>Find the expression for $H$ when fitting a linear curve ($n = 2$, $\psi_1(t) = 1$, $\psi_2(t) = t$).</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 9</div>
+        <p>Is it a good idea to use the basis $\psi = \{\sin(t), \cos(t), \sin(t + \pi/3)\}$ or $\psi = \{t+1,\; t^2-t,\; t^2+3t\}$? Explain your reasoning.</p>
+      </div>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section" id="sec8">
+      <h2 class="sec-title"><span class="sec-num">Section 8</span>Programming Exercise</h2>
+
+      <p>Track a target with constant but unknown acceleration. The position is $r(t) = [r_x(t), r_y(t)]$, and with constant acceleration:</p>
+
+      <div class="eq-block">
+        $$r_x(t) = a_x t^2 + b_x t + c_x, \qquad r_y(t) = a_y t^2 + b_y t + c_y$$
+      </div>
+
+      <p>The unknowns are $X = [a_x, b_x, c_x, a_y, b_y, c_y]^\top$ and the noisy observations are $Y_1(t) = r_x(t) + W_1(t)$, $Y_2(t) = r_y(t) + W_2(t)$.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Deliverables</div>
+        <ol>
+          <li><strong>(a)</strong> Write the observation in the form $Y(t) = H(t)X + W$. Specify $H(t)$.</li>
+          <li><strong>(b)</strong> Use the provided data files (time-stamps and measurements) to estimate $X$.</li>
+          <li><strong>(c)</strong> To predict the target position at $t = 10$, which option would you choose?
+            <ul style="margin-top:0.4rem; padding-left:1.5rem;">
+              <li>(A) $(10, -90)$</li>
+              <li>(B) $(20, -80)$</li>
+              <li>(C) $(15, -100)$</li>
+              <li>(D) $(15, -80)$</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section" id="sec9">
+      <h2 class="sec-title"><span class="sec-num">Section 9</span>Appendix: Mathematical Review on Gradients</h2>
+
+      <p>We review two approaches to computing gradients of functions on vector spaces.</p>
+
+      <p><strong>Gradient via partial derivatives.</strong> For $f: \mathbb{R}^n \to \mathbb{R}$, the gradient at $x$ is the $n$-vector of partial derivatives:</p>
+
+      <div class="eq-block">
+        $$\nabla f(x) = \begin{bmatrix} \partial f/\partial x_1 \\ \vdots \\ \partial f/\partial x_n \end{bmatrix}$$
+      </div>
+
+      <p>For example, $f(x) = x_1^2 + \cdots + x_n^2$ gives $\nabla f(x) = x$.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 10</div>
+        <p>Let $f(x) = \frac{1}{2}x^\top Ax + b^\top x$ where $A$ is symmetric $n \times n$ and $b \in \mathbb{R}^n$. Show that $\nabla f(x) = Ax + b$.</p>
+      </div>
+
+      <p><strong>Geometric (coordinate-free) approach.</strong> This method works on any vector space $V$ with inner product $\langle \cdot, \cdot \rangle$. Define the <em>directional derivative</em> of $f: V \to \mathbb{R}$ at $x$ along direction $u$ as:</p>
+
+      <div class="eq-block">
+        $$D_u f(x) := \frac{d}{dt} f(x + tu)\Big|_{t=0}$$
+      </div>
+
+      <p>The <strong>gradient</strong> $\nabla f(x) \in V$ is the unique vector satisfying:</p>
+
+      <div class="eq-block">
+        $$D_u f(x) = \langle \nabla f(x),\, u \rangle \qquad \text{for all directions } u$$
+      </div>
+
+      <p>The gradient points in the direction of steepest ascent.</p>
+
+      <div class="example">
+        <div class="example-label">Example 9.1</div>
+        <p>For $f(x) = \frac{1}{2}x^\top Ax + b^\top x$, compute the directional derivative:</p>
+        <div class="eq-block">
+          $$D_u f(x) = \frac{d}{dt}\Big[\tfrac{1}{2}(x+tu)^\top A(x+tu) + b^\top(x+tu)\Big]_{t=0} = \tfrac{1}{2}u^\top Ax + \tfrac{1}{2}x^\top Au + b^\top u$$
+        </div>
+        <p>Since $A$ is symmetric, this equals $(Ax + b)^\top u = \langle Ax + b,\, u\rangle$, concluding $\nabla f(x) = Ax + b$ — without any partial differentiation.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px', threshold: 0.05 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
