@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 3 — Essentials of Probability Theory · AA/EE/ME 549</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1a1a1a;
+      --muted:   #6b6b6b;
+      --rule:    #e0ddd8;
+      --bg:      #faf9f7;
+      --sidebar: #f0ede8;
+      --accent:  #2a5caa;
+      --serif:   'EB Garamond', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --mono:    'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell { display: grid; grid-template-columns: 230px 1fr; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    aside {
+      position: sticky; top: 0; height: 100vh;
+      background: var(--sidebar); border-right: 1px solid var(--rule);
+      padding: 2rem 1.5rem; display: flex; flex-direction: column; overflow-y: auto;
+    }
+
+    .course-tag  { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+    .course-title-side { font-family: var(--serif); font-size: 0.95rem; font-weight: 500; line-height: 1.35; color: var(--ink); margin-bottom: 0.2rem; }
+    .course-sub  { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+    .toc-label   { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.6rem; }
+
+    nav { display: flex; flex-direction: column; gap: 0; }
+
+    nav a {
+      font-family: var(--sans); font-size: 0.78rem; text-decoration: none; color: var(--muted);
+      padding: 0.3rem 0; padding-left: 0.65rem; margin-left: -0.65rem;
+      border-left: 2px solid transparent; line-height: 1.4; transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a.sub { font-size: 0.72rem; padding-left: 1.25rem; color: #999; }
+    nav a:hover, nav a.active { color: var(--accent); border-left-color: var(--accent); }
+
+    .sidebar-footer { margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .sidebar-footer a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; transition: color 0.15s; }
+    .sidebar-footer a:hover { color: var(--accent); }
+
+    /* ── Main ── */
+    main { padding: 3.5rem 5rem 6rem; max-width: 820px; }
+
+    .lecture-meta { font-family: var(--sans); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+
+    h1.lecture-title { font-family: var(--serif); font-size: 2.4rem; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
+    .lecture-author { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+    /* ── Objectives ── */
+    .objectives { border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; background: #f4f7fc; padding: 1.1rem 1.4rem; margin-bottom: 3rem; }
+    .objectives-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+    .objectives ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .objectives li { font-family: var(--sans); font-size: 0.88rem; color: #2a3a5a; line-height: 1.6; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 3.5rem; opacity: 0; transform: translateY(14px); animation: fadeUp 0.5s ease forwards; }
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.08s; }
+    .section:nth-child(3)  { animation-delay: 0.11s; }
+    .section:nth-child(4)  { animation-delay: 0.14s; }
+    .section:nth-child(5)  { animation-delay: 0.17s; }
+    .section:nth-child(6)  { animation-delay: 0.20s; }
+    .section:nth-child(7)  { animation-delay: 0.23s; }
+    .section:nth-child(8)  { animation-delay: 0.26s; }
+    .section:nth-child(9)  { animation-delay: 0.29s; }
+    .section:nth-child(10) { animation-delay: 0.32s; }
+    .section:nth-child(11) { animation-delay: 0.35s; }
+    .section:nth-child(12) { animation-delay: 0.38s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    h2.sec-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    h2.sec-title .sec-num { font-family: var(--sans); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.15rem; }
+
+    p { margin-bottom: 1rem; color: #2a2a2a; }
+
+    ul.content-list, ol.content-list { padding-left: 1.4rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    ul.content-list li, ol.content-list li { color: #2a2a2a; line-height: 1.75; }
+
+    /* ── Equation ── */
+    .eq-block { margin: 1.25rem 0; padding: 0.5rem 0; overflow-x: auto; }
+    .eq-label { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); float: right; margin-top: 0.2rem; }
+
+    /* ── Rules box ── */
+    .rules-box { border: 1px solid var(--rule); border-radius: 4px; background: #f8f6f2; padding: 1.3rem 1.6rem; margin: 1.75rem 0; }
+    .rules-box-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .rules-box ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .rules-box li { font-size: 0.95rem; color: #2a2a2a; line-height: 1.7; }
+
+    /* ── Summary box ── */
+    .summary-box { border: 1px solid var(--rule); border-radius: 4px; background: #f8f6f2; padding: 1.4rem 1.75rem; margin: 2rem 0; }
+    .summary-box-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .summary-box p { margin-bottom: 0.5rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    /* ── Example ── */
+    .example { border-left: 3px solid #c8b88a; background: #fdf8ee; padding: 1rem 1.2rem; margin: 1.75rem 0; border-radius: 0 4px 4px 0; }
+    .example-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #8a6a20; font-weight: 500; margin-bottom: 0.5rem; }
+    .example p { color: #3a2a0a; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .example p:last-child { margin-bottom: 0; }
+
+    /* ── Exercise ── */
+    .exercise { border: 1px solid #d4c8e8; border-radius: 4px; background: #f5f0fb; padding: 1.1rem 1.4rem; margin: 2rem 0; }
+    .exercise-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: #5b21b6; font-weight: 500; margin-bottom: 0.5rem; }
+    .exercise p { color: #1a0a3a; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .exercise p:last-child { margin-bottom: 0; }
+    .exercise ol { padding-left: 1.3rem; margin-top: 0.5rem; }
+    .exercise ol li { font-family: var(--sans); font-size: 0.88rem; color: #1a0a3a; line-height: 1.7; margin-bottom: 0.35rem; }
+
+    /* ── Remark ── */
+    .remark { border-left: 3px solid #aaa; background: #f5f5f3; padding: 0.9rem 1.2rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    .remark-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #555; font-weight: 500; margin-bottom: 0.4rem; }
+    .remark p { color: #333; margin-bottom: 0.4rem; font-size: 0.93rem; }
+    .remark p:last-child { margin-bottom: 0; }
+
+    /* ── Question ── */
+    .question { border-left: 3px solid #6aaa6a; background: #f0faf0; padding: 0.75rem 1.1rem; margin: 1.25rem 0; border-radius: 0 4px 4px 0; }
+    .question-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #2a7a2a; font-weight: 500; margin-bottom: 0.3rem; }
+    .question p { font-family: var(--sans); font-size: 0.88rem; color: #1a4a1a; margin-bottom: 0.3rem; }
+    .question p:last-child { margin-bottom: 0; }
+
+    /* ── Confidence interval highlight ── */
+    .conf-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .conf-item { background: white; border: 1px solid var(--rule); border-radius: 4px; padding: 0.9rem 1.1rem; text-align: center; }
+    .conf-prob { font-family: var(--sans); font-size: 1.1rem; font-weight: 500; color: var(--accent); margin-bottom: 0.2rem; }
+    .conf-range { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); }
+
+    /* ── Code ── */
+    code { font-family: var(--mono); font-size: 0.82em; background: #eee; padding: 0.1em 0.4em; border-radius: 3px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; flex-direction: row; flex-wrap: wrap; padding: 1.25rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .sidebar-footer { display: none; }
+      main { padding: 2rem 1.5rem 4rem; }
+      .conf-box { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="course-tag">AA / EE / ME 549</div>
+    <div class="course-title-side">Estimation &amp; System Identification</div>
+    <div class="course-sub">Week 3 · Probability Theory</div>
+
+    <div class="toc-label">Contents</div>
+    <nav>
+      <a href="#objectives">Learning Objectives</a>
+      <a href="#sec1">1 · Motivating Example</a>
+      <a href="#sec2">2 · Discrete Random Variables</a>
+      <a href="#sec3">3 · Continuous Random Variables</a>
+      <a href="#sec4">4 · Expectation and Variance</a>
+      <a href="#sec5">5 · Gaussian Random Variable</a>
+      <a href="#sec6">6 · Jointly Distributed</a>
+      <a href="#sec7">7 · Independence</a>
+      <a href="#sec8">8 · Covariance and Correlation</a>
+      <a href="#sec9">9 · Vector-Valued Variables</a>
+      <a href="#sec10">10 · Gaussian Random Vectors</a>
+      <a href="#sec11">11 · CLT and Law of Large Numbers</a>
+      <a href="#sec12">12 · Programming Exercise</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="course.html">← Back to course</a>
+      <a href="lecture-week2.html">← Week 2</a>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <div class="lecture-meta">Week 3 · Lecture Notes</div>
+    <h1 class="lecture-title">Essentials of Probability Theory</h1>
+    <div class="lecture-author">Amirhossein Taghvaei · University of Washington</div>
+
+    <div class="objectives" id="objectives">
+      <div class="objectives-label">Learning Objectives</div>
+      <ul>
+        <li>Identify continuous and discrete random variables and their probability density functions.</li>
+        <li>Compute expectations and variance. Apply rules of expectations and variance for a linear function of random variables.</li>
+        <li>Use the Gaussian PDF to compute mean and variance. Compute the distribution of a linear function of a Gaussian random variable.</li>
+        <li>Apply the law of large numbers and central limit theorem to analyze empirical averages.</li>
+        <li>Compute the covariance matrix between two vector-valued random variables.</li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section" id="sec1">
+      <h2 class="sec-title"><span class="sec-num">Section 1</span>Motivating Example</h2>
+
+      <p>Consider estimating a random variable $X$ generated by <code>numpy.random.randn()</code>. We do not observe $X$ directly, but observe a noisy version:</p>
+
+      <div class="eq-block">$$Y = X + W$$</div>
+
+      <p>where $W$ is also generated by <code>numpy.random.randn()</code>, independent of $X$. The goal is to form an estimate $\hat{X}$ given the observation $Y$.</p>
+
+      <div class="question">
+        <div class="question-label">Guiding Questions</div>
+        <p>1. What formula would you choose for $\hat{X}$? Is $\hat{X} = Y$ a good choice?</p>
+        <p>2. How do you evaluate the performance of your estimate?</p>
+        <p>3. If you restrict yourself to linear estimates $\hat{X} = kY$, what is the optimal $k$? Can a nonlinear estimate do better?</p>
+      </div>
+
+      <p>Answering these questions requires the framework of probability theory, developed in this lecture.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="sec2">
+      <h2 class="sec-title"><span class="sec-num">Section 2</span>Discrete Random Variables</h2>
+
+      <p>A <strong>discrete random variable</strong> $X$ is characterized by a set of possible outcomes $\{x_1, x_2, \ldots, x_K\}$ and associated probabilities $\{p_1, \ldots, p_K\}$ such that $P(X = x_k) = p_k$. The probabilities must satisfy:</p>
+
+      <ul class="content-list">
+        <li>$p_k \geq 0$ for all $k$.</li>
+        <li>$\sum_k p_k = 1$.</li>
+      </ul>
+
+      <p>Intuitively, $P(X = x_k)$ characterizes the fraction of times $X_i = x_k$ occurs over $N$ independent repetitions, as $N \to \infty$.</p>
+
+      <div class="example">
+        <div class="example-label">Example 2.1 · Bernoulli</div>
+        <p>A Bernoulli random variable with parameter $p \in [0,1]$ has $K=2$, outcomes $\{0, 1\}$, and probabilities $P(X=0) = 1-p$, $P(X=1) = p$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 2.2 · Poisson</div>
+        <p>Let $X$ be the number of emails received in $T$ hours, where emails arrive at average rate $\lambda$ per hour. Then $X$ takes values in $\{0, 1, 2, \ldots\}$ with:</p>
+        <div class="eq-block">$$P(X = k) = e^{-\lambda T} \frac{(\lambda T)^k}{k!}$$</div>
+        <p>This is called the <em>Poisson</em> distribution with parameter $\lambda T$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 1</div>
+        <p>Show that $\sum_{k=0}^\infty P(X=k) = 1$ for the Poisson random variable.</p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="sec3">
+      <h2 class="sec-title"><span class="sec-num">Section 3</span>Continuous Random Variables</h2>
+
+      <p>A <strong>continuous random variable</strong> $X$ takes values in $\mathbb{R}$ and is characterized by a <em>probability density function</em> $p(x)$ satisfying:</p>
+
+      <div class="eq-block">$$P(X \in [a,b]) = \int_a^b p(x)\,dx$$</div>
+
+      <p>A valid density must have $p(x) \geq 0$ and $\int_{-\infty}^\infty p(x)\,dx = 1$. Note that $P(X = x) = 0$ for any single point — densities assign probability to <em>intervals</em>, not points.</p>
+
+      <div class="example">
+        <div class="example-label">Example 3.1 · Uniform</div>
+        <p>$X \sim \text{Unif}[\alpha, \beta]$ has density $p(x) = \frac{1}{\beta - \alpha}$ for $x \in [\alpha, \beta]$, zero otherwise. It can be generated from $U \sim \text{Unif}[0,1]$ via $X = (\beta - \alpha)U + \alpha$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 3.2 · Exponential</div>
+        <p>$X$ has an exponential distribution with parameter $\lambda > 0$ if:</p>
+        <div class="eq-block">$$p(x) = \lambda e^{-\lambda x}, \quad x \geq 0$$</div>
+        <p>It models waiting times when the probability of an event does not change over time — e.g. lightbulb lifetimes, radioactive decay, or server request arrivals.</p>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="sec4">
+      <h2 class="sec-title"><span class="sec-num">Section 4</span>Expectation and Variance</h2>
+
+      <p>The <strong>expectation</strong> is a probability-weighted average of outcomes:</p>
+
+      <div class="eq-block">
+        $$E[X] = \begin{cases} \displaystyle\sum_{k=1}^K x_k p_k & \text{(discrete)} \\[1em] \displaystyle\int_{-\infty}^\infty x\, p(x)\,dx & \text{(continuous)} \end{cases}$$
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.1 · Die Roll</div>
+        <p>$E[X] = \frac{1}{6}(1+2+3+4+5+6) = 3.5$</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.2 · Poisson</div>
+        <p>$E[X] = \lambda T$ — the average number of emails expected after time $T$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.3 · Uniform</div>
+        <p>$E[X] = \displaystyle\int_\alpha^\beta \frac{x}{\beta-\alpha}\,dx = \frac{\alpha+\beta}{2}$</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.4 · Exponential</div>
+        <p>$E[X] = \displaystyle\int_0^\infty x\lambda e^{-\lambda x}\,dx = \frac{1}{\lambda}$ — the average waiting time when events occur at rate $\lambda$.</p>
+      </div>
+
+      <div class="remark">
+        <div class="remark-label">Remark 4.5</div>
+        <p>In this course we rarely compute expectations by direct integration. Instead, we simplify combinations of random variables to individual terms using the following rules.</p>
+      </div>
+
+      <div class="rules-box">
+        <div class="rules-box-label">Rules for Expectation</div>
+        <ul>
+          <li>$E[\alpha X] = \alpha E[X]$ for any constant $\alpha \in \mathbb{R}$.</li>
+          <li>$E[X + Y] = E[X] + E[Y]$ for any two random variables $X, Y$.</li>
+          <li>$E[\alpha] = \alpha$ for any constant $\alpha$.</li>
+        </ul>
+      </div>
+
+      <p>For any random variable $X$ and function $f$, the expectation of $f(X)$ is:</p>
+
+      <div class="eq-block">
+        $$E[f(X)] = \begin{cases} \displaystyle\sum_k f(x_k)p_k & \text{(discrete)} \\[0.5em] \displaystyle\int_{-\infty}^\infty f(x)p(x)\,dx & \text{(continuous)} \end{cases}$$
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.6</div>
+        <p>For an exponential random variable: $E[X^2] = \int_0^\infty x^2 \lambda e^{-\lambda x}\,dx = \frac{2}{\lambda^2}$.</p>
+      </div>
+
+      <p>The <strong>variance</strong> measures spread in the outcomes:</p>
+
+      <div class="eq-block">$$\text{var}(X) = E[(X - E[X])^2]$$</div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 2</div>
+        <p>Use the rules of expectation to show $\text{var}(X) = E[X^2] - E[X]^2$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.7 · Bernoulli</div>
+        <p>$\text{var}(X) = p - p^2 = p(1-p)$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 4.8 · Exponential</div>
+        <p>$\text{var}(X) = \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}$.</p>
+      </div>
+
+      <div class="rules-box">
+        <div class="rules-box-label">Rules for Variance</div>
+        <ul>
+          <li>$\text{var}(\alpha X) = \alpha^2 \text{var}(X)$ for any $\alpha \in \mathbb{R}$.</li>
+          <li>$\text{var}(X + \alpha) = \text{var}(X)$ for any constant $\alpha$.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section" id="sec5">
+      <h2 class="sec-title"><span class="sec-num">Section 5</span>Gaussian Random Variable</h2>
+
+      <p>A <strong>standard Gaussian</strong> $Z \sim \mathcal{N}(0,1)$ has density:</p>
+
+      <div class="eq-block">$$p(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$$</div>
+
+      <p>with $E[Z] = 0$ and $\text{var}(Z) = 1$. More generally, $X \sim \mathcal{N}(\mu, \sigma^2)$ has density:</p>
+
+      <div class="eq-block">$$p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$</div>
+
+      <p>with $E[X] = \mu$ and $\text{var}(X) = \sigma^2$. The parameter $\sigma > 0$ is the <em>standard deviation</em>.</p>
+
+      <p>A Gaussian remains Gaussian under linear transformations: if $X \sim \mathcal{N}(\mu, \sigma^2)$, then $Y = \alpha X + \beta \sim \mathcal{N}(\alpha\mu + \beta,\, \alpha^2\sigma^2)$.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 3</div>
+        <p>Use the rules of expectation and variance to compute the mean and variance of $Y = \alpha X + \beta$ when $X \sim \mathcal{N}(\mu, \sigma^2)$. Determine $\alpha$ and $\beta$ so that $Y \sim \mathcal{N}(0, 1)$.</p>
+      </div>
+
+      <p>Two useful <strong>confidence intervals</strong> for $X \sim \mathcal{N}(\mu, \sigma^2)$:</p>
+
+      <div class="conf-box">
+        <div class="conf-item">
+          <div class="conf-prob">≈ 69%</div>
+          <div class="conf-range">$P(|X - \mu| \leq \sigma) \approx 0.69$<br>$X \in [\mu - \sigma,\; \mu + \sigma]$</div>
+        </div>
+        <div class="conf-item">
+          <div class="conf-prob">≈ 96%</div>
+          <div class="conf-range">$P(|X - \mu| \leq 2\sigma) \approx 0.96$<br>$X \in [\mu - 2\sigma,\; \mu + 2\sigma]$</div>
+        </div>
+      </div>
+
+      <p>These confidence intervals are useful for verifying estimation algorithm performance.</p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section" id="sec6">
+      <h2 class="sec-title"><span class="sec-num">Section 6</span>Jointly Distributed Random Variables</h2>
+
+      <p>For two random variables $X$ and $Y$, we associate a <strong>joint density</strong> $p_{X,Y}(x,y)$ such that:</p>
+
+      <div class="eq-block">$$P\bigl((X,Y) \in [a,b]\times[c,d]\bigr) = \int_a^b\int_c^d p_{X,Y}(x,y)\,dx\,dy$$</div>
+
+      <p>The <strong>marginal densities</strong> are recovered by integrating out the other variable:</p>
+
+      <div class="eq-block">$$p_X(x) = \int_{-\infty}^\infty p_{X,Y}(x,y)\,dy, \qquad p_Y(y) = \int_{-\infty}^\infty p_{X,Y}(x,y)\,dx$$</div>
+
+      <div class="example">
+        <div class="example-label">Example 6.1</div>
+        <p>Let $p(x,y) = x + y$ for $(x,y) \in [0,1]\times[0,1]$. Then:</p>
+        <div class="eq-block">
+          $$E[X] = \frac{7}{12}, \quad E[X^2] = \frac{5}{12}, \quad E[XY] = \frac{1}{3}$$
+          $$p_X(x) = x + \frac{1}{2}, \quad p_Y(y) = y + \frac{1}{2}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section" id="sec7">
+      <h2 class="sec-title"><span class="sec-num">Section 7</span>Independent Random Variables</h2>
+
+      <p>Two random variables $X$ and $Y$ are <strong>independent</strong> if knowing one provides no information about the other. Formally, $X \perp Y$ if and only if:</p>
+
+      <div class="eq-block">$$p_{X,Y}(x,y) = p_X(x)\, p_Y(y)$$</div>
+
+      <p>Independence implies that $f(X)$ and $g(Y)$ are also independent for any functions $f$ and $g$, and:</p>
+
+      <div class="eq-block">$$E[f(X)g(Y)] = E[f(X)]\, E[g(Y)]$$</div>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section" id="sec8">
+      <h2 class="sec-title"><span class="sec-num">Section 8</span>Covariance, Correlation, and Geometry</h2>
+
+      <p>The <strong>covariance</strong> between $X$ and $Y$ is:</p>
+
+      <div class="eq-block">$$\text{cov}(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY] - E[X]E[Y]$$</div>
+
+      <p>Covariance has a geometric interpretation as an inner product on the space of random variables. The induced norm is $\|X\| = \sqrt{\text{var}(X)}$ and the <strong>correlation</strong> is like a cosine of an angle:</p>
+
+      <div class="eq-block">$$\text{cor}(X,Y) = \frac{\text{cov}(X,Y)}{\sqrt{\text{var}(X)\,\text{var}(Y)}} \in [-1, 1]$$</div>
+
+      <p>Correlation equal to $\pm 1$ implies a deterministic linear relationship $Y = \alpha X$. Correlation zero means $X$ and $Y$ are <em>uncorrelated</em>. Note that:</p>
+
+      <div class="eq-block">$$\text{independence} \implies \text{uncorrelated} \quad \text{(but not conversely)}$$</div>
+
+      <div class="rules-box">
+        <div class="rules-box-label">Rules for Covariance</div>
+        <ul>
+          <li>$\text{cov}(X,X) = \text{var}(X)$</li>
+          <li>$\text{cov}(X,Y) = \text{cov}(Y,X)$</li>
+          <li>$\text{cov}(X, \alpha Y) = \alpha\,\text{cov}(X,Y)$</li>
+          <li>$\text{cov}(X, Y+\alpha) = \text{cov}(X,Y)$</li>
+          <li>$\text{cov}(X, Y+Z) = \text{cov}(X,Y) + \text{cov}(X,Z)$</li>
+          <li>$\text{cov}(X,Y) = 0$ when $X$ and $Y$ are independent.</li>
+        </ul>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 8.1</div>
+        <p>For $p(x,y) = x+y$ on $[0,1]^2$, using $E[XY] = \frac{1}{3}$ and $E[X] = E[Y] = \frac{7}{12}$:</p>
+        <div class="eq-block">
+          $$\text{cov}(X,Y) = \frac{1}{3} - \left(\frac{7}{12}\right)^2, \qquad \text{cor}(X,Y) = -\frac{1}{11}$$
+        </div>
+        <p>The negative correlation makes sense: for large $x$, the density $p(x,y) = x+y$ is already large, so $Y$ tends to be smaller to keep the marginal normalized.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 4</div>
+        <p>Show that $\text{var}(X+Y) = \text{var}(X) + \text{var}(Y)$ if and only if $\text{cov}(X,Y) = 0$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 5</div>
+        <p>Assume $X$ and $Y$ are independent. Show that $\text{var}(X+Y) = \text{var}(X) + \text{var}(Y)$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 6</div>
+        <p>Consider the motivating example with $Y = X + W$, $X \sim \mathcal{N}(\mu, \sigma^2)$, and $W \sim \mathcal{N}(0, r^2)$ independent of $X$. Find the formula for $\text{cor}(X,Y)$ and explain how it depends on $\mu$, $\sigma$, and $r$.</p>
+      </div>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section" id="sec9">
+      <h2 class="sec-title"><span class="sec-num">Section 9</span>Vector-Valued Random Variables</h2>
+
+      <p>Stacking $n$ random variables $X_1, \ldots, X_n$ gives a <strong>vector-valued random variable</strong> $X \in \mathbb{R}^n$. Its expectation is defined componentwise:</p>
+
+      <div class="eq-block">$$E[X] = \begin{bmatrix} E[X_1] \\ \vdots \\ E[X_n] \end{bmatrix}$$</div>
+
+      <p>For $X \in \mathbb{R}^n$ and $Y \in \mathbb{R}^m$, the $n \times m$ <strong>covariance matrix</strong> is:</p>
+
+      <div class="eq-block">$$\text{Cov}(X,Y) = E\bigl[(X - E[X])(Y - E[Y])^\top\bigr]$$</div>
+
+      <p>The $(i,j)$-th entry is $\text{cov}(X_i, Y_j)$. We write $\text{Cov}(X) := \text{Cov}(X,X)$.</p>
+
+      <div class="rules-box">
+        <div class="rules-box-label">Rules for Covariance Matrix</div>
+        <ul>
+          <li>$\text{Cov}(X,Y) = \text{Cov}(Y,X)^\top$</li>
+          <li>$\text{Cov}(AX + b, Y) = A\,\text{Cov}(X,Y)$</li>
+          <li>$\text{Cov}(X, Y+Z) = \text{Cov}(X,Y) + \text{Cov}(Y,Z)$</li>
+          <li>$\text{Cov}(X+Y, X+Y) = \text{Cov}(X) + \text{Cov}(Y)$ if and only if $\text{Cov}(X,Y) = 0$</li>
+          <li>$\text{Cov}(X,Y) = 0$ when $X$ and $Y$ are independent.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 10 -->
+    <div class="section" id="sec10">
+      <h2 class="sec-title"><span class="sec-num">Section 10</span>Gaussian Random Vectors</h2>
+
+      <p>$X \sim \mathcal{N}(\mu, \Sigma)$ is a <strong>Gaussian random vector</strong> with mean $\mu \in \mathbb{R}^n$ and positive definite covariance $\Sigma \in \mathbb{R}^{n\times n}$ if:</p>
+
+      <div class="eq-block">$$p_X(x) = \frac{1}{\sqrt{(2\pi)^n \det(\Sigma)}}\, \exp\!\left(-\tfrac{1}{2}(x-\mu)^\top \Sigma^{-1}(x-\mu)\right)$$</div>
+
+      <p>with $E[X] = \mu$ and $\text{Cov}(X) = \Sigma$. When $\Sigma = \text{diag}(\sigma_1^2, \ldots, \sigma_n^2)$, all components are independent, since $p_X(x) = \prod_i p_{X_i}(x_i)$.</p>
+
+      <div class="rules-box">
+        <div class="rules-box-label">Properties of Gaussian Vectors</div>
+        <ul>
+          <li>If $X \sim \mathcal{N}(\mu, \Sigma)$ and $Y = AX + b$, then $Y \sim \mathcal{N}(A\mu + b,\; A\Sigma A^\top)$.</li>
+          <li>If $X \sim \mathcal{N}(\mu_1, \Sigma_1)$ and $Y \sim \mathcal{N}(\mu_2, \Sigma_2)$ are independent, then $X + Y \sim \mathcal{N}(\mu_1+\mu_2,\; \Sigma_1+\Sigma_2)$.</li>
+          <li>Two Gaussian vectors $X$ and $Y$ are independent if and only if $\text{Cov}(X,Y) = 0$.</li>
+        </ul>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 10.1 · Observation Model</div>
+        <p>Let $X \sim \mathcal{N}(\mu, \Sigma)$ and $Y = HX + W$ with $W \sim \mathcal{N}(0, R)$ independent of $X$. Then:</p>
+        <div class="eq-block">
+          $$\text{Cov}(X, Y) = \text{Cov}(X, HX + W) = \text{Cov}(X,X)H^\top = \Sigma H^\top$$
+          $$\text{Cov}(Y, Y) = H\Sigma H^\top + R$$
+        </div>
+        <p>These quantities will be central to the optimal estimation formulas developed later in the course.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 7</div>
+        <p>Let $X \sim \mathcal{N}(\mu, \Sigma)$ be an $n$-dimensional Gaussian. Find $A$ and $b$ such that $Y = AX + b \sim \mathcal{N}(0, I)$.</p>
+      </div>
+    </div>
+
+    <!-- Section 11 -->
+    <div class="section" id="sec11">
+      <h2 class="sec-title"><span class="sec-num">Section 11</span>Central Limit Theorem and Law of Large Numbers</h2>
+
+      <p>Let $\{X_1, \ldots, X_N\}$ be $N$ independent copies of a random variable $X$ with $E[X] = \mu$ and $\text{var}(X) = \sigma^2$. Define the empirical average $Y_N = \frac{1}{N}\sum_{i=1}^N X_i$.</p>
+
+      <p>Computing the mean-squared error of $Y_N$ as an estimate of $\mu$:</p>
+
+      <div class="eq-block">
+        $$E\bigl[(Y_N - \mu)^2\bigr] = \frac{1}{N^2}\sum_{i=1}^N \text{var}(X_i) = \frac{\sigma^2}{N}$$
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Law of Large Numbers</div>
+        <p>As $N \to \infty$, the empirical average converges to the true mean:</p>
+        <div class="eq-block">$$\lim_{N\to\infty} Y_N = \mu$$</div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Central Limit Theorem</div>
+        <p>For large $N$, the normalized empirical average converges in distribution to a standard Gaussian:</p>
+        <div class="eq-block">$$\frac{\sqrt{N}}{\sigma}(Y_N - \mu) \xrightarrow{d} \mathcal{N}(0,1) \quad \text{as } N \to \infty$$</div>
+        <p>This holds regardless of the distribution of $X_i$. It is the fundamental reason why Gaussian distributions arise naturally — uncertainties are typically sums of many small independent contributions.</p>
+      </div>
+    </div>
+
+    <!-- Section 12 -->
+    <div class="section" id="sec12">
+      <h2 class="sec-title"><span class="sec-num">Section 12</span>Programming Exercise</h2>
+
+      <p>The goal is to become familiar with generating random variables, computing expectations, and verifying the central limit theorem. Throughout, use only <code>numpy.random.rand()</code> for random number generation (which produces $U \sim \text{Unif}[0,1]$).</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Deliverables</div>
+        <ol>
+          <li><strong>(a)</strong> Let $X$ be a biased coin toss with $P(\text{heads}) = 2 \cdot P(\text{tails})$. Assign 1 to heads, 0 to tails. Express $X$ in terms of $U \sim \text{Unif}[0,1]$ in the form $X = a$ if $U \leq c$, else $X = b$. Determine $a$, $b$, and $c$.</li>
+          <li><strong>(b)</strong> Define $Y_n = \sum_{i=1}^n X_i$ (number of heads in $n$ tosses). Generate $N = 10^4$ realizations of $Y_n$. Plot histograms for $n = 1, 2, 10, 100$.</li>
+          <li><strong>(c)</strong> Derive formulas for $E[Y_n]$ and $\text{var}(Y_n)$ in terms of $n$. Compare with numerical estimates $\frac{1}{N}\sum_i Y_n^i$ and $\frac{1}{N}\sum_i (Y_n^i - \bar{Y}_n)^2$.</li>
+          <li><strong>(d)</strong> Express $Z_n$ as a function of $Y_n$ such that $Z_n \approx \mathcal{N}(0,1)$ for large $n$. Verify by generating $Z_n$ for $n=100$, plotting a histogram, and overlaying the $\mathcal{N}(0,1)$ density.</li>
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px', threshold: 0.05 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
