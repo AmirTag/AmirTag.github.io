@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 4 — Minimum MSE Estimation · AA/EE/ME 549</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1a1a1a;
+      --muted:   #6b6b6b;
+      --rule:    #e0ddd8;
+      --bg:      #faf9f7;
+      --sidebar: #f0ede8;
+      --accent:  #2a5caa;
+      --serif:   'EB Garamond', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --mono:    'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shell { display: grid; grid-template-columns: 230px 1fr; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    aside {
+      position: sticky; top: 0; height: 100vh;
+      background: var(--sidebar); border-right: 1px solid var(--rule);
+      padding: 2rem 1.5rem; display: flex; flex-direction: column; overflow-y: auto;
+    }
+
+    .course-tag       { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem; }
+    .course-title-side{ font-family: var(--serif); font-size: 0.95rem; font-weight: 500; line-height: 1.35; color: var(--ink); margin-bottom: 0.2rem; }
+    .course-sub       { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); margin-bottom: 2rem; }
+    .toc-label        { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.6rem; }
+
+    nav { display: flex; flex-direction: column; gap: 0; }
+    nav a { font-family: var(--sans); font-size: 0.78rem; text-decoration: none; color: var(--muted); padding: 0.3rem 0; padding-left: 0.65rem; margin-left: -0.65rem; border-left: 2px solid transparent; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
+    nav a.sub { font-size: 0.72rem; padding-left: 1.25rem; color: #999; }
+    nav a:hover, nav a.active { color: var(--accent); border-left-color: var(--accent); }
+
+    .sidebar-footer { margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .sidebar-footer a { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.35rem; transition: color 0.15s; }
+    .sidebar-footer a:hover { color: var(--accent); }
+
+    /* ── Main ── */
+    main { padding: 3.5rem 5rem 6rem; max-width: 820px; }
+
+    .lecture-meta   { font-family: var(--sans); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.5rem; }
+    h1.lecture-title{ font-family: var(--serif); font-size: 2.4rem; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
+    .lecture-author { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+    /* ── Objectives ── */
+    .objectives { border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; background: #f4f7fc; padding: 1.1rem 1.4rem; margin-bottom: 3rem; }
+    .objectives-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; font-weight: 500; }
+    .objectives ul { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .objectives li { font-family: var(--sans); font-size: 0.88rem; color: #2a3a5a; line-height: 1.6; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 3.5rem; opacity: 0; transform: translateY(14px); animation: fadeUp 0.5s ease forwards; }
+    .section:nth-child(1)  { animation-delay: 0.04s; }
+    .section:nth-child(2)  { animation-delay: 0.08s; }
+    .section:nth-child(3)  { animation-delay: 0.12s; }
+    .section:nth-child(4)  { animation-delay: 0.16s; }
+    .section:nth-child(5)  { animation-delay: 0.20s; }
+    .section:nth-child(6)  { animation-delay: 0.24s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    h2.sec-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }
+    h2.sec-title .sec-num { font-family: var(--sans); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.15rem; }
+
+    h3.subsec-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); margin-top: 2rem; margin-bottom: 0.75rem; }
+    h3.subsec-title .subsec-num { font-family: var(--sans); font-size: 0.68rem; color: var(--muted); margin-right: 0.4rem; }
+
+    p { margin-bottom: 1rem; color: #2a2a2a; }
+    ul.content-list, ol.content-list { padding-left: 1.4rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    ul.content-list li, ol.content-list li { color: #2a2a2a; line-height: 1.75; }
+
+    /* ── Equation ── */
+    .eq-block { margin: 1.25rem 0; padding: 0.5rem 0; overflow-x: auto; }
+    .eq-label { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); float: right; margin-top: 0.2rem; }
+
+    /* ── Summary / Key result ── */
+    .summary-box { border: 1px solid var(--rule); border-radius: 6px; background: #f8f6f2; padding: 1.4rem 1.75rem; margin: 2rem 0; }
+    .summary-box-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .summary-box p { margin-bottom: 0.5rem; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    /* ── Theorem/key result box ── */
+    .theorem-box { border: 1px solid #b8cce4; border-radius: 6px; background: #eef4fb; padding: 1.3rem 1.6rem; margin: 2rem 0; }
+    .theorem-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--accent); font-weight: 500; margin-bottom: 0.6rem; }
+    .theorem-box p { color: #1a2a3a; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .theorem-box p:last-child { margin-bottom: 0; }
+
+    /* ── Example ── */
+    .example { border-left: 3px solid #c8b88a; background: #fdf8ee; padding: 1rem 1.2rem; margin: 1.75rem 0; border-radius: 0 4px 4px 0; }
+    .example-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #8a6a20; font-weight: 500; margin-bottom: 0.5rem; }
+    .example p { color: #3a2a0a; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .example p:last-child { margin-bottom: 0; }
+
+    /* ── Exercise ── */
+    .exercise { border: 1px solid #d4c8e8; border-radius: 4px; background: #f5f0fb; padding: 1.1rem 1.4rem; margin: 2rem 0; }
+    .exercise-label { font-family: var(--sans); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.09em; color: #5b21b6; font-weight: 500; margin-bottom: 0.5rem; }
+    .exercise p { color: #1a0a3a; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .exercise p:last-child { margin-bottom: 0; }
+    .exercise ol { padding-left: 1.3rem; margin-top: 0.5rem; }
+    .exercise ol li { font-family: var(--sans); font-size: 0.88rem; color: #1a0a3a; line-height: 1.7; margin-bottom: 0.35rem; }
+
+    /* ── Remark ── */
+    .remark { border-left: 3px solid #aaa; background: #f5f5f3; padding: 0.9rem 1.2rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    .remark-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: #555; font-weight: 500; margin-bottom: 0.4rem; }
+    .remark p { color: #333; margin-bottom: 0.4rem; font-size: 0.93rem; }
+    .remark p:last-child { margin-bottom: 0; }
+
+    /* ── Proof ── */
+    .proof { border-left: 3px solid var(--rule); padding: 0.9rem 1.2rem; margin: 1.25rem 0; }
+    .proof-label { font-family: var(--sans); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); font-weight: 500; margin-bottom: 0.4rem; }
+    .proof p { color: #444; font-size: 0.93rem; margin-bottom: 0.4rem; font-style: italic; }
+    .proof p:last-child { margin-bottom: 0; }
+
+    /* ── Remarks numbered list ── */
+    .remarks-list { display: flex; flex-direction: column; gap: 0.85rem; margin: 1rem 0; }
+    .remark-item { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0.5rem; align-items: baseline; }
+    .remark-num { font-family: var(--sans); font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+    .remark-item p { margin-bottom: 0; font-size: 0.95rem; color: #2a2a2a; }
+
+    /* ── Figure ── */
+    .figure { margin: 1.75rem 0; text-align: center; }
+    .figure img { max-width: 72%; border-radius: 4px; border: 1px solid var(--rule); }
+    .figure-caption { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.5; }
+
+    code { font-family: var(--mono); font-size: 0.82em; background: #eee; padding: 0.1em 0.4em; border-radius: 3px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; flex-direction: row; flex-wrap: wrap; padding: 1.25rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .sidebar-footer { display: none; }
+      main { padding: 2rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="course-tag">AA / EE / ME 549</div>
+    <div class="course-title-side">Estimation &amp; System Identification</div>
+    <div class="course-sub">Week 4 · Minimum MSE Estimation</div>
+
+    <div class="toc-label">Contents</div>
+    <nav>
+      <a href="#objectives">Learning Objectives</a>
+      <a href="#sec1">1 · Intro to MSE Estimation</a>
+      <a href="#sec2">2 · Minimum Linear MSE</a>
+      <a href="#sec2-1" class="sub">2.1 Scalar Case</a>
+      <a href="#sec2-2" class="sub">2.2 Vector Case</a>
+      <a href="#sec3">3 · Minimum MSE Estimation</a>
+      <a href="#sec3-1" class="sub">3.1 Conditional Probability</a>
+      <a href="#sec3-2" class="sub">3.2 Conditional Densities</a>
+      <a href="#sec3-3" class="sub">3.3 Conditional Expectation</a>
+      <a href="#sec3-4" class="sub">3.4 Optimality of Cond. Exp.</a>
+      <a href="#sec4">4 · Jointly Gaussian Setting</a>
+      <a href="#sec5">5 · Programming Exercise</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="course.html">← Back to course</a>
+      <a href="lecture-week3.html">← Week 3</a>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <div class="lecture-meta">Week 4 · Lecture Notes</div>
+    <h1 class="lecture-title">Minimum MSE Estimation</h1>
+    <div class="lecture-author">Amirhossein Taghvaei · University of Washington</div>
+
+    <div class="objectives" id="objectives">
+      <div class="objectives-label">Learning Objectives</div>
+      <ul>
+        <li>Define the linear MSE estimate and obtain its formula for the scalar and vector settings.</li>
+        <li>Compute conditional density functions and conditional expectations.</li>
+        <li>Identify the conditional expectation as the minimum MSE estimate.</li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section" id="sec1">
+      <h2 class="sec-title"><span class="sec-num">Section 1</span>Introduction to MSE Estimation</h2>
+
+      <p>Consider the following estimation setup: a hidden random variable $X \in \mathbb{R}^n$, an observation $Y \in \mathbb{R}^m$, and an estimator $\hat{X} \in \mathbb{R}^n$ which is a function of $Y$ designed to approximate $X$. In the MSE estimation framework, the estimator is obtained by minimizing:</p>
+
+      <div class="eq-block">$$\min_{\hat{X} \in \mathcal{V}_Y} E\bigl[\|X - \hat{X}\|^2\bigr]$$</div>
+
+      <p>where $\mathcal{V}_Y$ is the space of estimators we search over. In this lecture we consider two choices:</p>
+
+      <ul class="content-list">
+        <li><strong>Linear estimators:</strong> $\mathcal{V}_Y = \{KY + b \;;\; K \in \mathbb{R}^{n \times m},\; b \in \mathbb{R}^n\}$</li>
+        <li><strong>All estimators:</strong> $\mathcal{V}_Y = \{f(Y) \;;\; f : \mathbb{R}^m \to \mathbb{R}^n\}$</li>
+      </ul>
+
+      <p>We also identify the setting where the linear estimator is optimal among all estimators.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="sec2">
+      <h2 class="sec-title"><span class="sec-num">Section 2</span>Minimum Linear MSE Estimation</h2>
+
+      <h3 class="subsec-title" id="sec2-1"><span class="subsec-num">2.1</span>Scalar Case</h3>
+
+      <p>Assume both $X$ and $Y$ are scalar. The MSE minimization over $k, b \in \mathbb{R}$ is:</p>
+
+      <div class="eq-block">$$\min_{k,b} \; E\bigl[(X - kY - b)^2\bigr]$$</div>
+
+      <p>Expanding and completing the square using the rules of covariance and expectation:</p>
+
+      <div class="eq-block">
+        $$E[(X - kY - b)^2] = \text{var}(X) - \frac{\text{cov}(X,Y)^2}{\text{var}(Y)} + \left(k - \frac{\text{cov}(X,Y)}{\text{var}(Y)}\right)^2 \text{var}(Y) + (E[X] - kE[Y] - b)^2$$
+      </div>
+
+      <p>This is minimized by:</p>
+
+      <div class="eq-block">
+        $$k^* = \frac{\text{cov}(X,Y)}{\text{var}(Y)}, \qquad b^* = E[X] - k^* E[Y]$$
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Minimum Linear MSE Estimate (Scalar)</div>
+        <div class="eq-block">$$\hat{X}^* = E[X] + \frac{\text{cov}(X,Y)}{\text{var}(Y)}\bigl(Y - E[Y]\bigr)$$</div>
+        <p>The minimum MSE achieved is:</p>
+        <div class="eq-block">$$E[e^2] = \text{var}(X) - \frac{\text{cov}(X,Y)^2}{\text{var}(Y)}$$</div>
+        <p>where $e = X - \hat{X}^*$.</p>
+      </div>
+
+      <div class="remarks-list">
+        <div class="remark-item">
+          <span class="remark-num">1.</span>
+          <p>The formula depends only on the first and second moments of $X$ and $Y$, and their covariance — not on the full joint distribution. It is the optimal linear estimate even when $X$ and $Y$ do not have a linear relationship.</p>
+        </div>
+        <div class="remark-item">
+          <span class="remark-num">2.</span>
+          <p>The estimate has a <em>feedback-error correction</em> form: the prior guess $E[X]$ is corrected by gain $k^*$ times the innovation $Y - E[Y]$.</p>
+        </div>
+        <div class="remark-item">
+          <span class="remark-num">3.</span>
+          <p>The minimum MSE $E[e^2]$ equals the prior uncertainty $\text{var}(X)$ reduced by a term proportional to the correlation between $X$ and $Y$.</p>
+        </div>
+        <div class="remark-item">
+          <span class="remark-num">4.</span>
+          <p>When $\text{cov}(X,Y) = 0$, we have $\hat{X}^* = E[X]$ — the observation provides no information.</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 2.1 · Gaussian with Additive Noise</div>
+        <p>Let $X \sim \mathcal{N}(\mu, \sigma^2)$ and $Y = X + W$ with $W \sim \mathcal{N}(0, r^2)$ independent of $X$. Then:</p>
+        <div class="eq-block">
+          $$k^* = \frac{\sigma^2}{\sigma^2 + r^2}, \qquad \hat{X} = \frac{\sigma^2}{\sigma^2 + r^2} Y + \frac{r^2}{\sigma^2 + r^2}\mu$$
+        </div>
+        <p>This is a convex combination of the observation $Y$ and the prior mean $\mu$. When $r/\sigma \ll 1$ (low noise), $\hat{X} \approx Y$. When $r/\sigma \gg 1$ (high noise), $\hat{X} \approx \mu$. The minimum MSE is:</p>
+        <div class="eq-block">$$E[(X - \hat{X})^2] = \frac{\sigma^2 r^2}{\sigma^2 + r^2}$$</div>
+      </div>
+
+      <h3 class="subsec-title" id="sec2-2"><span class="subsec-num">2.2</span>Vector Case</h3>
+
+      <p>For $X \in \mathbb{R}^n$ and $Y \in \mathbb{R}^m$, we minimize over $K \in \mathbb{R}^{n \times m}$ and $b \in \mathbb{R}^n$. Writing the error $e := X - KY - b$ and the MSE as:</p>
+
+      <div class="eq-block">$$E\bigl[\|e\|^2\bigr] = \text{Tr}(\text{Cov}(e)) + \|E[e]\|^2$$</div>
+
+      <p>Expanding the error covariance and completing the square in $K$:</p>
+
+      <div class="eq-block">
+        $$\text{Cov}(e) = \text{Cov}(X) - \text{Cov}(X,Y)\text{Cov}(Y)^{-1}\text{Cov}(Y,X) + (K - K^*)^\top \text{Cov}(Y)(K - K^*)$$
+      </div>
+
+      <p>where $K^* = \text{Cov}(X,Y)\text{Cov}(Y)^{-1}$. The square-norm of the expectation of the error is simplified as</p>
+        
+
+      <div class="eq-block">
+        $$\|E[e]\|^2 = \|E[X]-KE[Y] - b\|^2$$
+      </div>
+
+      <p>concluding the following simplified expression for the MSE</p>
+      
+      <div class="eq-block">
+        $$E\bigl[\|e\|^2\bigr] = \text{const.} + \text{Tr}((K - K^*)^\top \text{Cov}(Y)(K - K^*)) + \|E[X]-KE[Y] - b\|^2$$
+      </div>
+
+
+        <p>The optimal gain and bias are:</p>
+
+
+      <div class="summary-box">
+        <div class="summary-box-label">Minimum Linear MSE Estimate (Vector)</div>
+        <div class="eq-block">
+          $$K^* = \text{Cov}(X,Y)\,\text{Cov}(Y)^{-1}, \qquad b^* = E[X] - K^* E[Y]$$
+          $$\hat{X}^* = E[X] + K^*\bigl(Y - E[Y]\bigr)$$
+        </div>
+        <p>The optimal error $e^* = X - \hat{X}^*$ satisfies $E[e^*] = 0$ and:</p>
+        <div class="eq-block">$$\text{Cov}(e^*) = \text{Cov}(X) - \text{Cov}(X,Y)\,\text{Cov}(Y)^{-1}\,\text{Cov}(Y,X)$$</div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 2.2 · Kalman Gain</div>
+        <p>Let $X \sim \mathcal{N}(\mu, \Sigma)$ and $Y = HX + W$ with $W \sim \mathcal{N}(0, R)$ independent of $X$. Using $\text{Cov}(X,Y) = \Sigma H^\top$ and $\text{Cov}(Y) = H\Sigma H^\top + R$:</p>
+        <div class="eq-block">$$K^* = \Sigma H^\top(H\Sigma H^\top + R)^{-1}$$</div>
+        <div class="eq-block">$$\hat{X} = \mu + K^*(Y - H\mu)$$</div>
+        <p>The matrix $K^*$ is the <strong>Kalman gain</strong> — this formula appears directly in the Kalman filter update equations. The error covariance is:</p>
+        <div class="eq-block">$$\text{Cov}(e) = \Sigma - \Sigma H^\top(H\Sigma H^\top + R)^{-1}H\Sigma$$</div>
+        <p>The MSE of the optimal estimate is $E[\|e\|^2] = \text{Tr}(\text{Cov}(e))$.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 2.3 · Error Covariance Ellipse</div>
+        <p>Let $X = [X_1, X_2]^\top \sim \mathcal{N}(0, I)$ and $Y = h_1 X_1 + h_2 X_2 + W$ with $W \sim \mathcal{N}(0, r^2)$. Then:</p>
+        <div class="eq-block">
+          $$\begin{bmatrix}\hat{X}_1 \\ \hat{X}_2\end{bmatrix} = \frac{1}{h_1^2 + h_2^2 + r^2}\begin{bmatrix}h_1 Y \\ h_2 Y\end{bmatrix}$$
+        </div>
+        <div class="eq-block">
+          $$\text{Cov}(X - \hat{X}) = I - \frac{1}{h_1^2 + h_2^2 + r^2}\begin{bmatrix}h_1^2 & h_1 h_2 \\ h_1 h_2 & h_2^2\end{bmatrix}$$
+        </div>
+        <p>The uncertainty ellipse $\{x : x^\top \text{Cov}(X-\hat{X})^{-1} x = 1\}$ grows in directions where the error covariance is large. Study the effect of $[h_1, h_2]$ on the ellipse in the code demonstration.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 1</div>
+        <p>Relate the optimal linear MSE estimate to the regularized least-squares problem.</p>
+        <ol>
+          <li><strong>(a)</strong> Show that the solution to $\min_{\hat{X}} \|Y - H\hat{X}\|^2 + \lambda\|\hat{X}\|^2$ equals the optimal linear MSE estimate when $X \sim \mathcal{N}(0, \frac{1}{\lambda}I)$ and $W \sim \mathcal{N}(0,I)$. Use the identity $(I + UV)^{-1}U = U(I + VU)^{-1}$.</li>
+          <li><strong>(b)</strong> Show that the solution to $\min_{\hat{X}} (Y - H\hat{X})^\top R^{-1}(Y - H\hat{X}) + (\hat{X} - \mu)^\top \Sigma^{-1}(\hat{X} - \mu)$ equals the optimal linear MSE estimate when $X \sim \mathcal{N}(\mu, \Sigma)$ and $W \sim \mathcal{N}(0, R)$.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section" id="sec3">
+      <h2 class="sec-title"><span class="sec-num">Section 3</span>Minimum MSE Estimation</h2>
+
+      <p>Can we achieve a lower MSE with a nonlinear estimator $\hat{X} = f(Y)$? To answer this, we first need conditional probabilities and conditional expectations.</p>
+
+      <h3 class="subsec-title" id="sec3-1"><span class="subsec-num">3.1</span>Conditional Probability</h3>
+
+      <p>The conditional probability of event $A$ given event $B$ is denoted $P(A|B)$. Using the identity $P(A \text{ and } B) = P(B)P(A|B) = P(A)P(B|A)$, we obtain <strong>Bayes' law</strong>:</p>
+
+      <div class="eq-block">$$P(A|B) = \frac{P(A)\,P(B|A)}{P(B)}$$</div>
+
+      <div class="example">
+        <div class="example-label">Example 3.1 · Smoking and Cancer</div>
+        <p>Let $A$ = patient has lung cancer, $B$ = patient smokes. Suppose $P(B|A) = 0.8$, $P(A) = 0.05$, $P(B) = 0.2$. Then:</p>
+        <div class="eq-block">$$P(A|B) = \frac{0.05 \times 0.8}{0.2} = 0.2$$</div>
+        <p>The probability of lung cancer given smoking is 20%. (Numbers are illustrative.)</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 2</div>
+        <p>A family has two children. Each child is equally likely to be a girl or boy. You observe that one child is a girl. What is the probability that the other child is also a girl?</p>
+      </div>
+
+      <h3 class="subsec-title" id="sec3-2"><span class="subsec-num">3.2</span>Conditional Probability Density Functions</h3>
+
+      <p>For random variables $X$ and $Y$ with joint density $p_{X,Y}(x,y)$, the <strong>conditional density</strong> of $X$ given $Y$ satisfies:</p>
+
+      <div class="eq-block"><span class="eq-label">(3.1)</span>$$p_{X,Y}(x,y) = p_Y(y)\, p_{X|Y}(x|y)$$</div>
+
+      <p>Interchanging $X$ and $Y$ and applying Bayes' law for densities:</p>
+
+      <div class="eq-block">$$p_{X|Y}(x|y) = \frac{p_X(x)\, p_{Y|X}(y|x)}{p_Y(y)}$$</div>
+
+      <div class="example">
+        <div class="example-label">Example 3.2</div>
+        <p>For $p(x,y) = x + y$ on $[0,1]^2$ with marginal $p_Y(y) = y + \frac{1}{2}$:</p>
+        <div class="eq-block">$$p_{X|Y}(x|y) = \frac{x + y}{y + \frac{1}{2}}$$</div>
+        <p>The figure below shows this conditional density for four values of $y$. As $y$ increases, the distribution shifts toward larger $x$ values and becomes more uniform.</p>
+      </div>
+
+      <div class="figure">
+        <img src="conditional_density.png" alt="Conditional density for four values of y" />
+        <div class="figure-caption"><strong>Figure 1.</strong> The conditional density $p_{X|Y}(x|y)$ for $y = 0, 0.25, 0.5, 1$.</div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 3</div>
+        <p>Show that if $X$ and $Y$ are independent, then $p_{X|Y}(x|y) = p_X(x)$ and $p_{Y|X}(y|x) = p_Y(y)$.</p>
+      </div>
+
+      <h3 class="subsec-title" id="sec3-3"><span class="subsec-num">3.3</span>Conditional Expectation</h3>
+
+      <p>The <strong>conditional expectation</strong> of $X$ given $Y = y$ is:</p>
+
+      <div class="eq-block">$$E[X|Y=y] = \int_{-\infty}^\infty x\, p_{X|Y}(x|y)\,dx$$</div>
+
+      <p>More generally, $E[f(X)|Y=y] = \int f(x)\, p_{X|Y}(x|y)\,dx$. Dropping $=y$, the conditional expectation $E[X|Y]$ is a random variable — a function of $Y$.</p>
+
+      <div class="example">
+        <div class="example-label">Example 3.3</div>
+        <p>For $p(x,y) = x+y$ on $[0,1]^2$:</p>
+        <div class="eq-block">
+          $$E[X|Y] = \int_0^1 x \cdot \frac{x+Y}{Y+\frac{1}{2}}\,dx = \frac{\frac{Y}{2} + \frac{1}{3}}{Y + \frac{1}{2}}$$
+        </div>
+        <div class="eq-block">
+          $$E[X^2|Y] = \int_0^1 x^2 \cdot \frac{x+Y}{Y+\frac{1}{2}}\,dx = \frac{\frac{Y}{3} + \frac{1}{4}}{Y + \frac{1}{2}}$$
+        </div>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Rules for Conditional Expectation</div>
+        <ol class="content-list" style="padding-left:1.2rem;">
+          <li>$E[X|Y]$ is a function of $Y$: there exists $\hat{f}$ such that $E[X|Y] = \hat{f}(Y)$.</li>
+          <li>Linearity: $E[\alpha X + \beta Z|Y] = \alpha E[X|Y] + \beta E[Z|Y]$.</li>
+          <li>$E[Xf(Y)|Y] = f(Y)E[X|Y]$ — any function of $Y$ is treated as a constant.</li>
+          <li>$E[X|Y] = E[X]$ when $X$ and $Y$ are independent.</li>
+          <li>Tower property: $E[E[X|Y]] = E[X]$.</li>
+          <li>$E[E[X|Y,Z]|Y] = E[X|Y]$.</li>
+        </ol>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 4</div>
+        <p>Use the definition of conditional expectation to prove rule (5): $E[E[X|Y]] = E[X]$.</p>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-label">Exercise 5</div>
+        <p>Let $X \sim \mathcal{N}(0,1)$ and $Y = X + W$ with $W \sim \mathcal{N}(0,r^2)$ independent of $X$, so $p_{Y|X}(y|x) = \frac{1}{\sqrt{2\pi r^2}}e^{-(y-x)^2/(2r^2)}$.</p>
+        <ol>
+          <li><strong>(a)</strong> Show that $p_{X|Y}(x|y) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \frac{y}{1+r^2})^2/(2\sigma^2)}$ where $\sigma^2 = \frac{r^2}{1+r^2}$.</li>
+          <li><strong>(b)</strong> Use part (a) to find $E[X|Y]$.</li>
+          <li><strong>(c)</strong> Compare with the optimal linear MSE estimate.</li>
+        </ol>
+      </div>
+
+      <h3 class="subsec-title" id="sec3-4"><span class="subsec-num">3.4</span>Conditional Expectation as Minimum MSE Estimate</h3>
+
+      <p>We now solve $\min_f E[(X - f(Y))^2]$ over all functions $f$. Conditioning on $Y$:</p>
+
+      <div class="eq-block">
+        $$E[(X - f(Y))^2|Y] = E[X^2|Y] - E[X|Y]^2 + (f(Y) - E[X|Y])^2$$
+      </div>
+
+      <p>Taking expectations of both sides:</p>
+
+      <div class="eq-block">
+        $$E[(X - f(Y))^2] = \underbrace{E\bigl[E[X^2|Y] - E[X|Y]^2\bigr]}_{\text{independent of }f} + \underbrace{E\bigl[(f(Y) - E[X|Y])^2\bigr]}_{\geq\, 0,\;\text{minimized when }f(Y) = E[X|Y]}$$
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Summary · MSE Estimation</div>
+        <p><strong>Optimal nonlinear estimate</strong> (over all functions $f$):</p>
+        <div class="eq-block">$$\hat{X} = E[X|Y] = \int x\, p_{X|Y}(x|Y)\,dx$$</div>
+        <p><strong>Optimal linear estimate</strong> (over $\hat{X} = KY + b$):</p>
+        <div class="eq-block">$$\hat{X} = E[X] + K^*(Y - E[Y]), \qquad K^* = \text{Cov}(X,Y)\,\text{Cov}(Y)^{-1}$$</div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">Example 3.4 · Comparison of Estimators</div>
+        <p>For $p(x,y) = x+y$ on $[0,1]^2$, the optimal (nonlinear) estimate is:</p>
+        <div class="eq-block">$$E[X|Y] = \frac{\frac{Y}{2} + \frac{1}{3}}{Y + \frac{1}{2}}, \qquad \text{MSE} = \frac{1}{12} - \frac{1}{144}\log(3) \approx 0.07570$$</div>
+        <p>The optimal linear estimate is:</p>
+        <div class="eq-block">$$\hat{X} = \frac{7}{12} - \frac{1}{11}\left(Y - \frac{7}{12}\right), \qquad \text{MSE} = \frac{5}{66} \approx 0.07576$$</div>
+        <p>The two MSE values are remarkably close, with the nonlinear estimator offering only a marginal improvement — consistent with the small negative correlation between $X$ and $Y$.</p>
+
+        <div class="figure">
+          <img src="cond_expect.png" alt="Comparison of conditional expectation and optimal linear estimate" />
+          <div class="figure-caption"><strong>Figure 2.</strong> The conditional expectation $E[X|Y]$ (solid red) vs. the optimal linear MSE estimate (dashed orange), overlaid on the joint density $p(x,y) = x+y$.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section" id="sec4">
+      <h2 class="sec-title"><span class="sec-num">Section 4</span>Jointly Gaussian Setting</h2>
+
+      <p>Computing the conditional expectation is generally hard. An important tractable case is when $X$ and $Y$ are <strong>jointly Gaussian</strong>, i.e., $Z = [X, Y]^\top$ has a Gaussian density. In this case, the conditional expectation is linear and coincides with the optimal linear MSE estimate.</p>
+
+      <div class="theorem-box">
+        <div class="theorem-label">Key Result · Jointly Gaussian</div>
+        <p>If $X$ and $Y$ are jointly Gaussian, then:</p>
+        <div class="eq-block">$$E[X|Y] = KY + b, \qquad K = \text{Cov}(X,Y)\,\text{Cov}(Y)^{-1}, \quad b = E[X] - KE[Y]$$</div>
+        <p>Moreover, the conditional density $p_{X|Y}(x|y)$ is Gaussian $\mathcal{N}(KY+b,\, P)$ where:</p>
+        <div class="eq-block">$$P = \text{Cov}(X) - \text{Cov}(X,Y)\,\text{Cov}(Y)^{-1}\,\text{Cov}(Y,X)$$</div>
+      </div>
+
+      <div class="proof">
+        <div class="proof-label">Proof Sketch</div>
+        <p>Define $\hat{X} = KY + b$ and error $e = X - \hat{X}$. Both are Gaussian. The estimate formula implies $\text{Cov}(e, Y) = 0$, and since $e$ and $Y$ are Gaussian, they are independent. Therefore $e$ and $\hat{X}$ are independent. Since $X = \hat{X} + e$ with $e$ independent of $\hat{X}$ and $e \sim \mathcal{N}(0, P)$, conditioning on $Y$ gives $X|Y \sim \mathcal{N}(\hat{X}, P)$. $\square$</p>
+      </div>
+
+      <p>This result is fundamental: in the Gaussian setting, the linear estimator is globally optimal, and we never need to search for nonlinear improvements.</p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section" id="sec5">
+      <h2 class="sec-title"><span class="sec-num">Section 5</span>Programming Exercise: Nonlinear Estimation</h2>
+
+      <p>Let $X(0) \sim \mathcal{N}(0, P)$ and $X(1) = X(0) + U$ where $U = \pm 1$ with equal probability, independent of $X(0)$. The observation is $Y = X(1) + W$ with $W \sim \mathcal{N}(0, R)$ independent of everything else.</p>
+
+      <div class="exercise">
+        <div class="exercise-label">Deliverables</div>
+        <ol>
+          <li><strong>(a)</strong> Write code generating $N$ i.i.d. samples $\{(X(1)_i, Y_i)\}_{i=1}^N$. Plot a scatter plot with $P = 0.1$, $R = 0.4$.</li>
+          <li><strong>(b)</strong> Derive the best linear MSE estimator $\hat{f}_{\text{lin}}(Y)$ as a formula in $P$ and $R$. Overlay the estimator on the scatter plot.</li>
+          <li><strong>(c)</strong> Extend the search to $\mathcal{V} = \{c_0 + c_1\psi_1(Y) + \cdots + c_m\psi_m(Y)\}$. Use the optimality conditions to show the best estimator in $\mathcal{V}$ is:
+            <div class="eq-block">$$E[X(1)] + \text{Cov}(X, \psi(Y))\,\text{Cov}(\psi(Y))^{-1}\bigl(\psi(Y) - E[\psi(Y)]\bigr)$$</div>
+          </li>
+          <li><strong>(d)</strong> With $\psi(Y) = [Y, Y^3]^\top$, approximate the estimator numerically using sample means and covariances. Call it $\hat{f}_{\text{cubic}}(Y)$ and add to the scatter plot.</li>
+          <li><strong>(e)</strong> Repeat with $\psi(Y) = [Y, \text{sgn}(Y)]^\top$ where $\text{sgn}(Y) = \mathbf{1}_{Y > 0}$. Call it $\hat{f}_{\text{sgn}}(Y)$ and add to the scatter plot.</li>
+          <li><strong>(f)</strong> Numerically compare the MSE for all three estimators. Which performs best?</li>
+        </ol>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px', threshold: 0.05 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
